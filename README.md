@@ -1,102 +1,250 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+<h1 align="center">Sudoku Showdown</h1>
 
-Welcome USER_NAME,
+[View the live project here.](#)
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. The last update to this file was: **July 2, 2021**
+# Contents <!-- omit in toc -->
 
-## Gitpod Reminders
+- [1. User Experience (UX)](#1-user-experience-ux)
+  - [1.1 Target audience](#11-target-audience)
+  - [1.2 User Stories](#12-user-stories)
+    - [First Time Visitor Goals](#first-time-visitor-goals)
+    - [Returning Visitor Goals](#returning-visitor-goals)
+    - [Frequent User Goals](#frequent-user-goals)
+    - [Site Owner Goals](#site-owner-goals)
+  - [1.3 Design](#13-design)
+    - [Colour Scheme](#colour-scheme)
+    - [Typography](#typography)
+    - [Imagery](#imagery)
+  - [1.4 Structure](#14-structure)
+  - [1.5 Wireframes](#15-wireframes)
+- [2. Features](#2-features)
+  - [2.1 Existing Features](#21-existing-features)
+  - [2.2 Features Left to Implement](#22-features-left-to-implement)
+- [3 Technologies Used](#3-technologies-used)
+  - [3.1 Language Used](#31-language-used)
+  - [3.2 Frameworks, Libraries & Programs Used](#32-frameworks-libraries--programs-used)
+- [4. Testing](#4-testing)
+  - [4.1 Validator tools](#41-validator-tools)
+  - [4.2 Testing User Stories from User Experience (UX) Section](#42-testing-user-stories-from-user-experience-ux-section)
+    - [First Time Visitor Goals](#first-time-visitor-goals-1)
+    - [Returning Visitor Goals](#returning-visitor-goals-1)
+    - [Frequent User Goals](#frequent-user-goals-1)
+    - [Site Owner Goals](#site-owner-goals-1)
+      - [14. As the Site Owner, I want to inform students (existing and prospective) of upcoming events](#14-as-the-site-owner-i-want-to-inform-students-existing-and-prospective-of-upcoming-events)
+  - [4.3. Further Testing](#43-further-testing)
+  - [4.4 Testing Bugs - Resolved](#44-testing-bugs---resolved)
+  - [4.5 Known Bugs](#45-known-bugs)
+- [5. Deployment](#5-deployment)
+  - [5.1. GitHub Pages](#51-github-pages)
+  - [5.2. Forking the GitHub Repository](#52-forking-the-github-repository)
+  - [5.3. Making a Local Clone](#53-making-a-local-clone)
+- [6. Credits](#6-credits)
+  - [6.1. Code](#61-code)
+  - [6.2. Content](#62-content)
+  - [6.3. Media](#63-media)
+  - [6.4. Acknowledgements](#64-acknowledgements)
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+# 1. User Experience (UX)
 
-`python3 -m http.server`
+This website was created for Sudoku enthusiasts, offering an opportunity to improve your time to completion and compete for the best completion time against other site visitors.
 
-A blue button should appear to click: _Make Public_,
+## 1.1 Target audience
 
-Another blue button should appear to click: _Open Browser_.
+- New Sudoku players interested looking for a new hobby.
+- Prospective players hoping to gain the potential health benefits of playing Sudoku (improved thinking skills, concentration, memory etc.)
+- Seasoned players in improving their puzzle completion times.
+- Players with a competitive streak hoping to guage how they stack up against other players.
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+## 1.2 User Stories
 
-A blue button should appear to click: _Make Public_,
+### First Time Visitor Goals
 
-Another blue button should appear to click: _Open Browser_.
+  1. As a First Time Visitor, I want to easily navigate from the landing page to the sections that interest me.
+  2. As a First Time Visitor, I want to have access to and learn the rules of the game.
+  3. As a First Time Visitor, I want to practice to improve my completion times.
+  4. As a First Time Visitor, I want to see a log of my completion times while I am playing a practice game to monitor improvement.
+  5. As a First TIme Visitor, I want to view hints and tips on how best to approach the game.
+  6. As a First Time Visitor, I want to be able to have unlimited access to new puzzles.
+  7. As a First Time Visitor, I want to be able to change the background to my preference (dark / light / colourful).
+  8. As a First Time Visitor, I want to have the option of being alerted when I've made an error in completing the puzzle.
+  
+### Returning Visitor Goals
+  
+  9. As a Returning Visitor, I want to easily navigate from the landing page to the game (challenge / practice).
+  10. As a Returning Visitor, I want to view hints and tips to improve my game completion times.
+  11. As a Returning Visitor, I want to have unlimited access to new puzzles.
+  12. As a Returning Visitor, I want to have the option of being alerted when I've made an error in completing the puzzle.
+  13. As a Returning Visitor, I want to be able to change the background to my preference (dark / light / colourful).
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+### Frequent User Goals
+  
+  14. As a Frequent User, I want to easily navigate from the landing page to the game (challenge / practice).
+  15. As a Frequent User, I want to have unlimited access to new puzzles.
+  16. As a Frequent User, I want to be able to change the background to my preference (dark / light / colourful).
+  17. As a Frequent User, I want to be compare my skills to other players in a daily challenge.
+  18. As a Frequent User, I want to practice to improve my completion times.
 
-To log into the Heroku toolbelt CLI:
+### Site Owner Goals
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+  12. As the Site Owner, I want users to attract and retain new users. 
+  13. As the Site Owner, I want to receive users' suggestions for improvement or bug reports in a dedicated mailbox.
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+## 1.3 Design
 
-------
+### Colour Scheme
 
-## Release History
+- The main colours, selected from  
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+- Snapshot of palette image can be viewed [here](#).
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+### Typography
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+- 
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+### Imagery
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+- 
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+## 1.4 Structure
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+- 
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+## 1.5 Wireframes
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+- Home page  - [view](docs/wireframes/home.png)
+- Contact page - [view](docs/wireframes/contact.png)
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+# 2. Features
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+## 2.1 Existing Features
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+- Responsive on all device sizes
+- Interactive elements
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+## 2.2 Features Left to Implement
 
-------
+- Difficult levels
 
-## FAQ about the uptime script
+# 3 Technologies Used
 
-**Why have you added this script?**
+## 3.1 Language Used
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+- [HTML 5](https://en.wikipedia.org/wiki/HTML5)
+- [CSS](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
 
-**How will this affect me?**
+## 3.2 Frameworks, Libraries & Programs Used
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+### - [Bootstrap 5:](https://getbootstrap.com/docs/5.0/getting-started/introduction/) <!-- omit in toc -->
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+- Bootstrap was used to assist with the responsiveness and styling of the website:
+  - Horizontal alignment navs & tabs used for navbar
+    - Used stacked to horizontal grid for introduction section on home page
+    - For the image gallery on About page, used Carousel
+    - Sign up for newsletter form created with modals
+    - Classes layout uses List Group, with headings as disabled items
+    - Contact form elements
+  
+### - [Google Fonts:](https://fonts.google.com/) <!-- omit in toc -->
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+- Google Fonts were used to import the "Lato" and "Dancing Script" fonts into the style.css file used on all pages throughout the website.
+  
+### - [Font Awesome:](https://fontawesome.com/) <!-- omit in toc -->
 
-**So….?**
+- Font Awesome was used on all pages throughout the website to add icons for aesthetic and UX purposes.
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+### - [jQuery:](https://jquery.com/) <!-- omit in toc -->
 
-**Can I opt out?**
+- jQuery in conjunction with Bootstrap make the navbar, modal, accordion and carousel responsive.
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+### - [Git:](https://git-scm.com/) <!-- omit in toc -->
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+- Git was used for version control by utilizing the Gitpod terminal to commit to Git and Push to GitHub.
 
-**Anything more?**
+### - [GitHub:](https://github.com/) <!-- omit in toc -->
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+- GitHub is used to store the projects code after being pushed from Git.
 
----
+### - [Visual Studio Code:](https://code.visualstudio.com/) <!-- omit in toc -->
 
-Happy coding!
+- IDE used to write code for this project.
+
+### - [Microsoft Paint](https://en.wikipedia.org/wiki/Microsoft_Paint) and [Microsoft Photos:](https://en.wikipedia.org/wiki/Microsoft_Photos) <!-- omit in toc -->
+
+- Used to crop and resize images where required.
+
+### - [Microsoft Excel:](https://en.wikipedia.org/wiki/Microsoft_Excel) <!-- omit in toc -->
+
+- Used to prepared PDF schedule available for download from Schedule page.
+
+### - [Balsamiq:](https://balsamiq.com/) <!-- omit in toc -->
+
+- Balsamiq was used to create the wireframes during the design process.
+
+### - [Am I Responsive:](http://ami.responsivedesign.is/) <!-- omit in toc -->
+
+- Used to create mockups for README file.
+
+# 5. Deployment
+
+## 5.1. GitHub Pages
+
+The project was deployed to GitHub Pages as follows:
+
+1. Log in to GitHub and locate the [GitHub Repository](https://github.com/ElrieM/CI_MS1_MBM)
+2. Locate the "Settings" button in the menu above the Repository.
+   - Alternatively, click [here](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site) from the "Creating your site" section for a description of the process. ![GitHub menu](docs/readme/other/github-bar.png)
+3. Scroll down the Settings page until you locate the "Pages" section.![GitHub settings options](docs/readme/other/github-sidemenu.png)
+4. In the "Source" section, select the dropdown "Branch:" dropdown and select "Main". ![GitHub pages](docs/readme/other/github-pages.png)
+5. The page refreshes automatically.
+6. Scroll to "Your site is published at..." for the puslished site link in the "GitHub Pages" section.
+
+## 5.2. Forking the GitHub Repository
+
+A fork is a copy of the repository, allowing you to experiment with changes without affecting the original project.
+
+1. Log in to GitHub and locate the [GitHub Repository](https://github.com/ElrieM/CI_MS1_MBM)
+2. In the banner above the Repository, click on the "Fork" button.
+3. ![GitHub banner with Fork](docs/readme/other/github-forkmenu.png)
+4. If you have succeeded, you now have a copy of the original repository in your GitHub account.
+
+Alternatively, click [here](https://docs.github.com/en/github/getting-started-with-github/quickstart/fork-a-repo) for a guide to fork a repository.
+
+## 5.3. Making a Local Clone
+
+A clone allows you to create a local copy of a repository on your computer and sync between your computer and the GitHub repository.
+
+1. Log in to GitHub and locate the [GitHub Repository](https://github.com/ElrieM/CI_MS1_MBM)
+2. Click on Code, click on the copy button next to HTTPS to copy the URL. ![GitHub banner with Fork](docs/readme/other/github-forkmenu.png)
+3. Open Git Bash.
+4. Change the current working directory to the location where the cloned directory should be stored.
+5. Type "git clone', then paste the URL copied in step 2.
+6. Press Enter to create a local clone.
+
+Alternatively, click [here](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository-from-github/cloning-a-repository) for a guide to clone a repository.
+
+# 6. Credits
+
+## 6.1. Code
+
+- Bootstrap 5: Bootstrap Library used to make the site responsive using the Bootstrap Grid System
+- W3schools.com used for making changes to formatting and customising Bootstrap content used.
+- mdbootstrap.com for Carousel multiple items [here](https://mdbootstrap.com/snippets/jquery/ascensus/135508#html-tab-view)
+- freecodecamp.org for understanding why the footer won't stay put [here](https://www.freecodecamp.org/news/how-to-keep-your-footer-where-it-belongs-59c6aa05c59c/) and [here](https://css-tricks.com/couple-takes-sticky-footer/)
+
+## 6.2. Content
+
+- Contact page:
+  - Phone number, email address and WhatsApp contact numbers are fictional.
+  - Address randomly generated from [here](https://www.fakeaddressgenerator.com/World/Netherlands_address_generator)
+  - Guidance on how to embed Google Maps on website from [here](https://www.geeksforgeeks.org/how-to-add-google-map-inside-html-page-without-using-api-key/)
+
+## 6.3. Media
+
+- Logo used in header
+  - Lotus flower person vector from [here](https://www.pngkey.com/download/u2e6a9t4t4i1o0u2_lotus-zen-comments-you-need-care-too-self/)
+
+-
+
+## 6.4. Acknowledgements
+
+- 
