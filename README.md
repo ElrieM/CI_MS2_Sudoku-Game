@@ -93,17 +93,32 @@ This website was created for Sudoku enthusiasts, offering an opportunity to impr
 
 ### Colour Scheme
 
-- The main colours, selected from  
+- For the colour scheme, I wanted a more "serious" colour due to the nature of the game. After reading an article by 99designs (11 website color schemes to help you find the perfect palette)[https://en.99designs.nl/blog/tips/website-color-schemes/], I performed a Google search for grey colour palettes.
 
-- Snapshot of palette image can be viewed [here](#).
+- The main colours, selected from (grey website colour scheme search results)[https://www.google.com/search?q=grey+website+colour+scheme&rlz=1C1GEWG_nlNL954NL954&sxsrf=ALeKk01QQVHPWpUXTISKdEMnsKMCC5cSlQ:1625736050935&source=lnms&tbm=isch&sa=X&ved=2ahUKEwjttsHektPxAhXRC-wKHRKcBYIQ_AUoAXoECAEQAw&biw=1920&bih=937#imgrc=Rm5ReKnHhzM44M] and colormind (using #ccc to generate a palette)[http://colormind.io/bootstrap/] are:
+  - Light Shades - #EEE (background for Light theme / text for Dark theme)
+  - Light Accent - #8A6C8F (buttons on Dark theme)
+  - Main brand colour - #CCC
+  - Dark accent - #969ABF (buttons on Light theme)
+  - Dark shades - #333 (background for Dark theme / text for Light theme)
+
+- Snapshot of palette images can be viewed [here](docs\other\color-palette.png) and [here](docs\other\color-palette_(ccc).png).
 
 ### Typography
 
-- 
+- When selecting a font for the puzzle, I searched Google Fonts (filtering for Numerals) for a font with . I selected EB Garamond, which is a classical font with numbers that are equal in size and align with all other numbers in a single line. This was important to me to make sure the numbers in the puzzle appeared in a straight line across the grid, with no numbers dipping below or sticking out above others.
+
+- For the website text, I used EB Garamond's suggested pairing "Raleway" for its elegant and classic format, which I feel alings with the nature of the game.
 
 ### Imagery
 
-- 
+- I opted for a simple background on the landing page because I wanted it to be more of an interactive "navigation tool".
+
+- Since the majority of time is expected to be spent on the puzzle page, I selected background images for behind the page. The puzzle is quite plain, and adding the background is a nice way to passively engage the site user and leave them with a positive experience of the website. I opted for a more nature-focused theme, representing calm and beauty.
+
+  - Background - Dark theme: [Close Up of Leaf](https://www.pexels.com/photo/close-up-of-leaf-326055/)
+  - Background - Colourful theme: [Butterfly Perched on Flower](https://www.pexels.com/photo/butterfly-perched-on-flower-462118/)
+  - Background - Light theme: [Pink and Purple Flower Field](https://www.pexels.com/photo/pink-and-purple-flower-field-262713/)
 
 ## 1.4 Structure
 
@@ -111,8 +126,9 @@ This website was created for Sudoku enthusiasts, offering an opportunity to impr
 
 ## 1.5 Wireframes
 
-- Home page  - [view](docs/wireframes/home.png)
-- Contact page - [view](docs/wireframes/contact.png)
+- Home page - [view](docs\wireframes\home.png)
+- Game page - [view](docs\wireframes\game.png)
+- Rules page - [view](docs\wireframes\rules.png)
 
 # 2. Features
 
@@ -131,6 +147,7 @@ This website was created for Sudoku enthusiasts, offering an opportunity to impr
 
 - [HTML 5](https://en.wikipedia.org/wiki/HTML5)
 - [CSS](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
+- [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
 
 ## 3.2 Frameworks, Libraries & Programs Used
 
@@ -138,15 +155,10 @@ This website was created for Sudoku enthusiasts, offering an opportunity to impr
 
 - Bootstrap was used to assist with the responsiveness and styling of the website:
   - Horizontal alignment navs & tabs used for navbar
-    - Used stacked to horizontal grid for introduction section on home page
-    - For the image gallery on About page, used Carousel
-    - Sign up for newsletter form created with modals
-    - Classes layout uses List Group, with headings as disabled items
-    - Contact form elements
   
 ### - [Google Fonts:](https://fonts.google.com/) <!-- omit in toc -->
 
-- Google Fonts were used to import the "Lato" and "Dancing Script" fonts into the style.css file used on all pages throughout the website.
+- Imported "EB Garamond" and "Raleway" fonts from Google Fonts into the style.css file used on all pages throughout the website.
   
 ### - [Font Awesome:](https://fontawesome.com/) <!-- omit in toc -->
 
@@ -168,14 +180,6 @@ This website was created for Sudoku enthusiasts, offering an opportunity to impr
 
 - IDE used to write code for this project.
 
-### - [Microsoft Paint](https://en.wikipedia.org/wiki/Microsoft_Paint) and [Microsoft Photos:](https://en.wikipedia.org/wiki/Microsoft_Photos) <!-- omit in toc -->
-
-- Used to crop and resize images where required.
-
-### - [Microsoft Excel:](https://en.wikipedia.org/wiki/Microsoft_Excel) <!-- omit in toc -->
-
-- Used to prepared PDF schedule available for download from Schedule page.
-
 ### - [Balsamiq:](https://balsamiq.com/) <!-- omit in toc -->
 
 - Balsamiq was used to create the wireframes during the design process.
@@ -190,7 +194,7 @@ This website was created for Sudoku enthusiasts, offering an opportunity to impr
 
 The project was deployed to GitHub Pages as follows:
 
-1. Log in to GitHub and locate the [GitHub Repository](https://github.com/ElrieM/CI_MS1_MBM)
+1. Log in to GitHub and locate the [GitHub Repository](#)
 2. Locate the "Settings" button in the menu above the Repository.
    - Alternatively, click [here](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site) from the "Creating your site" section for a description of the process. ![GitHub menu](docs/readme/other/github-bar.png)
 3. Scroll down the Settings page until you locate the "Pages" section.![GitHub settings options](docs/readme/other/github-sidemenu.png)
@@ -202,7 +206,7 @@ The project was deployed to GitHub Pages as follows:
 
 A fork is a copy of the repository, allowing you to experiment with changes without affecting the original project.
 
-1. Log in to GitHub and locate the [GitHub Repository](https://github.com/ElrieM/CI_MS1_MBM)
+1. Log in to GitHub and locate the [GitHub Repository](#)
 2. In the banner above the Repository, click on the "Fork" button.
 3. ![GitHub banner with Fork](docs/readme/other/github-forkmenu.png)
 4. If you have succeeded, you now have a copy of the original repository in your GitHub account.
@@ -213,7 +217,7 @@ Alternatively, click [here](https://docs.github.com/en/github/getting-started-wi
 
 A clone allows you to create a local copy of a repository on your computer and sync between your computer and the GitHub repository.
 
-1. Log in to GitHub and locate the [GitHub Repository](https://github.com/ElrieM/CI_MS1_MBM)
+1. Log in to GitHub and locate the [GitHub Repository](#)
 2. Click on Code, click on the copy button next to HTTPS to copy the URL. ![GitHub banner with Fork](docs/readme/other/github-forkmenu.png)
 3. Open Git Bash.
 4. Change the current working directory to the location where the cloned directory should be stored.
@@ -228,8 +232,6 @@ Alternatively, click [here](https://docs.github.com/en/github/creating-cloning-a
 
 - Bootstrap 5: Bootstrap Library used to make the site responsive using the Bootstrap Grid System
 - W3schools.com used for making changes to formatting and customising Bootstrap content used.
-- mdbootstrap.com for Carousel multiple items [here](https://mdbootstrap.com/snippets/jquery/ascensus/135508#html-tab-view)
-- freecodecamp.org for understanding why the footer won't stay put [here](https://www.freecodecamp.org/news/how-to-keep-your-footer-where-it-belongs-59c6aa05c59c/) and [here](https://css-tricks.com/couple-takes-sticky-footer/)
 
 ## 6.2. Content
 
@@ -239,9 +241,6 @@ Alternatively, click [here](https://docs.github.com/en/github/creating-cloning-a
   - Guidance on how to embed Google Maps on website from [here](https://www.geeksforgeeks.org/how-to-add-google-map-inside-html-page-without-using-api-key/)
 
 ## 6.3. Media
-
-- Logo used in header
-  - Lotus flower person vector from [here](https://www.pngkey.com/download/u2e6a9t4t4i1o0u2_lotus-zen-comments-you-need-care-too-self/)
 
 -
 
