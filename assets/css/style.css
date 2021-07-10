@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond&family=Raleway&display=swap');
+
+/* ALL PAGES */
+/* Setting fonts */
+body {
+    font-family: 'Raleway', sans-serif;   
+}
+
+.container-game {
+    font-family: 'EB Garamond', serif;
+}
+
+/* Header formatting */
+
+header {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    padding-top: 5vh;
+    height: 15vh;
+}
+
+.wrapper-page,
+.row {
+    margin: 0;
+}
+
+footer {
+    height: 10vh;
+}
+
+/* LANDING PAGE */
+
+/* Button formatting */
+
+#wrapper-page {
+    background-color: #EEE;
+    height: 75vh;
+}
+button {
+    margin: .5em 0;
+}
