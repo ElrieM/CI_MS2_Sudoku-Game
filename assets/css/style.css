@@ -3,7 +3,7 @@
 /* ALL PAGES */
 /* Setting fonts */
 body {
-    font-family: 'Raleway', sans-serif;   
+    font-family: 'Raleway', sans-serif;
 }
 
 .container-game {
@@ -16,8 +16,8 @@ header {
     text-align: center;
     margin: 0;
     padding: 0;
-    padding-top: 5vh;
-    height: 15vh;
+    padding-top: 7vh;
+    height: 20vh;
 }
 
 .wrapper-page,
@@ -29,14 +29,119 @@ footer {
     height: 10vh;
 }
 
-/* LANDING PAGE */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
 
-/* Button formatting */
+    /* ---- Tablets ---- */
+    header {
+        padding-top: 5vh;
+        height: 15vh;
+    }
+
+    footer {
+        height: 10vh;
+    }
+}
+
+
+@media only screen and (max-width: 767px) {
+
+    /* ---- Mobile ---- */
+    header {
+        padding-top: 5vh;
+        height: 15vh;
+    }
+
+    footer {
+        height: 10vh;
+    }
+}
+
+/* -------------------------------------------------- LANDING PAGE */
+
+/* Button / navigation area formatting */
 
 #wrapper-page {
     background-color: #EEE;
-    height: 75vh;
+    height: 65vh;
 }
+
+.card {
+    margin-top: 20%;
+    padding-top: 25%;
+    height: 45vh;
+}
+
+i {
+    font-size: 100px;
+}
+
+h2 {
+    font-size: 50px;
+}
+
 button {
     margin: .5em 0;
+}
+
+@media only screen and (max-width: 767px) {
+
+    /* ---- Mobile ---- */
+    #wrapper-page {
+        height: 70vh;
+    }
+
+    .card {
+        margin-top: 1em;
+        padding-top: .7em;
+        padding-bottom: .7em;
+        height: 20vh;
+    }
+
+    i {
+        font-size: 30px;
+    }
+
+    h2 {
+        font-size: 25px;
+    }
+
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+    /* ---- Tablet ---- */
+    #wrapper-page {
+        height: 70vh;
+    }
+
+    .card {
+        margin-top: 1em;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        height: 20vh;
+    }
+
+    i {
+        font-size: 55px;
+    }
+
+}
+
+@media only screen and (min-width: 1200px) {
+    /* ---- Large laptops and desktops ---- */
+
+    .card {
+        margin-top: 30%;
+        padding-top: 15%;
+        height: 40vh;
+    }
+
+    i {
+        font-size: 150px;
+    }
+
+    h2 {
+        font-size: 80px;
+    }
+
 }
