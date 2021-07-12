@@ -71,8 +71,13 @@ footer {
     height: 45vh;
 }
 
-i {
+.nav-page {
     font-size: 100px;
+}
+
+.nav-link {
+    padding-top: .5em;
+    font-size: 40px;
 }
 
 h2 {
@@ -97,8 +102,13 @@ button {
         height: 20vh;
     }
 
-    i {
+    .nav-page {
         font-size: 30px;
+    }
+
+    .nav-link {
+        padding-top: 1em;
+        font-size: 25px;
     }
 
     h2 {
@@ -121,8 +131,13 @@ button {
         height: 20vh;
     }
 
-    i {
+    .nav-page {
         font-size: 55px;
+    }
+
+    .nav-link {
+        padding-top: .5em;
+        font-size: 40px;
     }
 
 }
@@ -136,8 +151,13 @@ button {
         height: 40vh;
     }
 
-    i {
+    .nav-page {
         font-size: 150px;
+    }
+
+    .nav-link {
+        padding-top: .5em;
+        font-size: 70px;
     }
 
     h2 {
