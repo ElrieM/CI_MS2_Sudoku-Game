@@ -2,8 +2,10 @@
 
 /* ALL PAGES */
 /* Setting fonts */
-body {
+body,
+i {
     font-family: 'Raleway', sans-serif;
+    color: #333;
 }
 
 .container-game {
@@ -16,8 +18,13 @@ header {
     text-align: center;
     margin: 0;
     padding: 0;
-    padding-top: 7vh;
+    padding-top: 3%;
     height: 20vh;
+}
+
+header>.h1,
+h1 {
+    font-size: calc(2.5rem + 2.5vw);
 }
 
 .wrapper-page,
@@ -26,39 +33,58 @@ header {
 }
 
 footer {
+    padding-top: 1%;
     height: 10vh;
+}
+
+@media only screen and (max-width: 767px) {
+
+    /* ---- Mobile ---- */
+    header {
+        padding-top: 7%;
+        height: 15vh;
+    }
+
+    header>.h1, h1 {
+        font-size: calc(2.25rem + 1.5vw);
+    }
+
+    footer {
+        height: 10vh;
+        padding-top: 5%;
+    }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
 
     /* ---- Tablets ---- */
     header {
-        padding-top: 5vh;
+        padding-top: 5%;
         height: 15vh;
     }
 
     footer {
+        padding-top: 4%;
         height: 10vh;
     }
 }
 
+@media only screen and (min-width: 1200px) {
+    /* ---- Large laptops and desktops ---- */
 
-@media only screen and (max-width: 767px) {
-
-    /* ---- Mobile ---- */
     header {
-        padding-top: 5vh;
-        height: 15vh;
+        padding-top: 2%;
     }
 
-    footer {
-        height: 10vh;
+    header>.h1,
+    h1 {
+        font-size: calc(3rem + 3vw);
     }
 }
 
 /* -------------------------------------------------- LANDING PAGE */
 
-/* Button / navigation area formatting */
+/* Navigation area formatting */
 
 #wrapper-page {
     background-color: #EEE;
@@ -71,22 +97,18 @@ footer {
     height: 45vh;
 }
 
-.nav-page {
-    font-size: 100px;
+.fs-1 {
+    font-size: calc(3rem + 2.5vw) !important;
 }
 
-.nav-link {
-    padding-top: .5em;
-    font-size: 40px;
+.fs-2 {
+    font-size: calc(2rem + 1.5vw) !important;
 }
 
-h2 {
-    font-size: 50px;
+.fs-3 {
+    font-size: calc(2rem + .8vw) !important;
 }
 
-button {
-    margin: .5em 0;
-}
 
 @media only screen and (max-width: 767px) {
 
@@ -102,17 +124,16 @@ button {
         height: 20vh;
     }
 
-    .nav-page {
-        font-size: 30px;
+    .fs-1 {
+        font-size: calc(2rem + 1.5vw) !important;
     }
 
-    .nav-link {
-        padding-top: 1em;
-        font-size: 25px;
+    .fs-2 {
+        font-size: calc(2rem + 2vw) !important;
     }
 
-    h2 {
-        font-size: 25px;
+    .fs-3 {
+        font-size: calc(1.5rem + 1.5vw) !important;
     }
 
 }
@@ -131,13 +152,16 @@ button {
         height: 20vh;
     }
 
-    .nav-page {
-        font-size: 55px;
+    .fs-1 {
+        font-size: calc(2.5rem + 2vw) !important;
     }
 
-    .nav-link {
-        padding-top: .5em;
-        font-size: 40px;
+    .fs-2 {
+        font-size: calc(2rem + 1.5vw) !important;
+    }
+
+    .fs-3 {
+        font-size: calc(1.8rem + 1.5vw) !important;
     }
 
 }
@@ -146,22 +170,21 @@ button {
     /* ---- Large laptops and desktops ---- */
 
     .card {
-        margin-top: 30%;
+        margin-top: 6em;
         padding-top: 15%;
         height: 40vh;
     }
 
-    .nav-page {
-        font-size: 150px;
+    .fs-1 {
+        font-size: 5rem !important;
     }
 
-    .nav-link {
-        padding-top: .5em;
-        font-size: 70px;
+    .fs-2 {
+        font-size: 4rem !important;
     }
 
-    h2 {
-        font-size: 80px;
+    .fs-3 {
+        font-size: 3rem !important;
     }
 
 }
