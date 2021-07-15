@@ -45,7 +45,8 @@ footer {
         height: 15vh;
     }
 
-    header>.h1, h1 {
+    header>.h1,
+    h1 {
         font-size: calc(2.25rem + 1.5vw);
     }
 
@@ -86,7 +87,7 @@ footer {
 
 /* Navigation area formatting */
 
-#wrapper-page {
+.wrapper-page {
     background-color: #EEE;
     height: 65vh;
 }
@@ -113,7 +114,7 @@ footer {
 @media only screen and (max-width: 767px) {
 
     /* ---- Mobile ---- */
-    #wrapper-page {
+    .wrapper-page {
         height: 70vh;
     }
 
@@ -141,7 +142,7 @@ footer {
 @media only screen and (min-width: 768px) and (max-width: 991px) {
 
     /* ---- Tablet ---- */
-    #wrapper-page {
+    .wrapper-page {
         height: 70vh;
     }
 
@@ -188,3 +189,9 @@ footer {
     }
 
 }
+
+/* -------------------------------------------------- GAME PAGE */
+
+
+
+  
