@@ -30,6 +30,7 @@ h1 {
 .wrapper-page,
 .row {
     margin: 0;
+    padding-top: 2vh;
 }
 
 footer {
@@ -93,7 +94,7 @@ footer {
 }
 
 .card {
-    margin-top: 20%;
+    margin-top: 15%;
     padding-top: 25%;
     height: 45vh;
 }
@@ -119,7 +120,7 @@ footer {
     }
 
     .card {
-        margin-top: 1em;
+        margin-top: 3%;
         padding-top: .7em;
         padding-bottom: .7em;
         height: 20vh;
@@ -171,7 +172,7 @@ footer {
     /* ---- Large laptops and desktops ---- */
 
     .card {
-        margin-top: 6em;
+
         padding-top: 15%;
         height: 40vh;
     }
@@ -192,6 +193,62 @@ footer {
 
 /* -------------------------------------------------- GAME PAGE */
 
+/* Formatting for grid adapted from: 
+https://css-tricks.com/snippets/css/complete-guide-grid/#basics-and-browser-support
+https://rachelandrew.co.uk/archives/2018/04/27/grid-level-2-and-subgrid/ */
+#game-grid {
+    font-family: 'EB Garamond', serif;
+    font-size: 1.5rem;
+    border: 3px solid;
+    padding: 0;
+    width: 60vh;
+    height: 60vh;
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
 
+.box {
+    padding: 0;
+    border: 1px solid;
+    grid-column: auto / span 3;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    text-align: center;
+    align-items: center;
+}
 
-  
+.cell {
+    padding: 0;
+    height: 100%;
+    border: 1px solid;
+}
+
+@media only screen and (max-width: 767px) {
+
+    /* ---- Mobile ---- */
+
+    #game-grid {
+        margin-left: 5%;
+        margin-right: 5%;
+        margin-top: 5%;
+        font-size: 100%;
+        border: 3px solid;
+        width: 90%;
+        height: 45vh;
+        }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+    /* ---- Tablet ---- */
+    #game-grid {
+        margin-left: 10%;
+        margin-right: 10%;
+        font-size: 100%;
+        border: 4px solid;
+        width: 80%;
+        height: 60vh;
+        }
+}
