@@ -234,7 +234,8 @@ Alternatively, click [here](https://docs.github.com/en/github/creating-cloning-a
 - W3schools.com used for making changes to formatting and customising Bootstrap content used.
 
 ## 6.2. Content
-
+- Rules page:
+  - Sudoku rules and solve approach from [here](https://masteringsudoku.com/sudoku-rules-beginners/)
 - Contact page:
   - Phone number, email address and WhatsApp contact numbers are fictional.
   - Address randomly generated from [here](https://www.fakeaddressgenerator.com/World/Netherlands_address_generator)
