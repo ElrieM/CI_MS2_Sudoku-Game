@@ -14,69 +14,31 @@ i {
 
 /* Header formatting */
 
-header {
-    text-align: center;
-    margin: 0;
-    padding: 0;
-    padding-top: 3%;
-    height: 20vh;
-}
 
 header>.h1,
 h1 {
     font-size: calc(2.5rem + 2.5vw);
 }
 
-.wrapper-page,
-.row {
-    margin: 0;
-    padding-top: 2vh;
-}
 
-footer {
-    padding-top: 1%;
-    height: 10vh;
-}
+
 
 @media only screen and (max-width: 767px) {
-
     /* ---- Mobile ---- */
-    header {
-        padding-top: 7%;
-        height: 15vh;
-    }
 
     header>.h1,
     h1 {
         font-size: calc(2.25rem + 1.5vw);
     }
-
-    footer {
-        height: 10vh;
-        padding-top: 5%;
-    }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
-
     /* ---- Tablets ---- */
-    header {
-        padding-top: 5%;
-        height: 15vh;
-    }
 
-    footer {
-        padding-top: 4%;
-        height: 10vh;
-    }
 }
 
 @media only screen and (min-width: 1200px) {
     /* ---- Large laptops and desktops ---- */
-
-    header {
-        padding-top: 2%;
-    }
 
     header>.h1,
     h1 {
@@ -87,11 +49,6 @@ footer {
 /* -------------------------------------------------- LANDING PAGE */
 
 /* Navigation area formatting */
-
-.wrapper-page {
-    background-color: #EEE;
-    height: 65vh;
-}
 
 .card {
     margin-top: 15%;
@@ -113,11 +70,7 @@ footer {
 
 
 @media only screen and (max-width: 767px) {
-
     /* ---- Mobile ---- */
-    .wrapper-page {
-        height: 70vh;
-    }
 
     .card {
         margin-top: 3%;
@@ -141,11 +94,7 @@ footer {
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
-
     /* ---- Tablet ---- */
-    .wrapper-page {
-        height: 70vh;
-    }
 
     .card {
         margin-top: 1em;
@@ -237,7 +186,7 @@ https://rachelandrew.co.uk/archives/2018/04/27/grid-level-2-and-subgrid/ */
         border: 3px solid;
         width: 90%;
         height: 45vh;
-        }
+    }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
@@ -250,5 +199,5 @@ https://rachelandrew.co.uk/archives/2018/04/27/grid-level-2-and-subgrid/ */
         border: 4px solid;
         width: 80%;
         height: 60vh;
-        }
+    }
 }
