@@ -232,6 +232,7 @@ Alternatively, click [here](https://docs.github.com/en/github/creating-cloning-a
 
 - Bootstrap 5: Bootstrap Library used to make the site responsive using the Bootstrap Grid System
 - W3schools.com used for making changes to formatting and customising Bootstrap content used.
+- FreeCodeCamp for guidance on using flexbox for page layout, [here](https://www.freecodecamp.org/news/learn-flexbox-build-5-layouts/)
 
 ## 6.2. Content
 - Rules page:
