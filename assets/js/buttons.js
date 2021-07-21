@@ -10,8 +10,22 @@ function createPuzzle() {
         let box = document.getElementById(`box-${i}`);
         box.innerHTML = ""; // Clears previous grid
 
+        var testBox = [];
+
         for (let j = 1; j < 10; j++) { // Runs through each of the 9 cells within a box
             let value = Math.floor(Math.random() * 9 + 1); // Assigns a value between 1 and 9
+            console.log(value);
+
+            while (testBox.includes(value)) {
+                if (j === 1) {
+                    testBox.push(value);
+                } else {
+                    value = Math.floor(Math.random() * 9 + 1); // Assigns a value between 1 and 9
+                    console.log(`New value:${value}`);
+                }
+            }
+
+            testBox.push(value);
 
             box.innerHTML += `<div class="cell">${value}</div>`;
         }
