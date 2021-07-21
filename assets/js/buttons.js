@@ -3,15 +3,17 @@
 // Each box can only contain a number once
 // Some cells set to hide value, value compared to user input
 
+window.onload = createPuzzle();
+
 function createPuzzle() {
-    for (let i = 1; i < 10; i++) {
+    for (let i = 1; i < 10; i++) { // Runs through each of the 9 boxes
         let box = document.getElementById(`box-${i}`);
+        box.innerHTML = ""; // Clears previous grid
 
-        for (let j = 1; j < 10; j++) {
-            let value = Math.floor(Math.random() * 9 + 1);
+        for (let j = 1; j < 10; j++) { // Runs through each of the 9 cells within a box
+            let value = Math.floor(Math.random() * 9 + 1); // Assigns a value between 1 and 9
 
-            box.innerHTML += `<div class="cell">${value}</div>`
-            console.log(value);
+            box.innerHTML += `<div class="cell">${value}</div>`;
         }
     }
 }

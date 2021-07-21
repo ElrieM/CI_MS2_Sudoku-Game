@@ -187,6 +187,11 @@ https://rachelandrew.co.uk/archives/2018/04/27/grid-level-2-and-subgrid/ */
         width: 90%;
         height: 45vh;
     }
+
+    header>.h1, h1 {
+        font-size: calc(1.5rem + 1.5vw);
+    }
+
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
