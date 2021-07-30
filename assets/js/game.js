@@ -22,7 +22,7 @@ function createPuzzle() {
         [1, 8, 9, 3, 4, 7, 2, 6, 5]
     ];
 
-    let randomTimes = Math.floor((Math.random() * 15) + 1); // Randomise grid by adding 1 for an indeterminate amount of times
+    let randomTimes = Math.floor((Math.random() * 9 - 2 + 1) + 2); // Randomise grid by adding 1 for an indeterminate amount of times
 
     for (let n = 0; n < randomTimes; n++) { // Add 1 to each grid item for randomTimes (random number of times)
         for (let i = 0; i < 9; i++) { // Row index
@@ -34,7 +34,7 @@ function createPuzzle() {
                 }
             }
         }
-    }
+    }console.log(randomTimes);
 
     for (let k = 1; k < 10; k++) { // Runs through each of the 9 boxes
         let box = document.getElementById(`box-${k}`);
@@ -66,6 +66,6 @@ function createPuzzle() {
             for (let j = colLower; j < colUpper; j++) { // Column index
                 box.innerHTML += `<div class="cell">${(grid[i][j])}</div>`;
             }
-        }console.log(box);
+        }
     }
 }
