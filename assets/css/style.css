@@ -210,3 +210,7 @@ https://rachelandrew.co.uk/archives/2018/04/27/grid-level-2-and-subgrid/ */
 /* -------------------------------------------------- LANDING PAGE */
 
 /* Contact form formatting */
+
+textarea.form-control {
+    min-height: calc(10em + (.75rem + 2px));
+}
