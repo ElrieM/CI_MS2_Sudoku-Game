@@ -186,7 +186,8 @@ https://rachelandrew.co.uk/archives/2018/04/27/grid-level-2-and-subgrid/ */
         height: 45vh;
     }
 
-    header>.h1, h1 {
+    header>.h1,
+    h1 {
         font-size: calc(1.5rem + 1.5vw);
     }
 
@@ -213,4 +214,40 @@ https://rachelandrew.co.uk/archives/2018/04/27/grid-level-2-and-subgrid/ */
 
 textarea.form-control {
     min-height: calc(10em + (.75rem + 2px));
+}
+
+
+
+/* ------------------------------------------------- 404 PAGE */
+
+/* Error page formatting */
+.img-fluid {
+    width: 300;
+    max-width: 100%;
+    height: auto;
+}
+
+@media only screen and (max-width: 767px) {
+
+    /* ---- Mobile ---- */
+    .img-fluid {
+        width: 240;
+    }
+}
+
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+    /* ---- Tablet ---- */
+    .img-fluid {
+        width: 400;
+    }
+
+}
+
+@media only screen and (min-width: 1200px) {
+    /* ---- Large laptops and desktops ---- */
+    .img-fluid {
+        width: 600;
+    }
 }
