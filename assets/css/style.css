@@ -21,8 +21,6 @@ h1 {
 }
 
 
-
-
 @media only screen and (max-width: 767px) {
     /* ---- Mobile ---- */
 
@@ -206,3 +204,9 @@ https://rachelandrew.co.uk/archives/2018/04/27/grid-level-2-and-subgrid/ */
         height: 60vh;
     }
 }
+
+
+
+/* -------------------------------------------------- LANDING PAGE */
+
+/* Contact form formatting */
