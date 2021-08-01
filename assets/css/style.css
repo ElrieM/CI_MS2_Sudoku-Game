@@ -5,7 +5,6 @@
 body,
 i {
     font-family: 'Raleway', sans-serif;
-    color: #333;
 }
 
 .container-game {
@@ -14,11 +13,46 @@ i {
 
 /* Header formatting */
 
-
 header>.h1,
 h1 {
     font-size: calc(2.5rem + 2.5vw);
 }
+
+:root {
+    --light: #f8f1ff;
+    --bright: #4F5B33;
+    --dark: #0E151C;
+  }
+
+.theme-switches {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .switch {
+    border: 3px solid black;
+    border-radius: 50px;
+    height: 20px;
+    width: 20px;
+    margin: 15px;
+    cursor: pointer;
+  }
+  
+  .switch:hover {
+    transform: scale(1.2);
+  }
+  
+  #switch-1 {
+    background-color: var(--light);
+  }
+  
+  #switch-2 {
+    background-color: var(--bright);
+  }
+  
+  #switch-3 {
+    background-color: var(--dark);
+  }
 
 
 @media only screen and (max-width: 767px) {
@@ -71,7 +105,7 @@ h1 {
     /* ---- Mobile ---- */
 
     .card {
-        margin-top: 3%;
+        margin-top: 2%;
         padding-top: .7em;
         padding-bottom: .7em;
         height: 20vh;
