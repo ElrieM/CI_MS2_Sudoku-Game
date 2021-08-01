@@ -1,0 +1,48 @@
+/* Setting primary colours */
+:root {
+  --back-color: #4f6073;
+  --primary-color: #eee;
+  --header-back: #a8c4c3;
+  --header-text: #0E151C;
+}
+
+body {
+  background-color: var(--back-color);
+  color: var(--primary-color);
+}
+
+/* Formatting header and footer */
+header,
+footer {
+  background-color: var(--header-back);
+  color: var(--header-text);
+}
+
+footer i {
+  color: var(--header-text);
+}
+
+/* Formatting game page */
+
+#game-grid {
+  background-color: mintcream;
+  color: #0e151f;
+}
+
+.card {
+  background-color: #ccc;
+  color: #0E151C;
+}
+
+/* Formatting contact page */
+
+.form-control {
+  background-color: #dee6e6;
+  color: #4f6073;
+}
+
+.btn-info {
+  color: #dee6e6;
+  background-color: #60848b;
+  border-color: #50666a;
+}
