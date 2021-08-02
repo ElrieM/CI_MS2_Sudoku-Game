@@ -36,6 +36,10 @@ footer i {
 
 /* Formatting contact page */
 
+#contact-wrapper {
+  border: 5px solid #656176;
+}
+
 .form-control {
   background-color: #FFF;
   color: #4f6073;
@@ -45,4 +49,14 @@ footer i {
   color: #f8f1ff;
   background-color: #656176;
   border-color: #534d56;
+}
+
+/* Formatting error page */
+
+.btn-link {
+  color: #656176;
+}
+
+.btn-link:hover {
+  color: #534d56;
 }

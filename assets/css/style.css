@@ -281,6 +281,13 @@ https://rachelandrew.co.uk/archives/2018/04/27/grid-level-2-and-subgrid/ */
 
 /* Contact form formatting */
 
+#contact-wrapper {
+    margin-left: 10%;
+    margin-right: 10%;
+    width: 80%;
+    padding: .5% 3%;
+}
+
 .form-control {
     font-size: .8rem;
 }
@@ -300,17 +307,21 @@ textarea.form-control {
 
     /* ---- Mobile ---- */
 
-    #contact-page {
-        margin-top: 1vh;
+    #contact-wrapper {
+        margin-left: 5%;
+        margin-right: 5%;
+        width: 90%;
+        padding: 0 5%;
     }
+
 
     .form-control {
         font-size: .9rem;
     }
 
     textarea.form-control {
-        min-height: calc(4em + (.75rem + 2px));
-        height: 10vh;
+        min-height: calc(3em + (.75rem + 2px));
+        height: 8vh;
     }
 
     .col-form-label {
@@ -321,6 +332,46 @@ textarea.form-control {
 
 }
 
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+    /* ---- Tablet ---- */
+
+    #contact-wrapper {
+        margin-left: 5%;
+        margin-right: 5%;
+        width: 90%;
+        padding: 2% 5%;
+    }
+
+    textarea.form-control {
+        min-height: calc(10em + (.75rem + 2px));
+        height: 10vh;
+    }
+
+    .col-form-label {
+        font-size: large;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    /* ---- Large laptops and desktops ---- */
+
+    #contact-wrapper {
+        margin-left: 15%;
+        margin-right: 15%;
+        width: 70%;
+        padding: .25% 3%;
+    }
+
+    textarea.form-control {
+        min-height: calc(12em + (.75rem + 2px));
+        height: 12vh;
+    }
+
+    .col-form-label {
+        font-size: unset;
+    }
+}
 
 /* ------------------------------------------------- 404 PAGE */
 
@@ -339,6 +390,14 @@ textarea.form-control {
     }
 }
 
+.lead {
+    margin-top: 2rem;
+    font-size: x-large;
+}
+
+a.btn.btn-link {
+    font-size: large;
+}
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
 

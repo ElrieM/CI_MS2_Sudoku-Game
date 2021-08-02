@@ -31,10 +31,14 @@ footer i {
 
 .card {
   background-color: #EAC7AE;
-  color: #4F5B33;
+  color: #63183C;
 }
 
 /* Formatting contact page */
+
+#contact-wrapper {
+  border: 5px solid #63183C;
+}
 
 .form-control {
   background-color: #FFF;
@@ -45,4 +49,14 @@ footer i {
   color: #DDDCA6;
   background-color: #4F5B33;
   border-color: #291420;
+}
+
+/* Formatting error page */
+
+.btn-link {
+  color: #63183C;
+}
+
+.btn-link:hover {
+  color: #60848b;
 }
