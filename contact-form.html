@@ -62,15 +62,11 @@
     </header>
 
     <!-- Contact form section -->
-    <main class="flex-shrink-0">
+    <main class="flex-shrink-0"  id="contact-page">
         <div class="container">
             <!-- Form adapted from Bootstrap 5 (https://getbootstrap.com/docs/5.0/forms/layout/)-->
-            <div>
-                <h2>Contact Us</h2>
-                <p>
-                    Comments, questions or suggestions? Please complete the form below and we'll get back to you as soon
-                    as possible!
-                </p>
+            <div id="contact-heading">
+                <h2 class="mt-3 text-center fs-2">Contact Us</h2>
             </div>
             <form id="contact-form">
                 <!-- Contact name -->
@@ -90,8 +86,8 @@
                 <!-- Contact message -->
                 <div class="row mb-3">
                     <div class="col-12">
-                        <label>Message</label>
-                        <textarea class="form-control" aria-label="With textarea" name="message"
+                        <labelfor="user_message" class="col-sm-2 col-form-label">Message</label>
+                        <textarea class="form-control" aria-label="With textarea" name="user_message"
                             id="message-block"></textarea>
                     </div>
                 </div>

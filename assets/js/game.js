@@ -36,7 +36,6 @@ function createPuzzle() {
         }
     }
 
-
     // Copy grid contents to board
     for (let c = 1; c < 82; c++) { // Counts through all 81 cells
         for (let k = 1; k < 10; k++) { // Runs through each of the 9 boxes
@@ -67,30 +66,45 @@ function createPuzzle() {
 
             for (let i = rowLower; i < rowUpper; i++) { // Row index
                 for (let j = colLower; j < colUpper; j++) { // Column index
-                    box.innerHTML += `<div class="cell">${(grid[i][j])}</div>`;
+                    box.innerHTML += `<div class="cell" id="cell-${c}">${(grid[i][j])}</div>`;
                 }
             }
         }
     }
 
-        // Randomly select cells to empty
-        let selectedCells = [];
-        let totalBlank = 24;
-        let randomCell;
+    // Randomly select cells to empty
+    let selectedCells = [];
+    let totalBlank = 24;
+    let randomCell;
 
-        for (let m = 0; m < totalBlank; m++) {
-            randomCell = Math.floor(Math.random() * 81 + 1);
+    for (let m = 0; m < totalBlank; m++) {
+        randomCell = Math.floor(Math.random() * 81 + 1);
 
-            if (m === 0) {
-                selectedCells.push(randomCell);
-            } else {
-                do {
-                    randomCell = Math.floor(Math.random() * 81 + 1);
-                }
-                while (selectedCells.includes(randomCell) || randomCell === 0);
-                selectedCells.push(randomCell);
+        if (m === 0) {
+            selectedCells.push(randomCell);
+        } else {
+            do {
+                randomCell = Math.floor(Math.random() * 81 + 1);
             }
+            while (selectedCells.includes(randomCell) || randomCell === 0);
+            selectedCells.push(randomCell);
         }
-        console.log(selectedCells);
-
     }
+    console.log(selectedCells);
+
+    // Add class to cell
+    let cellId;
+
+    for (let f = 0; f < 81; f++) {
+        for (g = 1; g < 24; g++) {
+            selectedCell = selectedCells[g];
+            cellId = `cell-${selectedCell}`;
+
+            console.log(cellId);
+        }
+
+        var element = document.getElementById(cellId);
+        element.classList.add("inputCell");
+    }
+
+}
