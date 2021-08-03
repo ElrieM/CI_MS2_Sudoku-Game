@@ -3,78 +3,68 @@
 // Each box can only contain a number once
 // Some cells set to hide value, value compared to user input
 
-
-// Starting point for grid
-const grid = [
-    [8, 6, 1, 7, 9, 4, 3, 5, 2],
-    [3, 5, 2, 1, 6, 8, 7, 4, 9],
-    [4, 9, 7, 2, 5, 3, 1, 8, 6],
-    [2, 1, 8, 9, 7, 5, 6, 3, 4],
-    [6, 7, 5, 3, 4, 1, 9, 2, 8],
-    [9, 3, 4, 6, 8, 2, 5, 1, 7],
-    [5, 2, 6, 8, 1, 9, 4, 7, 3],
-    [7, 4, 3, 5, 2, 6, 8, 9, 1],
-    [1, 8, 9, 3, 4, 7, 2, 6, 5]
-];
-
 window.onload = createPuzzle();
 
 // Puzzle creating function Adapted from https://github.com/reymon359/web-experiments/blob/master/Sudoku%20Board%20Generator/script.js
 function createPuzzle() {
+    let genGrid = [];
 
-    let randomTimes = Math.floor((Math.random() * 9 - 2 + 1) + 2); // Randomise grid by adding 1 for a random amount of times
+    seedGrid(genGrid);
+}
 
-    for (let n = 0; n < randomTimes; n++) { // Add 1 to each grid item for randomTimes (random number of times)
-        for (let i = 0; i < 9; i++) { // Row index
-            for (let j = 0; j < 9; j++) { // Column index
-                if (grid[i][j] + 1 === 10) {
-                    grid[i][j] = 1;
-                } else {
-                    grid[i][j] += 1;
-                }
-            }
-        }
-    }
 
-    // Copy grid contents to board
-    for (let c = 1; c < 82; c++) { // Counts through all 81 cells
-        for (let k = 1; k < 10; k++) { // Runs through each of the 9 boxes
-            let box = document.getElementById(`box-${k}`);
-            box.innerHTML = ""; // Clears previous grid
+// Creates grid according to grid layout (box first, then next box in row, then next box in row, then next row etc.)
+function seedGrid(genGrid) {
 
-            if (k === 1 || k === 2 || k === 3) {
-                rowLower = 1 - 1;
-                rowUpper = 3;
-            } else if (k === 4 || k === 5 || k === 6) {
-                rowLower = 4 - 1;
-                rowUpper = 6;
-            } else if (k === 7 || k === 8 || k === 9) {
-                rowLower = 7 - 1;
-                rowUpper = 9;
-            }
+    playGrid = generateGrid(genGrid);
+    console.log(playGrid);
 
-            if (k === 1 || k === 4 || k === 7) {
-                colLower = 1 - 1;
-                colUpper = 3;
-            } else if (k === 2 || k === 5 || k === 8) {
-                colLower = 4 - 1;
-                colUpper = 6;
-            } else if (k === 3 || k === 6 || k === 9) {
-                colLower = 7 - 1;
-                colUpper = 9;
-            }
-
-            for (let i = rowLower; i < rowUpper; i++) { // Row index
-                for (let j = colLower; j < colUpper; j++) { // Column index
-                    box.innerHTML += `<div class="cell" id="cell-${c}">${(grid[i][j])}</div>`;
-                }
-            }
-        }
-    }
-
-    // Randomly select cells to empty
     let selectedCells = [];
-    let totalBlank = 24;
+
+    selectEmptyCells(selectedCells);
+    console.log(selectedCells);
+
+    for (i = 1; i < 10; i++) { // Box number
+        let box = document.getElementById(`box-${i}`);
+
+        // Sets value of row based on box
+        if (i === 1 || i === 2 || i === 3) {
+            rowLower = 1 - 1;
+            rowUpper = 3;
+        } else if (i === 4 || i === 5 || i === 6) {
+            rowLower = 4 - 1;
+            rowUpper = 6;
+        } else if (i === 7 || i === 8 || i === 9) {
+            rowLower = 7 - 1;
+            rowUpper = 9;
+        }
+
+        // Sets value of column based on box
+        if (i === 1 || i === 4 || i === 7) {
+            colLower = 1 - 1;
+            colUpper = 3;
+        } else if (i === 2 || i === 5 || i === 8) {
+            colLower = 4 - 1;
+            colUpper = 6;
+        } else if (i === 3 || i === 6 || i === 9) {
+            colLower = 7 - 1;
+            colUpper = 9;
+        }
+
+        // Displays values in grid
+        for (let j = rowLower; j < rowUpper; j++) { // Row index
+            for (let k = colLower; k < colUpper; k++) { // Column index
+                box.innerHTML += `<div class="cell">${(playGrid[j][k])}</div>`;
+            }
+        }
+    }
+
+}
+
+// Randomly select cells to empty
+function selectEmptyCells(selectedCells) {
+
+    let totalBlank = 24; // Easy / Medium / Hard
     let randomCell;
 
     for (let m = 0; m < totalBlank; m++) {
@@ -90,21 +80,41 @@ function createPuzzle() {
             selectedCells.push(randomCell);
         }
     }
+
     console.log(selectedCells);
 
-    // Add class to cell
-    let cellId;
+    return selectedCells;
 
-    for (let f = 0; f < 81; f++) {
-        for (g = 1; g < 24; g++) {
-            selectedCell = selectedCells[g];
-            cellId = `cell-${selectedCell}`;
+}
 
-            console.log(cellId);
+/* Generates grid */
+function generateGrid(genGrid) {
+
+    var genGrid = [
+        [8, 6, 1, 7, 9, 4, 3, 5, 2],
+        [3, 5, 2, 1, 6, 8, 7, 4, 9],
+        [4, 9, 7, 2, 5, 3, 1, 8, 6],
+        [2, 1, 8, 9, 7, 5, 6, 3, 4],
+        [6, 7, 5, 3, 4, 1, 9, 2, 8],
+        [9, 3, 4, 6, 8, 2, 5, 1, 7],
+        [5, 2, 6, 8, 1, 9, 4, 7, 3],
+        [7, 4, 3, 5, 2, 6, 8, 9, 1],
+        [1, 8, 9, 3, 4, 7, 2, 6, 5]
+    ];
+
+    let randomTimes = Math.floor((Math.random() * 8) + 1); // Randomise grid by adding 1 for a random amount of times
+
+    for (let i = 0; i < 9; i++) {
+        for (let j = 0; j < 9; j++) {
+            genGrid[i][j] += randomTimes;
+            genGrid[i][j] %= 9;
+            genGrid[i][j]++;
         }
-
-        var element = document.getElementById(cellId);
-        element.classList.add("inputCell");
     }
+
+    console.log(randomTimes);
+    console.log(genGrid);
+
+    return (genGrid);
 
 }
