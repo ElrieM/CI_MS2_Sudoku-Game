@@ -4,6 +4,7 @@
   --primary-color: #eee;
   --header-back: #a8c4c3;
   --header-text: #0E151C;
+  --b-info: #60848b;
 }
 
 body {
@@ -49,6 +50,14 @@ footer i {
   color: #dee6e6;
   background-color: #60848b;
   border-color: #50666a;
+}
+
+.btn-info:hover,
+.btn-info:focus {
+  color: #dee6e6;
+  background-color: #60848b;
+  border-color: #50666a;
+  box-shadow: unset;
 }
 
 /* Formatting error page */
