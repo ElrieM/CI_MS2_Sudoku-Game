@@ -7,115 +7,186 @@ window.onload = createPuzzle();
 
 // Puzzle creating function Adapted from https://github.com/reymon359/web-experiments/blob/master/Sudoku%20Board%20Generator/script.js
 function createPuzzle() {
-    let genGrid = [];
+    let genSolvedGrid = [];
 
-    seedGrid(genGrid);
-}
+    genSolvedGrid = solveGrid(genSolvedGrid);
+    console.log(genSolvedGrid);
 
+    /*
+    // Create grid for game, hiding random cells
+    function playGrid(genGameGrid) {
+        genGrid = solveGrid(genSolvedGrid);
 
-// Creates grid according to grid layout (box first, then next box in row, then next box in row, then next row etc.)
-function seedGrid(genGrid) {
+        let selectedCellArray = [];
+        let selectedCell;
 
-    playGrid = generateGrid(genGrid);
-    console.log(playGrid);
+        selectedCellArray = selectEmptyCells(selectedCells);
+        console.log(selectedCells);
 
-    let selectedCells = [];
+        for (let a = 0; a < selectedCellArray.len; a++) {
 
-    selectEmptyCells(selectedCells);
-    console.log(selectedCells);
+            selectedCell = selectCellArray[a];
+            console.log(`selected: ${selectedCell}`);
 
-    for (i = 1; i < 10; i++) { // Box number
-        let box = document.getElementById(`box-${i}`);
-        box.innerHTML = ""; // Clears previous grid
-        
-        // Sets value of row based on box
-        if (i === 1 || i === 2 || i === 3) {
-            rowLower = 1 - 1;
-            rowUpper = 3;
-        } else if (i === 4 || i === 5 || i === 6) {
-            rowLower = 4 - 1;
-            rowUpper = 6;
-        } else if (i === 7 || i === 8 || i === 9) {
-            rowLower = 7 - 1;
-            rowUpper = 9;
-        }
+            for (let i = 0; selectedCell.len; i++) {
+                boxSelected = selectedCell[i] % 9;
+                console.log(boxSelected);
+            }
 
-        // Sets value of column based on box
-        if (i === 1 || i === 4 || i === 7) {
-            colLower = 1 - 1;
-            colUpper = 3;
-        } else if (i === 2 || i === 5 || i === 8) {
-            colLower = 4 - 1;
-            colUpper = 6;
-        } else if (i === 3 || i === 6 || i === 9) {
-            colLower = 7 - 1;
-            colUpper = 9;
-        }
+            return genGameGrid;
 
-        // Displays values in grid
-        for (let j = rowLower; j < rowUpper; j++) { // Row index
-            for (let k = colLower; k < colUpper; k++) { // Column index
-                box.innerHTML += `<div class="cell">${(playGrid[j][k])}</div>`;
+            // Randomly select cells to empty
+            function selectEmptyCells(selectedCells) {
+
+                let totalBlank = 24; // Easy / Medium / Hard
+                let randomCell;
+
+                for (let m = 0; m < totalBlank; m++) {
+                    randomCell = Math.floor(Math.random() * 81 + 1);
+
+                    if (m === 0) {
+                        selectedCells.push(randomCell);
+                    } else {
+                        do {
+                            randomCell = Math.floor(Math.random() * 81 + 1);
+                        }
+                        while (selectedCells.includes(randomCell) || randomCell === 0);
+                        selectedCells.push(randomCell);
+                    }
+                }
+
+                return selectedCells;
             }
         }
     }
 
-}
+    */
 
-// Randomly select cells to empty
-function selectEmptyCells(selectedCells) {
+    // Creates grid according to grid layout (box first, then next box in row, then next box in row, then next row etc.)
+    function solveGrid(genSolvedGrid) {
 
-    let totalBlank = 24; // Easy / Medium / Hard
-    let randomCell;
+        playGrid = generateGrid(genSolvedGrid);
 
-    for (let m = 0; m < totalBlank; m++) {
-        randomCell = Math.floor(Math.random() * 81 + 1);
+        for (i = 1; i < 10; i++) { // Box number
+            let box = document.getElementById(`box-${i}`);
+            box.innerHTML = ""; // Clears previous grid
 
-        if (m === 0) {
-            selectedCells.push(randomCell);
-        } else {
-            do {
-                randomCell = Math.floor(Math.random() * 81 + 1);
+            // Sets value of row based on box
+            if (i === 1 || i === 2 || i === 3) {
+                rowLower = 1 - 1;
+                rowUpper = 3;
+            } else if (i === 4 || i === 5 || i === 6) {
+                rowLower = 4 - 1;
+                rowUpper = 6;
+            } else if (i === 7 || i === 8 || i === 9) {
+                rowLower = 7 - 1;
+                rowUpper = 9;
             }
-            while (selectedCells.includes(randomCell) || randomCell === 0);
-            selectedCells.push(randomCell);
+
+            // Sets value of column based on box
+            if (i === 1 || i === 4 || i === 7) {
+                colLower = 1 - 1;
+                colUpper = 3;
+            } else if (i === 2 || i === 5 || i === 8) {
+                colLower = 4 - 1;
+                colUpper = 6;
+            } else if (i === 3 || i === 6 || i === 9) {
+                colLower = 7 - 1;
+                colUpper = 9;
+            }
+
+            // Displays values in grid
+            for (let j = rowLower; j < rowUpper; j++) { // Row index
+                for (let k = colLower; k < colUpper; k++) { // Column index
+                    box.innerHTML += `<div class="cell">${(playGrid[j][k])}</div>`;
+                }
+            }
+        }
+        return genSolvedGrid;
+
+        /* Generates solved grid */
+        function generateGrid(genSolvedGrid) {
+
+            var genSolvedGrid = [
+                [8, 6, 1, 7, 9, 4, 3, 5, 2],
+                [3, 5, 2, 1, 6, 8, 7, 4, 9],
+                [4, 9, 7, 2, 5, 3, 1, 8, 6],
+                [2, 1, 8, 9, 7, 5, 6, 3, 4],
+                [6, 7, 5, 3, 4, 1, 9, 2, 8],
+                [9, 3, 4, 6, 8, 2, 5, 1, 7],
+                [5, 2, 6, 8, 1, 9, 4, 7, 3],
+                [7, 4, 3, 5, 2, 6, 8, 9, 1],
+                [1, 8, 9, 3, 4, 7, 2, 6, 5]
+            ];
+
+            let randomTimes = Math.floor((Math.random() * 8) + 1); // Randomise grid by adding 1 for a random amount of times
+
+            for (let i = 0; i < 9; i++) {
+                for (let j = 0; j < 9; j++) {
+                    genSolvedGrid[i][j] += randomTimes;
+                    genSolvedGrid[i][j] %= 9;
+                    genSolvedGrid[i][j]++;
+                }
+            }
+
+            console.log(randomTimes);
+            console.log(genSolvedGrid);
+
+            return (genSolvedGrid);
+
         }
     }
-
-    console.log(selectedCells);
-
-    return selectedCells;
-
 }
 
-/* Generates grid */
-function generateGrid(genGrid) {
 
-    var genGrid = [
-        [8, 6, 1, 7, 9, 4, 3, 5, 2],
-        [3, 5, 2, 1, 6, 8, 7, 4, 9],
-        [4, 9, 7, 2, 5, 3, 1, 8, 6],
-        [2, 1, 8, 9, 7, 5, 6, 3, 4],
-        [6, 7, 5, 3, 4, 1, 9, 2, 8],
-        [9, 3, 4, 6, 8, 2, 5, 1, 7],
-        [5, 2, 6, 8, 1, 9, 4, 7, 3],
-        [7, 4, 3, 5, 2, 6, 8, 9, 1],
-        [1, 8, 9, 3, 4, 7, 2, 6, 5]
-    ];
+// Countup timer on loading page
+// Adapted from https://dev.to/gspteck/create-a-stopwatch-in-javascript-2mak
 
-    let randomTimes = Math.floor((Math.random() * 8) + 1); // Randomise grid by adding 1 for a random amount of times
 
-    for (let i = 0; i < 9; i++) {
-        for (let j = 0; j < 9; j++) {
-            genGrid[i][j] += randomTimes;
-            genGrid[i][j] %= 9;
-            genGrid[i][j]++;
-        }
+const timer = document.getElementById('stopwatch');
+
+var min = 0;
+var sec = 0;
+var stoptime = true;
+
+function startTimer() {
+    if (stoptime == true) {
+        stoptime = false;
+        timerCycle();
     }
+}
 
-    console.log(randomTimes);
-    console.log(genGrid);
+function stopTimer() {
+    if (stoptime == false) {
+        stoptime = true;
+    }
+}
 
-    return (genGrid);
+function timerCycle() {
+    if (stoptime == false) {
+        sec = parseInt(sec);
+        min = parseInt(min);
 
+        sec = sec + 1;
+
+        if (sec == 60) {
+            min = min + 1;
+            sec = 0;
+        }
+
+        if (sec < 10 || sec == 0) {
+            sec = '0' + sec;
+        }
+        if (min < 10 || min == 0) {
+            min = '0' + min;
+        }
+
+        timer.innerHTML = min + ':' + sec;
+
+        setTimeout("timerCycle()", 1000);
+    }
+}
+
+function resetTimer() {
+    timer.innerHTML = '00:00';
 }
