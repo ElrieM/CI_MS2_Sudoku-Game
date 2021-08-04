@@ -42,8 +42,12 @@
         <div class="wrapper-page container">
             <div class="row">
                 <!-- Container for game grid-->
-                <div class="col-xs-6">
-                    <button class="btn btn-info" onclick="createPuzzle();">New</button>
+                <div class="col-xs-6 mx-auto">
+                    <div id="button-container">
+                        <button class="btn btn-info" onclick="createPuzzle();">New</button>
+                        <button class="btn btn-info" onclick="solvePuzzle()">Solve</button>
+                        <button class="btn btn-info" onclick="restartPuzzle();">Restart</button>
+                    </div>
                     <div id="game-grid">
                         <div class="box" id="box-1"></div>
                         <div class="box" id="box-2"></div>

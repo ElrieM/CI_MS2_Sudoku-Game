@@ -207,6 +207,10 @@ main.flex-shrink-0 {
 https://css-tricks.com/snippets/css/complete-guide-grid/#basics-and-browser-support
 https://rachelandrew.co.uk/archives/2018/04/27/grid-level-2-and-subgrid/ */
 
+#button-container {
+    display: flex;
+    justify-content: space-evenly;
+}
 
 #game-grid {
     font-family: 'EB Garamond', serif;
