@@ -44,9 +44,9 @@
                 <!-- Container for game grid-->
                 <div class="col-xs-6 mx-auto">
                     <div id="button-container">
-                        <button class="btn btn-info" onclick="createPuzzle();">New</button>
-                        <button class="btn btn-info" onclick="solvePuzzle()">Solve</button>
-                        <button class="btn btn-info" onclick="restartPuzzle();">Restart</button>
+                        <button class="btn btn-info" id="newButton">New</button>
+                        <button class="btn btn-info" id="solveButton">Solve</button>
+                        <button class="btn btn-info" id="restartButton">Restart</button>
                     </div>
                     <div id="game-grid">
                         <div class="box" id="box-1"></div>
@@ -58,6 +58,14 @@
                         <div class="box" id="box-7"></div>
                         <div class="box" id="box-8"></div>
                         <div class="box" id="box-9"></div>
+                    </div>
+                </div>
+                <div class="col-xs-6">
+                    <div id="stopwatch">00:00</div>
+                    <div>
+                        <button id="start" onclick="startTimer()"> Start </button>
+                        <button id="stop" onclick="stopTimer()"> Stop </button>
+                        <button id="pause" onclick="pauseTimer()"> Pause </button>
                     </div>
                 </div>
             </div>
