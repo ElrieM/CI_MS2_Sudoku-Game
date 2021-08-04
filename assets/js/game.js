@@ -5,6 +5,18 @@
 
 window.onload = createPuzzle();
 
+// New game button: creates new puzzle and resets stopwatch timer
+document.getElementById("newButton").addEventListener("click", createPuzzle);
+document.getElementById("newButton").addEventListener("click", resetTimer);
+
+// Solve game button: shows puzzle solution and resets stops stopwatch timer
+document.getElementById("solveButton").addEventListener("click", solveGrid);
+document.getElementById("solveButton").addEventListener("click", stopTimer);
+
+// Restart game button: creates new puzzle and resets stopwatch timer
+document.getElementById("restartButton").addEventListener("click", createPuzzle);
+document.getElementById("restartButton").addEventListener("click", resetTimer);
+
 // Puzzle creating function Adapted from https://github.com/reymon359/web-experiments/blob/master/Sudoku%20Board%20Generator/script.js
 function createPuzzle() {
     let genSolvedGrid = [];
