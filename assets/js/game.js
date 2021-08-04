@@ -26,7 +26,8 @@ function seedGrid(genGrid) {
 
     for (i = 1; i < 10; i++) { // Box number
         let box = document.getElementById(`box-${i}`);
-
+        box.innerHTML = ""; // Clears previous grid
+        
         // Sets value of row based on box
         if (i === 1 || i === 2 || i === 3) {
             rowLower = 1 - 1;
