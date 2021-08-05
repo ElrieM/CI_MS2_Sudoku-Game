@@ -25,8 +25,9 @@ footer i {
 
 /* Formatting game page */
 
-#game-grid {
-  background-color: mintcream;
+#game-grid,
+#stopwatch-container {
+  background-color: #dee6e6;
   color: #0e151f;
 }
 
