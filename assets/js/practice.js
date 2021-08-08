@@ -3,6 +3,16 @@ window.onload = practiceGame();
 function practiceGame() {
     var totalBlank = 24;
 
+    var level = document.getElementById('level-select');
+    // Assign number of cells blank based on level selection
+    // Adapted from https://stackoverflow.com/questions/37538217/how-to-get-addeventlistener-to-work-with-a-select-tag
+    level.addEventListener("change", function() {
+        totalBlank = this.value;
+        console.log(totalBlank);
+    },false);
+
+    console.log(totalBlank);
+
     // New game button: creates new puzzle and resets stopwatch timer
     document.getElementById("newButton").addEventListener("click", displayPracticeGrid);
     document.getElementById("newButton").addEventListener("click", resetTimer);

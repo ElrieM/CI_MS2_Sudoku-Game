@@ -47,6 +47,12 @@
                         <button class="btn btn-info" id="newButton">New</button>
                         <button class="btn btn-info" id="solveButton">Solve</button>
                         <button class="btn btn-info" id="restartButton">Restart</button>
+                        <!-- Adapted from https://getbootstrap.com/docs/5.0/forms/select/ -->
+                        <select class="form-select" id="level-select" aria-label="game-level">
+                            <option value="24" selected>Easy</option> <!-- 81 * 20% for easy -->
+                            <option value="32">Medium</option> <!-- 81 * 40% for medium -->
+                            <option value="48">Difficult</option> <!-- 81 * 60% for difficult -->
+                        </select>
                     </div>
                     <div id="game-grid">
                         <div class="box" id="box-1"></div>

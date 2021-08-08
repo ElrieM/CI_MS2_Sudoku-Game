@@ -213,6 +213,11 @@ https://rachelandrew.co.uk/archives/2018/04/27/grid-level-2-and-subgrid/ */
     justify-content: space-evenly;
 }
 
+#level-select {
+    width: 8em;
+    font-size: x-small;
+}
+
 #stopwatch-container {
     min-height: 54vh;
 }
