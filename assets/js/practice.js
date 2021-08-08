@@ -9,6 +9,11 @@ function practiceGame() {
     level.addEventListener("change", function () {
         totalBlank = this.value;
         console.log(totalBlank);
+        solveGrid(solvedGrid, playGrid);
+        createPracticeGame(playGrid);
+        displayPracticeGrid();
+        resetTimer();
+        startTimer();
     }, false);
 
     console.log(totalBlank);
