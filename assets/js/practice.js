@@ -11,7 +11,7 @@ function practiceGame() {
     document.getElementById("solveButton").addEventListener("click", stopTimer);
 
     // Restart game button: creates new puzzle and resets stopwatch timer
-    document.getElementById("restartButton").addEventListener("click",displayPracticeGrid);
+    document.getElementById("restartButton").addEventListener("click", displayPracticeGrid);
     document.getElementById("restartButton").addEventListener("click", resetTimer);
 
     // Button to start timer
@@ -76,17 +76,15 @@ function practiceGame() {
         console.log(playGrid);
         return playGrid;
     }
-    
-    createPracticeGame(playGrid);
-    console.log(playGrid);
+
+
 
     function displayPracticeGrid() {
 
-        displayGrid = playGrid;
+        displayGrid = createPracticeGame(playGrid);
 
         console.log(displayGrid);
 
-        /*
         for (i = 1; i < 10; i++) { // Box number
             let box = document.getElementById(`box-${i}`);
             box.innerHTML = ""; // Clears previous grid
@@ -118,10 +116,14 @@ function practiceGame() {
             // Displays values in grid
             for (let j = rowLower; j < rowUpper; j++) { // Row index
                 for (let k = colLower; k < colUpper; k++) { // Column index
-                    box.innerHTML += `<div class="cell">${(displayGrid[j][k])}</div>`;
+                    if (displayGrid[j][k] === 0) {
+                        box.innerHTML += `<div class="cell"></div>`;
+                    } else {
+                        box.innerHTML += `<div class="cell">${(displayGrid[j][k])}</div>`;
+                    }
                 }
             }
-        }*/
+        }
     }
 
 }

@@ -2,6 +2,7 @@
 // Practice game has the ability to play various game
 function runPractice() {
     window.location.href = 'game.html';
+    document.getElementById("practiceButton").addEventListener("click", practiceGame);
 }
 
 // Runs challenge game
