@@ -155,7 +155,10 @@ function practiceGame() {
             for (let j = rowLower; j < rowUpper; j++) { // Row index
                 for (let k = colLower; k < colUpper; k++) { // Column index
                     if (displayGrid[j][k] === 0) {
-                        box.innerHTML += `<div class="cell"></div>`;
+                        box.innerHTML += `
+                        <div class="cell">
+                        <label for inputVal></label>
+                        <input class="input-cell" name="inputVal" id="inputVal" type="number" step="1" min="1" max="9" maxlength="1"></div>`;
                     } else {
                         box.innerHTML += `<div class="cell">${(displayGrid[j][k])}</div>`;
                     }
