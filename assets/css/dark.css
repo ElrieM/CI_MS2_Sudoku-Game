@@ -36,6 +36,10 @@ footer i {
   color: #0E151C;
 }
 
+.input-cell {
+  background-color: var(--header-back);
+}
+
 /* Formatting contact page */
 
 #contact-wrapper {
