@@ -1,6 +1,7 @@
 window.onload = practiceGame();
 
 function practiceGame() {
+    var totalBlank = 24;
 
     // New game button: creates new puzzle and resets stopwatch timer
     document.getElementById("newButton").addEventListener("click", displayPracticeGrid);
@@ -11,8 +12,13 @@ function practiceGame() {
     document.getElementById("solveButton").addEventListener("click", stopTimer);
 
     // Restart game button: creates new puzzle and resets stopwatch timer
+    document.getElementById("restartButton").addEventListener("click", function(){
+        totalBlank = 0;
+        console.log(totalBlank);
+    });
     document.getElementById("restartButton").addEventListener("click", displayPracticeGrid);
     document.getElementById("restartButton").addEventListener("click", resetTimer);
+    
 
     // Button to start timer
     document.getElementById("start").addEventListener("click", startTimer);
@@ -73,7 +79,6 @@ function practiceGame() {
     function createPracticeGame(playGrid) {
         gridSolution = playGrid;
 
-        let totalBlank = 24; // Easy / Medium / Hard
         let randomCell;
 
         for (let m = 0; m < totalBlank; m++) {
