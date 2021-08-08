@@ -2,7 +2,7 @@
 // Cells can only have a value of 1 to 9
 // Each box can only contain a number once
 // Some cells set to hide value, value compared to user input
-
+   /*
 window.onload = createPuzzle();
 
 // New game button: creates new puzzle and resets stopwatch timer
@@ -24,16 +24,32 @@ document.getElementById("start").addEventListener("click", startTimer);
 document.getElementById("stop").addEventListener("click", stopTimer);
 
 // Puzzle creating function Adapted from https://github.com/reymon359/web-experiments/blob/master/Sudoku%20Board%20Generator/script.js
+
+var solvedGrid = [
+    [8, 6, 1, 7, 9, 4, 3, 5, 2],
+    [3, 5, 2, 1, 6, 8, 7, 4, 9],
+    [4, 9, 7, 2, 5, 3, 1, 8, 6],
+    [2, 1, 8, 9, 7, 5, 6, 3, 4],
+    [6, 7, 5, 3, 4, 1, 9, 2, 8],
+    [9, 3, 4, 6, 8, 2, 5, 1, 7],
+    [5, 2, 6, 8, 1, 9, 4, 7, 3],
+    [7, 4, 3, 5, 2, 6, 8, 9, 1],
+    [1, 8, 9, 3, 4, 7, 2, 6, 5]
+];
+
+var playGrid = [];
+
 function createPuzzle() {
-    let genSolvedGrid = [];
 
-    genSolvedGrid = solveGrid(genSolvedGrid);
-    console.log(genSolvedGrid);
+    solvedGrid = solveGrid(solvedGrid);
+    console.log(solvedGrid);
 
-    /*
+    displaySolvedGrid(solveGrid);
+
+ 
     // Create grid for game, hiding random cells
     function playGrid(genGameGrid) {
-        genGrid = solveGrid(genSolvedGrid);
+        genGrid = solveGrid(solvedGrid);
 
         let selectedCellArray = [];
         let selectedCell;
@@ -78,14 +94,29 @@ function createPuzzle() {
         }
     }
 
-    */
+    
 
     // Creates grid according to grid layout (box first, then next box in row, then next box in row, then next row etc.)
 }
 
-function solveGrid(genSolvedGrid) {
+function solveGrid(solvedGrid) {
+    
+    let randomTimes = Math.floor((Math.random() * 8) + 1); // Randomise grid by adding 1 for a random amount of times
 
-    playGrid = generateGrid(genSolvedGrid);
+    for (let i = 0; i < 9; i++) {
+        for (let j = 0; j < 9; j++) {
+            solvedGrid[i][j] += randomTimes;
+            solvedGrid[i][j] %= 9;
+            solvedGrid[i][j]++;
+        }
+    }
+
+    console.log(randomTimes);
+
+    return (solvedGrid);
+}
+
+function displaySolvedGrid(solvedGrid) {
 
     for (i = 1; i < 10; i++) { // Box number
         let box = document.getElementById(`box-${i}`);
@@ -118,45 +149,12 @@ function solveGrid(genSolvedGrid) {
         // Displays values in grid
         for (let j = rowLower; j < rowUpper; j++) { // Row index
             for (let k = colLower; k < colUpper; k++) { // Column index
-                box.innerHTML += `<div class="cell">${(playGrid[j][k])}</div>`;
+                box.innerHTML += `<div class="cell">${(solveGrid[j][k])}</div>`;
             }
         }
     }
-    return genSolvedGrid;
 
-    /* Generates solved grid */
-    function generateGrid(genSolvedGrid) {
-
-        var genSolvedGrid = [
-            [8, 6, 1, 7, 9, 4, 3, 5, 2],
-            [3, 5, 2, 1, 6, 8, 7, 4, 9],
-            [4, 9, 7, 2, 5, 3, 1, 8, 6],
-            [2, 1, 8, 9, 7, 5, 6, 3, 4],
-            [6, 7, 5, 3, 4, 1, 9, 2, 8],
-            [9, 3, 4, 6, 8, 2, 5, 1, 7],
-            [5, 2, 6, 8, 1, 9, 4, 7, 3],
-            [7, 4, 3, 5, 2, 6, 8, 9, 1],
-            [1, 8, 9, 3, 4, 7, 2, 6, 5]
-        ];
-
-        let randomTimes = Math.floor((Math.random() * 8) + 1); // Randomise grid by adding 1 for a random amount of times
-
-        for (let i = 0; i < 9; i++) {
-            for (let j = 0; j < 9; j++) {
-                genSolvedGrid[i][j] += randomTimes;
-                genSolvedGrid[i][j] %= 9;
-                genSolvedGrid[i][j]++;
-            }
-        }
-
-        console.log(randomTimes);
-        console.log(genSolvedGrid);
-
-        return (genSolvedGrid);
-
-    }
 }
-
 
 
 // Countup timer on loading page
@@ -210,3 +208,4 @@ function timerCycle() {
 function resetTimer() {
     timer.innerHTML = '00:00';
 }
+*/
