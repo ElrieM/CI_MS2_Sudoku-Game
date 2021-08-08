@@ -14,22 +14,26 @@ function practiceGame() {
     console.log(totalBlank);
 
     // New game button: creates new puzzle and resets stopwatch timer
-    document.getElementById("newButton").addEventListener("click", displayPracticeGrid);
-    document.getElementById("newButton").addEventListener("click", resetTimer);
-    document.getElementById("start").addEventListener("click", startTimer);
+    document.getElementById("newButton").addEventListener("click", function () {
+        solveGrid(solvedGrid, playGrid);
+        createPracticeGame(playGrid);
+        displayPracticeGrid();
+        resetTimer();
+        startTimer();
+    });
 
     // Solve game button: shows puzzle solution and resets stops stopwatch timer
-    document.getElementById("solveButton").addEventListener("click", displaySolvedGrid);
-    document.getElementById("solveButton").addEventListener("click", stopTimer);
-
+    document.getElementById("solveButton").addEventListener("click", function () {
+        displaySolvedGrid();
+        stopTimer();
+    });
     // Restart game button: creates new puzzle and resets stopwatch timer
     document.getElementById("restartButton").addEventListener("click", function () {
         totalBlank = 0;
         console.log(totalBlank);
+        displayPracticeGrid();
+        resetTimer();
     });
-    document.getElementById("restartButton").addEventListener("click", displayPracticeGrid);
-    document.getElementById("restartButton").addEventListener("click", resetTimer);
-
 
     // Button to start timer
     document.getElementById("start").addEventListener("click", startTimer);
@@ -84,6 +88,7 @@ function practiceGame() {
         return solvedGrid, playGrid;
     }
 
+    // Creates game grid on load
     solveGrid(solvedGrid, playGrid);
 
     // Create play grid, empty randomly selected cells
@@ -105,7 +110,6 @@ function practiceGame() {
         console.log(solvedGrid);
         return playGrid;
     }
-
 
     // Display game grid, showing nil values as blank cells
     function displayPracticeGrid() {
@@ -157,7 +161,6 @@ function practiceGame() {
 
     // Display practice grid on load
     displayPracticeGrid();
-
 
     // Display solved grid
     function displaySolvedGrid() {
