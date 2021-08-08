@@ -6,29 +6,30 @@ function practiceGame() {
     var level = document.getElementById('level-select');
     // Assign number of cells blank based on level selection
     // Adapted from https://stackoverflow.com/questions/37538217/how-to-get-addeventlistener-to-work-with-a-select-tag
-    level.addEventListener("change", function() {
+    level.addEventListener("change", function () {
         totalBlank = this.value;
         console.log(totalBlank);
-    },false);
+    }, false);
 
     console.log(totalBlank);
 
     // New game button: creates new puzzle and resets stopwatch timer
     document.getElementById("newButton").addEventListener("click", displayPracticeGrid);
     document.getElementById("newButton").addEventListener("click", resetTimer);
+    document.getElementById("start").addEventListener("click", startTimer);
 
     // Solve game button: shows puzzle solution and resets stops stopwatch timer
     document.getElementById("solveButton").addEventListener("click", displaySolvedGrid);
     document.getElementById("solveButton").addEventListener("click", stopTimer);
 
     // Restart game button: creates new puzzle and resets stopwatch timer
-    document.getElementById("restartButton").addEventListener("click", function(){
+    document.getElementById("restartButton").addEventListener("click", function () {
         totalBlank = 0;
         console.log(totalBlank);
     });
     document.getElementById("restartButton").addEventListener("click", displayPracticeGrid);
     document.getElementById("restartButton").addEventListener("click", resetTimer);
-    
+
 
     // Button to start timer
     document.getElementById("start").addEventListener("click", startTimer);
@@ -154,6 +155,10 @@ function practiceGame() {
         }
     }
 
+    // Display practice grid on load
+    displayPracticeGrid();
+
+
     // Display solved grid
     function displaySolvedGrid() {
 
@@ -202,11 +207,6 @@ function practiceGame() {
         }
     }
 
-
-
-
-
-
 }
 
 
@@ -224,6 +224,8 @@ function startTimer() {
         timerCycle();
     }
 }
+// Starts timer on load
+startTimer();
 
 function stopTimer() {
     if (stoptime == false) {
