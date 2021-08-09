@@ -201,7 +201,7 @@ main.flex-shrink-0 {
 
 }
 
-/* -------------------------------------------------- GAME PAGE */
+/* -------------------------------------------------- GAME PAGES (PRACTICE, CHALLENGE) */
 
 /* Formatting for grid adapted from: 
 https://css-tricks.com/snippets/css/complete-guide-grid/#basics-and-browser-support
@@ -269,6 +269,13 @@ https://rachelandrew.co.uk/archives/2018/04/27/grid-level-2-and-subgrid/ */
     width:100%;
     height:100%;
     text-align:center;
+}
+
+table {
+    margin-top: 1rem;
+    max-width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
 }
 
 @media only screen and (max-width: 767px) {

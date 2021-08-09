@@ -23,7 +23,7 @@ footer i {
   color: var(--header-text);
 }
 
-/* Formatting game page */
+/* Formatting game pages (challenge, practice) */
 
 #game-grid,
 .stopwatch-container {
@@ -33,11 +33,21 @@ footer i {
 
 .card {
   background-color: #EAC7AE;
-  color: #63183C;
+  color: var(--primary-color);
 }
 
 .input-cell {
   background-color: var(--header-back);
+}
+
+.table {
+  --bs-table-bg: var(--back-color);
+  --bs-table-active-color:  var( --header-text);
+  --bs-table-active-bg: var(--header-bg);
+  --bs-table-hover-color: var( --header-text);
+  --bs-table-hover-bg: var(--header-bg);
+  color: var(--primary-color);
+  border-color: #dee2e6;
 }
 
 /* Formatting contact page */

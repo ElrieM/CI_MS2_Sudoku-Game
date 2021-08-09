@@ -28,7 +28,7 @@ footer i {
 #game-grid,
 .stopwatch-container {
   background-color: #fff;
-  color: #0e151f;
+  color: var(--primary-color);
 }
 
 .card {
@@ -63,6 +63,16 @@ footer i {
   background-color: #656176;
   border-color: #534d56;
   box-shadow: unset;
+}
+
+.table {
+  --bs-table-bg: var(--back-color);
+  --bs-table-active-color:  var( --header-text);
+  --bs-table-active-bg: var(--header-bg);
+  --bs-table-hover-color: var( --header-text);
+  --bs-table-hover-bg: var(--header-bg);
+  color: var(--primary-color);
+  border-color: #dee2e6;
 }
 
 /* Formatting error page */
