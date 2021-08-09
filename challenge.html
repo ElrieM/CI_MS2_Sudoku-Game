@@ -49,9 +49,12 @@
                         <button class="btn btn-info" id="restartButton">Restart</button>
                         <!-- Adapted from https://getbootstrap.com/docs/5.0/forms/select/ -->
                         <select class="form-select" id="level-select" aria-label="game-level">
-                            <option value="20" selected>Easy</option> <!-- 81 * 25% for easy -->
-                            <option value="30">Medium</option> <!-- 81 * 37.5% for medium -->
-                            <option value="40">Difficult</option> <!-- 81 * 50% for difficult -->
+                            <option value="20" solveTime="5" selected>Easy</option>
+                            <!-- 81 * 25% for easy, 5 minutes to solve -->
+                            <option value="30" solveTime="10">Medium</option>
+                            <!-- 81 * 37.5% for medium, 10 minutes to solve -->
+                            <option value="40" solveTime="15">Difficult</option>
+                            <!-- 81 * 50% for difficult, 15 minutes to solve -->
                         </select>
                     </div>
                     <div id="game-grid">
@@ -68,13 +71,13 @@
                 </div>
                 <div class="col-xs-6 col-lg-6">
                     <div id="timer-heading">
-                        <h2>TIMER</h2>
+                        <h2>TIME REMAINING</h2>
                     </div>
-                    <div id="stopwatch-container">
-                        <div id="stopwatch">00:00</div>
-                        <div id="timer-button-container">
-                            <button id="start"> Start </button>
-                            <button id="stop"> Stop </button>
+                    <div id="countdownTimer-container">
+                        <div id="countdownTimer"></div>
+                        <div id="countdownTimer-button-container">
+                            <button id="count-start"> Start </button>
+                            <button id="count-stop"> Pause </button>
                         </div>
                     </div>
                 </div>

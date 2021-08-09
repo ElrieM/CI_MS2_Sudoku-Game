@@ -1,9 +1,9 @@
 /* jshint esversion: 6 */
 
-// Runs challenge game
-function runChallenge() {
-    window.location.href = 'challenge.html';
-}
+window.onload = function () {
+    timedGame();
+    startCountdown();
+};
 
 window.onload = timedGame();
 
@@ -19,40 +19,40 @@ function timedGame() {
         solveGrid(solvedGrid, playGrid);
         createchallengeGame(playGrid);
         displaychallengeGrid();
-        resetclock();
-        startclock();
+        resetCountdown();
+        startCountdown();
     }, false);
 
     console.log(totalBlank);
 
-    // New game button: creates new puzzle and resets stopwatch clock
+    // New game button: creates new puzzle and resets stopwatch Countdown
     document.getElementById("newButton").addEventListener("click", function () {
         solveGrid(solvedGrid, playGrid);
         createchallengeGame(playGrid);
         displaychallengeGrid();
-        resetclock();
-        startclock();
+        resetCountdown();
+        startCountdown();
     });
 
-    // Solve game button: shows puzzle solution and resets stops stopwatch clock
+    // Solve game button: shows puzzle solution and resets stops stopwatch Countdown
     document.getElementById("solveButton").addEventListener("click", function () {
         displaySolvedGrid();
-        stopclock();
+        stopCountdown();
     });
-    
-    // Restart game button: creates new puzzle and resets stopwatch clock
+
+    // Restart game button: creates new puzzle and resets stopwatch Countdown
     document.getElementById("restartButton").addEventListener("click", function () {
         totalBlank = 0;
         console.log(totalBlank);
         displaychallengeGrid();
-        resetclock();
+        resetCountdown();
     });
 
-    // Button to start clock
-    document.getElementById("start").addEventListener("click", startclock);
+    // Button to start Countdown
+    document.getElementById("count-start").addEventListener("click", startCountdown);
 
-    // Button to stop clock
-    document.getElementById("stop").addEventListener("click", stopclock);
+    // Button to stop Countdown
+    document.getElementById("count-stop").addEventListener("click", stopCountdown);
 
     // Puzzle creating function Adapted from https://github.com/reymon359/web-experiments/blob/master/Sudoku%20Board%20Generator/script.js
 
@@ -225,68 +225,68 @@ function timedGame() {
             }
         }
     }
-
 }
 
 
-// Countup clock on loading page
-// Adapted from https://dev.to/gspteck/create-a-stopwatch-in-javascript-2mak
-const clock = document.getElementById('stopwatch');
+// Countdown Countdown on loading page
+// Adapted from https://codepen.io/jmikey/pen/tFHrp
+const Countdown = document.getElementById('stopwatch');
 
-var min = 0;
-var sec = 0;
+var secondsRemaining;
+var intervalHandle;
 var stoptime = true;
 
-function startclock() {
-    if (stoptime == true) {
-        stoptime = false;
-        clockCycle();
-    }
-    if (m < 0) {
-        return;
+function tick() {
+    // countdown timer space
+    var timeDisplay = document.getElementById("countdownTimer");
+
+    // convert seconds to mm:ss
+    var min = Math.floor(secondsRemaining / 60);
+    var sec = secondsRemaining - (min * 60);
+
+    //add a leading zero (as a string value) if seconds less than 10
+    if (sec < 10) {
+        sec = "0" + sec;
     }
 
-    document.getElementById('timer').innerHTML =
-        m + ":" + s;
-    console.log(m);
-    setTimeout(startTimer, 1000);
+    // concatenate with colon
+    var message = min.toString() + ":" + sec;
+
+    // now change the display
+    timeDisplay.innerHTML = message;
+
+    // stop is down to zero
+    if (secondsRemaining === 0) {
+        alert("Time's Up!");
+        clearInterval(intervalHandle);
+    }
+
+    //subtract from seconds remaining
+    secondsRemaining--;
+
 }
-// Starts clock on load
-startclock();
 
-function stopclock() {
+function startCountdown() {
+    // set minutes
+    var minutes = 5;
+
+    // how many seconds
+    secondsRemaining = minutes * 60;
+
+    //every second, call the "tick" function
+    // have to make it into a variable so that you can stop the interval later!!!
+    intervalHandle = setInterval(tick, 1000);
+
+}
+
+function resetCountdown() {
+    minutes = 5;
+    min = 0;
+    sec = 0;
+}
+
+function stopCountdown() {
     if (stoptime == false) {
         stoptime = true;
     }
-}
-
-function clockCycle() {
-    if (stoptime == false) {
-        sec = parseInt(sec);
-        min = parseInt(min);
-
-        sec = sec + 1;
-
-        if (sec == 60) {
-            min = min + 1;
-            sec = 0;
-        }
-
-        if (sec < 10 || sec == 0) {
-            sec = '0' + sec;
-        }
-        if (min < 10 || min == 0) {
-            min = '0' + min;
-        }
-
-        clock.innerHTML = min + ':' + sec;
-
-        functionsetTimeout("clockCycle()", 1000);
-    }
-  }
-
-function resetclock() {
-    clock.innerHTML = '00:00';
-    min = 0;
-    sec = 0;
 }
