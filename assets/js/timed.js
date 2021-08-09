@@ -1,6 +1,11 @@
-window.onload = practiceGame();
+// Runs challenge game
+function runChallenge() {
+    window.location.href = 'game.html';
+}
 
-function practiceGame() {
+window.onload = timedGame();
+
+function timedGame() {
     var totalBlank = 20;
 
     var level = document.getElementById('level-select');
@@ -10,41 +15,41 @@ function practiceGame() {
         totalBlank = this.value;
         console.log(totalBlank);
         solveGrid(solvedGrid, playGrid);
-        createPracticeGame(playGrid);
-        displayPracticeGrid();
-        resetTimer();
-        startTimer();
+        createchallengeGame(playGrid);
+        displaychallengeGrid();
+        resetclock();
+        startclock();
     }, false);
 
     console.log(totalBlank);
 
-    // New game button: creates new puzzle and resets stopwatch timer
+    // New game button: creates new puzzle and resets stopwatch clock
     document.getElementById("newButton").addEventListener("click", function () {
         solveGrid(solvedGrid, playGrid);
-        createPracticeGame(playGrid);
-        displayPracticeGrid();
-        resetTimer();
-        startTimer();
+        createchallengeGame(playGrid);
+        displaychallengeGrid();
+        resetclock();
+        startclock();
     });
 
-    // Solve game button: shows puzzle solution and resets stops stopwatch timer
+    // Solve game button: shows puzzle solution and resets stops stopwatch clock
     document.getElementById("solveButton").addEventListener("click", function () {
         displaySolvedGrid();
-        stopTimer();
+        stopclock();
     });
-    // Restart game button: creates new puzzle and resets stopwatch timer
+    // Restart game button: creates new puzzle and resets stopwatch clock
     document.getElementById("restartButton").addEventListener("click", function () {
         totalBlank = 0;
         console.log(totalBlank);
-        displayPracticeGrid();
-        resetTimer();
+        displaychallengeGrid();
+        resetclock();
     });
 
-    // Button to start timer
-    document.getElementById("start").addEventListener("click", startTimer);
+    // Button to start clock
+    document.getElementById("start").addEventListener("click", startclock);
 
-    // Button to stop timer
-    document.getElementById("stop").addEventListener("click", stopTimer);
+    // Button to stop clock
+    document.getElementById("stop").addEventListener("click", stopclock);
 
     // Puzzle creating function Adapted from https://github.com/reymon359/web-experiments/blob/master/Sudoku%20Board%20Generator/script.js
 
@@ -97,7 +102,7 @@ function practiceGame() {
     solveGrid(solvedGrid, playGrid);
 
     // Create play grid, empty randomly selected cells
-    function createPracticeGame(playGrid) {
+    function createchallengeGame(playGrid) {
         gridSolution = playGrid;
 
         let randomCell;
@@ -117,9 +122,9 @@ function practiceGame() {
     }
 
     // Display game grid, showing nil values as blank cells
-    function displayPracticeGrid() {
+    function displaychallengeGrid() {
 
-        displayGrid = createPracticeGame(playGrid);
+        displayGrid = createchallengeGame(playGrid);
 
         console.log(displayGrid);
 
@@ -167,8 +172,8 @@ function practiceGame() {
         }
     }
 
-    // Display practice grid on load
-    displayPracticeGrid();
+    // Display challenge grid on load
+    displaychallengeGrid();
 
     // Display solved grid
     function displaySolvedGrid() {
@@ -221,30 +226,30 @@ function practiceGame() {
 }
 
 
-// Countup timer on loading page
+// Countup clock on loading page
 // Adapted from https://dev.to/gspteck/create-a-stopwatch-in-javascript-2mak
-const timer = document.getElementById('stopwatch');
+const clock = document.getElementById('stopwatch');
 
 var min = 0;
 var sec = 0;
 var stoptime = true;
 
-function startTimer() {
+function startclock() {
     if (stoptime == true) {
         stoptime = false;
-        timerCycle();
+        clockCycle();
     }
 }
-// Starts timer on load
-startTimer();
+// Starts clock on load
+startclock();
 
-function stopTimer() {
+function stopclock() {
     if (stoptime == false) {
         stoptime = true;
     }
 }
 
-function timerCycle() {
+function clockCycle() {
     if (stoptime == false) {
         sec = parseInt(sec);
         min = parseInt(min);
@@ -263,14 +268,14 @@ function timerCycle() {
             min = '0' + min;
         }
 
-        timer.innerHTML = min + ':' + sec;
+        clock.innerHTML = min + ':' + sec;
 
-        setTimeout("timerCycle()", 1000);
+        setTimeout("clockCycle()", 1000);
     }
 }
 
-function resetTimer() {
-    timer.innerHTML = '00:00';
+function resetclock() {
+    clock.innerHTML = '00:00';
     min = 0;
     sec = 0;
 }

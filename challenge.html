@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <!--- Theme switch CSS -->
     <link rel="stylesheet" id="switcher-id" href="">
-    <title>SUDOKU TIME | Home</title>
+    <title>SUDOKU TIME | Play</title>
 </head>
 
 <body class="d-flex flex-column h-100">
@@ -38,39 +38,49 @@
         </nav>
     </header>
 
-    <!-- Content section -->
     <main class="flex-shrink-0">
-        <!-- Bootstrap 5 for website layout grid https://getbootstrap.com/docs/5.0/layout/grid/#row-columns-->
-        <div class="container-flex" id="buttons-container">
+        <div class="wrapper-page container">
             <div class="row">
-                <div id="btn-practice" class="col-lg-4 d-grid gap-3 mx-auto">
-                    <!-- Card component using Bootstrap 5 https://getbootstrap.com/docs/5.0/components/card/-->
-                    <div class="card text-center" onclick="runPractice()">
-                        <!-- Pencil icon, representing Practice, from FontAwesome https://fontawesome.com/v5.15/icons/pencil-alt?style=solid-->
-                        <h2 class="fs-1"><i class="fas fa-pencil-alt nav-page"></i></h2>
-                        <h2 class="fs-2">Practice</h2>
+                <!-- Container for game grid-->
+                <div class="col-xs-6 col-lg-6">
+                    <div id="button-container">
+                        <button class="btn btn-info" id="newButton">New</button>
+                        <button class="btn btn-info" id="solveButton">Solve</button>
+                        <button class="btn btn-info" id="restartButton">Restart</button>
+                        <!-- Adapted from https://getbootstrap.com/docs/5.0/forms/select/ -->
+                        <select class="form-select" id="level-select" aria-label="game-level">
+                            <option value="20" selected>Easy</option> <!-- 81 * 25% for easy -->
+                            <option value="30">Medium</option> <!-- 81 * 37.5% for medium -->
+                            <option value="40">Difficult</option> <!-- 81 * 50% for difficult -->
+                        </select>
+                    </div>
+                    <div id="game-grid">
+                        <div class="box" id="box-1"></div>
+                        <div class="box" id="box-2"></div>
+                        <div class="box" id="box-3"></div>
+                        <div class="box" id="box-4"></div>
+                        <div class="box" id="box-5"></div>
+                        <div class="box" id="box-6"></div>
+                        <div class="box" id="box-7"></div>
+                        <div class="box" id="box-8"></div>
+                        <div class="box" id="box-9"></div>
                     </div>
                 </div>
-                <div id="btn-challenge" class="col-lg-4 d-grid gap-3 mx-auto">
-                    <!-- Card component using Bootstrap 5 https://getbootstrap.com/docs/5.0/components/card/-->
-                    <div class="card text-center" onclick="runChallenge()">
-                        <!-- Trophy icon, representing Challenge, from FontAwesome https://fontawesome.com/v5.15/icons/trophy?style=solid-->
-                        <h2 class="fs-1"><i class="fas fa-trophy nav-page"></i></h2>
-                        <h2 class="fs-2">Challenge</h2>
+                <div class="col-xs-6 col-lg-6">
+                    <div id="timer-heading">
+                        <h2>TIMER</h2>
                     </div>
-                </div>
-                <div id="btn-rules" class="col-lg-4 d-grid gap-3 mx-auto">
-                    <!-- Card component using Bootstrap 5 https://getbootstrap.com/docs/5.0/components/card/-->
-                    <div class="card text-center" onclick="window.location.href = 'rules.html';">
-                        <!-- Book icon, representing Rules, from FontAwesome https://fontawesome.com/v5.15/icons/book?style=solid-->
-                        <h2 class="fs-1"><i class="fas fa-book nav-page"></i></h2>
-                        <h2 class="fs-2">Rules</h2>
+                    <div id="stopwatch-container">
+                        <div id="stopwatch">00:00</div>
+                        <div id="timer-button-container">
+                            <button id="start"> Start </button>
+                            <button id="stop"> Stop </button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </main>
-
     <!-- Page footer -->
     <footer class="footer mt-auto py-3">
         <!-- Bootstrap 5 navigation tabs https://getbootstrap.com/docs/5.0/components/navs-tabs/#fill-and-justify-->
@@ -92,6 +102,7 @@
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
     </script>
     <script src="assets/js/buttons.js"></script>
+    <script src="assets/js/timed.js"></script>
 </body>
 
 </html>
