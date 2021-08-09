@@ -7,29 +7,34 @@ window.onload = function () {
 
 window.onload = timedGame();
 
-function timedGame() {
-    var totalBlank = 20;
+var levelBlank = 20;
 
-    var level = document.getElementById('level-select');
-    // Assign number of cells blank based on level selection
-    // Adapted from https://stackoverflow.com/questions/37538217/how-to-get-addeventlistener-to-work-with-a-select-tag
-    level.addEventListener("change", function () {
-        totalBlank = this.value;
-        solveTimedGrid(SolvedTimedGrid, playTimedGrid);
-        createTimedGame(playTimedGrid);
-        displayTimedGrid();
-        resetCountdown();
-        startCountdown();
-    }, false);
-
+var level = document.getElementById('level-select');
+// Assign number of cells blank based on level selection
+// Adapted from https://stackoverflow.com/questions/37538217/how-to-get-addeventlistener-to-work-with-a-select-tag
+level.addEventListener("change", function () {
+    levelBlank = this.value;
+    timedGame();
     console.log(totalBlank);
+}, false);
 
+function timedGame() {
+
+    totalBlank = levelBlank;
+
+    if (totalBlank == undefined) {
+        totalBlank = 20;
+    }
+    
     // New game button: creates new puzzle and resets stopwatch Countdown
     document.getElementById("newButton").addEventListener("click", function () {
+        if (totalBlank == 0) {
+            totalBlank = levelBlank;
+        }
+        
         solveTimedGrid(SolvedTimedGrid, playTimedGrid);
         createTimedGame(playTimedGrid);
         displayTimedGrid();
-        resetCountdown();
         startCountdown();
     });
 
@@ -214,68 +219,80 @@ function timedGame() {
             }
         }
     }
-}
 
 
-// Countdown Countdown on loading page
-// Adapted from https://codepen.io/jmikey/pen/tFHrp
-const Countdown = document.getElementById('stopwatch');
 
-var secondsRemaining;
-var intervalHandle;
-var stoptime = true;
+    // Countdown Countdown on loading page
+    // Adapted from https://codepen.io/jmikey/pen/tFHrp
 
-function tick() {
-    // countdown timer space
-    var timeDisplay = document.getElementById("countdownTimer");
+    console.log(totalBlank);
 
-    // convert seconds to mm:ss
-    var min = Math.floor(secondsRemaining / 60);
-    var sec = secondsRemaining - (min * 60);
 
-    //add a leading zero (as a string value) if seconds less than 10
-    if (sec < 10) {
-        sec = "0" + sec;
+
+    var secondsRemaining;
+    var intervalHandle;
+    var stoptime = true;
+
+    function tick() {
+        // countdown timer space
+        var timeDisplay = document.getElementById("countdownTimer");
+
+        // convert seconds to mm:ss
+        var min = Math.floor(secondsRemaining / 60);
+        var sec = secondsRemaining - (min * 60);
+
+        //add a leading zero (as a string value) if seconds less than 10
+        if (sec < 10) {
+            sec = "0" + sec;
+        }
+
+        // concatenate with colon
+        var message = min.toString() + ":" + sec;
+
+        // now change the display
+        timeDisplay.innerHTML = message;
+
+        // stop is down to zero
+        if (secondsRemaining === 0) {
+            alert("Time's Up!");
+            clearInterval(intervalHandle);
+        }
+
+        //subtract from seconds remaining
+        secondsRemaining--;
+
     }
 
-    // concatenate with colon
-    var message = min.toString() + ":" + sec;
+    function startCountdown() {
+        // set minutes
+        let minutes;
 
-    // now change the display
-    timeDisplay.innerHTML = message;
+        if (totalBlank === 20) {
+            minutes = 5;
+        } else if (totalBlank === 30) {
+            minutes = 10;
+        } else if (totalBlank === 40) {
+            minutes = 15;
+        }
 
-    // stop is down to zero
-    if (secondsRemaining === 0) {
-        alert("Time's Up!");
-        clearInterval(intervalHandle);
+        // how many seconds
+        secondsRemaining = minutes * 60;
+
+        //every second, call the "tick" function
+        // have to make it into a variable so that you can stop the interval later!!!
+        intervalHandle = setInterval(tick, 1000);
+
     }
 
-    //subtract from seconds remaining
-    secondsRemaining--;
+    function resetCountdown() {
 
-}
+        min = 0;
+        sec = 0;
+    }
 
-function startCountdown() {
-    // set minutes
-    var minutes = 5;
-
-    // how many seconds
-    secondsRemaining = minutes * 60;
-
-    //every second, call the "tick" function
-    // have to make it into a variable so that you can stop the interval later!!!
-    intervalHandle = setInterval(tick, 1000);
-
-}
-
-function resetCountdown() {
-    minutes = 5;
-    min = 0;
-    sec = 0;
-}
-
-function stopCountdown() {
-    if (stoptime == false) {
-        stoptime = true;
+    function stopCountdown() {
+        if (stoptime == false) {
+            stoptime = true;
+        }
     }
 }
