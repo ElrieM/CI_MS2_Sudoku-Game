@@ -1,6 +1,6 @@
 <h1 align="center">Sudoku Showdown</h1>
 
-[View the live project here.](#)
+[View the live project here.](https://elriem.github.io/CI_MS2_Sudoku-Game/)
 
 # Contents <!-- omit in toc -->
 
@@ -198,7 +198,7 @@ The project was deployed to GitHub Pages as follows:
 2. Locate the "Settings" button in the menu above the Repository.
    - Alternatively, click [here](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site) from the "Creating your site" section for a description of the process. ![GitHub menu](docs/readme/other/github-bar.png)
 3. Scroll down the Settings page until you locate the "Pages" section.![GitHub settings options](docs/readme/other/github-sidemenu.png)
-4. In the "Source" section, select the dropdown "Branch:" dropdown and select "Main". ![GitHub pages](docs/readme/other/github-pages.png)
+4. In the "Source" section, select the dropdown "Branch:" dropdown and select "Main" and save. ![GitHub pages](docs/readme/other/github-pages.png)
 5. The page refreshes automatically.
 6. Scroll to "Your site is published at..." for the puslished site link in the "GitHub Pages" section.
 
