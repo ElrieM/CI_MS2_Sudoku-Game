@@ -26,7 +26,7 @@ footer i {
 /* Formatting game page */
 
 #game-grid,
-#stopwatch-container {
+.stopwatch-container {
   background-color: #fff;
   color: #0e151f;
 }
