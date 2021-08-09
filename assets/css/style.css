@@ -227,8 +227,11 @@ https://rachelandrew.co.uk/archives/2018/04/27/grid-level-2-and-subgrid/ */
     text-align: center;
 }
 
-#timer-button-container{
+.timer-button-container{
     text-align-last: center;
+    display: flex;
+    align-content: space-between;
+    justify-content: center;
     font-size: x-large;
 }
 
@@ -262,7 +265,7 @@ https://rachelandrew.co.uk/archives/2018/04/27/grid-level-2-and-subgrid/ */
 }
 
 .input-cell {
-    background-color: yellow;
+    background-color: #fff;
     width:100%;
     height:100%;
     text-align:center;
@@ -280,7 +283,7 @@ https://rachelandrew.co.uk/archives/2018/04/27/grid-level-2-and-subgrid/ */
         font-size: xx-large;
     }
     
-    #timer-button-container{
+    .timer-button-container{
         font-size: unset;
     }
     
@@ -312,7 +315,7 @@ https://rachelandrew.co.uk/archives/2018/04/27/grid-level-2-and-subgrid/ */
         font-size: xx-large;
     }
     
-    #timer-button-container{
+    .timer-button-container{
         font-size: unset;
     }
     #game-grid {
