@@ -38,16 +38,24 @@ function practiceGame() {
     });
 
     // Solve game button: shows puzzle solution and resets stops stopwatch timer
+    // Alert adapted from https://www.tutorialspoint.com/How-to-delay-a-JavaScript-function-call-using-JavaScript
     document.getElementById("solveButton").addEventListener("click", function () {
         displaySolvedGrid();
         stopTimer();
+        setTimeout(function () {
+            alert("Play again?");
+            solveGrid(solvedGrid, playGrid);
+            createPracticeGame(playGrid);
+            displayPracticeGrid();
+        }, 1000);
     });
+
     // Restart game button: creates new puzzle and resets stopwatch timer
     document.getElementById("restartButton").addEventListener("click", function () {
         totalBlank = 0;
         console.log(totalBlank);
         displayPracticeGrid();
-        resetTimer();
+        startTimer();
     });
 
     // Button to start timer
@@ -85,7 +93,7 @@ function practiceGame() {
     // Create game grid solution
     function solveGrid(solvedGrid, playGrid) {
 
-        let randomTimes = Math.floor((Math.random() * 8) + 1); // Randomise grid by adding 1 for a random amount of times
+        let randomTimes = Math.floor((Math.random() * 8-1) + 1); // Randomise grid by adding 1 for a random amount of times
 
         for (let i = 0; i < 9; i++) {
             for (let j = 0; j < 9; j++) {
@@ -95,11 +103,6 @@ function practiceGame() {
                 playGrid[i][j] = solvedGrid[i][j];
             }
         }
-
-        console.log(randomTimes);
-        console.log(solvedGrid);
-        console.log(playGrid);
-
         return solvedGrid, playGrid;
     }
 
@@ -121,8 +124,6 @@ function practiceGame() {
             playGrid[selectedRow][selectedCol] = 0;
         }
 
-        console.log(playGrid);
-        console.log(solvedGrid);
         return playGrid;
     }
 
@@ -130,8 +131,6 @@ function practiceGame() {
     function displayPracticeGrid() {
 
         displayGrid = createPracticeGame(playGrid);
-
-        console.log(displayGrid);
 
         for (i = 1; i < 10; i++) { // Box number
             let box = document.getElementById(`box-${i}`);
@@ -184,8 +183,6 @@ function practiceGame() {
     function displaySolvedGrid() {
 
         displayGridSolution = solvedGrid;
-
-        console.log(displayGridSolution);
 
         for (i = 1; i < 10; i++) { // Box number
             let solBox = document.getElementById(`box-${i}`);

@@ -25,7 +25,7 @@ function timedGame() {
     if (totalBlank == undefined) {
         totalBlank = 20;
     }
-    
+
     // New game button: creates new puzzle and resets stopwatch Countdown
     document.getElementById("newButton").addEventListener("click", function () {
         if (totalBlank == 0) {
@@ -41,6 +41,13 @@ function timedGame() {
     document.getElementById("solveButton").addEventListener("click", function () {
         displaySolvedTimedGrid();
         stopCountdown();
+        setTimeout(function () {
+            alert("Play again?");
+            solveTimedGrid(SolvedTimedGrid, playTimedGrid);
+            createTimedGame(playTimedGrid);
+            displayTimedGrid();
+            startCountdown();
+        }, 1000);
     });
 
     // Restart game button: creates new puzzle and resets stopwatch Countdown
@@ -86,7 +93,7 @@ function timedGame() {
     // Create game grid solution
     function solveTimedGrid(SolvedTimedGrid, playTimedGrid) {
 
-        let randomNum = Math.floor((Math.random() * 8) + 1); // Randomise grid by adding 1 for a random amount of times
+        let randomNum = Math.floor((Math.random() * 8 - 2) + 1); // Randomise grid by adding 1 for a random amount of times
 
         for (let i = 0; i < 9; i++) {
             for (let j = 0; j < 9; j++) {
@@ -219,14 +226,8 @@ function timedGame() {
         }
     }
 
-
-
     // Countdown Countdown on loading page
     // Adapted from https://codepen.io/jmikey/pen/tFHrp
-
-    console.log(totalBlank);
-
-
 
     var secondsRemaining;
     var intervalHandle;
