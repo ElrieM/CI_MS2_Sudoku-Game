@@ -1,27 +1,35 @@
 /* jshint esversion: 6 */
 
-window.onload = practiceGame();
+window.onload = function () {
+    practiceGame();
+    resetTimer();
+    startTimer();
+};
+
+var levelBlank = 20;
+
+var level = document.getElementById('level-select');
+// Assign number of cells blank based on level selection
+// Adapted from https://stackoverflow.com/questions/37538217/how-to-get-addeventlistener-to-work-with-a-select-tag
+level.addEventListener("change", function () {
+    levelBlank = this.value;
+    practiceGame();
+    console.log(totalBlank);
+}, false);
 
 function practiceGame() {
-    var totalBlank = 20;
 
-    var level = document.getElementById('level-select');
-    // Assign number of cells blank based on level selection
-    // Adapted from https://stackoverflow.com/questions/37538217/how-to-get-addeventlistener-to-work-with-a-select-tag
-    level.addEventListener("change", function () {
-        totalBlank = this.value;
-        console.log(totalBlank);
-        solveGrid(solvedGrid, playGrid);
-        createPracticeGame(playGrid);
-        displayPracticeGrid();
-        resetTimer();
-        startTimer();
-    }, false);
+    totalBlank = levelBlank;
 
-    console.log(totalBlank);
+    if (totalBlank == undefined) {
+        totalBlank = 20;
+    }
 
     // New game button: creates new puzzle and resets stopwatch timer
     document.getElementById("newButton").addEventListener("click", function () {
+        if (totalBlank == 0) {
+            totalBlank = levelBlank;
+        }
         solveGrid(solvedGrid, playGrid);
         createPracticeGame(playGrid);
         displayPracticeGrid();

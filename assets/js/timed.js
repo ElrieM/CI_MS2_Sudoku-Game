@@ -31,7 +31,6 @@ function timedGame() {
         if (totalBlank == 0) {
             totalBlank = levelBlank;
         }
-        
         solveTimedGrid(SolvedTimedGrid, playTimedGrid);
         createTimedGame(playTimedGrid);
         displayTimedGrid();
