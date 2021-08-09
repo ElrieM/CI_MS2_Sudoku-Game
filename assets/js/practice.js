@@ -1,3 +1,10 @@
+/* jshint esversion: 6 */
+
+// Runs practice game
+function runPractice() {
+    window.location.href = 'practice.html';
+}
+
 window.onload = practiceGame();
 
 function practiceGame() {
@@ -265,9 +272,13 @@ function timerCycle() {
 
         timer.innerHTML = min + ':' + sec;
 
-        setTimeout("timerCycle()", 1000);
+        setTimeout(function () {
+                timerCycle();
+            },
+            1000);
     }
 }
+
 
 function resetTimer() {
     timer.innerHTML = '00:00';

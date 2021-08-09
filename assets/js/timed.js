@@ -1,6 +1,8 @@
+/* jshint esversion: 6 */
+
 // Runs challenge game
 function runChallenge() {
-    window.location.href = 'game.html';
+    window.location.href = 'challenge.html';
 }
 
 window.onload = timedGame();
@@ -37,6 +39,7 @@ function timedGame() {
         displaySolvedGrid();
         stopclock();
     });
+    
     // Restart game button: creates new puzzle and resets stopwatch clock
     document.getElementById("restartButton").addEventListener("click", function () {
         totalBlank = 0;
@@ -239,6 +242,14 @@ function startclock() {
         stoptime = false;
         clockCycle();
     }
+    if (m < 0) {
+        return;
+    }
+
+    document.getElementById('timer').innerHTML =
+        m + ":" + s;
+    console.log(m);
+    setTimeout(startTimer, 1000);
 }
 // Starts clock on load
 startclock();
@@ -270,9 +281,9 @@ function clockCycle() {
 
         clock.innerHTML = min + ':' + sec;
 
-        setTimeout("clockCycle()", 1000);
+        functionsetTimeout("clockCycle()", 1000);
     }
-}
+  }
 
 function resetclock() {
     clock.innerHTML = '00:00';
