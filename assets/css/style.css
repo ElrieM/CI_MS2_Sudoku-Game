@@ -222,7 +222,7 @@ https://rachelandrew.co.uk/archives/2018/04/27/grid-level-2-and-subgrid/ */
     min-height: 54vh;
 }
 
-#stopwatch {
+.timer {
     font-size: 4.5em;
     text-align: center;
 }
@@ -276,7 +276,7 @@ https://rachelandrew.co.uk/archives/2018/04/27/grid-level-2-and-subgrid/ */
         min-height: unset;
     }
 
-    #stopwatch {
+    .timer {
         font-size: xx-large;
     }
     
@@ -308,7 +308,7 @@ https://rachelandrew.co.uk/archives/2018/04/27/grid-level-2-and-subgrid/ */
         min-height: unset;
     }
 
-    #stopwatch {
+    .timer {
         font-size: xx-large;
     }
     
