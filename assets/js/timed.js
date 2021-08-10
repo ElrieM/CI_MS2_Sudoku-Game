@@ -109,11 +109,10 @@ function timedGame() {
 
     // Creates game grid on load
     solveTimedGrid(solvedTimedGrid, playTimedGrid);
-    var inputCells = [];
 
     // Create play grid, empty randomly selected cells
     function createTimedGame(playTimedGrid) {
-        gridSolution = solvedTimedGrid;
+
         timedGrid = playTimedGrid;
 
         let randCell;
@@ -124,16 +123,19 @@ function timedGame() {
             selRow = Math.floor(randCell / 9);
             selCol = randCell % 9;
 
-            inputCells.push(gridSolution[selRow][selCol]);
+
             playTimedGrid[selRow][selCol] = 0;
         }
 
-        console.log(inputCells);
         return playTimedGrid;
     }
 
     // Display game grid, showing nil values as blank cells
     function displayTimedGrid() {
+        gridSolution = solvedTimedGrid;
+        let inputCells = [];
+
+        console.log(gridSolution);
 
         dispTimedGrid = createTimedGame(playTimedGrid);
 
@@ -169,6 +171,7 @@ function timedGame() {
             for (let j = rowLower; j < rowUpper; j++) { // Row index
                 for (let k = colLower; k < colUpper; k++) { // Column index
                     if (dispTimedGrid[j][k] === 0) {
+                        inputCells.push(gridSolution[j][k]);
                         cellNum = ((i - 1) * 9) + (j % 3 * 3 + k % 3 + 1); // Reverse calculates to get cell number
                         box.innerHTML += `
                         <div class="cell">
