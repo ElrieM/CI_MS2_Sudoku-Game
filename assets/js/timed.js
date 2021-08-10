@@ -31,19 +31,19 @@ function timedGame() {
         if (totalBlank == 0) {
             totalBlank = levelBlank;
         }
-        solveTimedGrid(SolvedTimedGrid, playTimedGrid);
+        solveTimedGrid(solvedTimedGrid, playTimedGrid);
         createTimedGame(playTimedGrid);
         displayTimedGrid();
         startCountdown();
     });
 
-    // Solve game button: shows puzzle solution and resets stops stopwatch Countdown
+    // solve game button: shows puzzle solution and resets stops stopwatch Countdown
     document.getElementById("solveButton").addEventListener("click", function () {
         displaySolvedTimedGrid();
         stopCountdown();
         setTimeout(function () {
             alert("Play again?");
-            solveTimedGrid(SolvedTimedGrid, playTimedGrid);
+            solveTimedGrid(solvedTimedGrid, playTimedGrid);
             createTimedGame(playTimedGrid);
             displayTimedGrid();
             startCountdown();
@@ -66,7 +66,7 @@ function timedGame() {
 
     // Puzzle creating function Adapted from https://github.com/reymon359/web-experiments/blob/master/Sudoku%20Board%20Generator/script.js
 
-    var SolvedTimedGrid = [
+    var solvedTimedGrid = [
         [8, 6, 1, 7, 9, 4, 3, 5, 2],
         [3, 5, 2, 1, 6, 8, 7, 4, 9],
         [4, 9, 7, 2, 5, 3, 1, 8, 6],
@@ -91,28 +91,30 @@ function timedGame() {
     ];
 
     // Create game grid solution
-    function solveTimedGrid(SolvedTimedGrid, playTimedGrid) {
+    function solveTimedGrid(solvedTimedGrid, playTimedGrid) {
 
         let randomNum = Math.floor((Math.random() * 8 - 2) + 1); // Randomise grid by adding 1 for a random amount of times
 
         for (let i = 0; i < 9; i++) {
             for (let j = 0; j < 9; j++) {
-                SolvedTimedGrid[i][j] += randomNum;
-                SolvedTimedGrid[i][j] %= 9;
-                SolvedTimedGrid[i][j]++;
-                playTimedGrid[i][j] = SolvedTimedGrid[i][j];
+                solvedTimedGrid[i][j] += randomNum;
+                solvedTimedGrid[i][j] %= 9;
+                solvedTimedGrid[i][j]++;
+                playTimedGrid[i][j] = solvedTimedGrid[i][j];
             }
         }
 
-        return SolvedTimedGrid, playTimedGrid;
+        return solvedTimedGrid, playTimedGrid;
     }
 
     // Creates game grid on load
-    solveTimedGrid(SolvedTimedGrid, playTimedGrid);
+    solveTimedGrid(solvedTimedGrid, playTimedGrid);
+    var inputCells = [];
 
     // Create play grid, empty randomly selected cells
     function createTimedGame(playTimedGrid) {
-        gridSolution = playTimedGrid;
+        gridSolution = solvedTimedGrid;
+        timedGrid = playTimedGrid;
 
         let randCell;
 
@@ -122,9 +124,11 @@ function timedGame() {
             selRow = Math.floor(randCell / 9);
             selCol = randCell % 9;
 
+            inputCells.push(gridSolution[selRow][selCol]);
             playTimedGrid[selRow][selCol] = 0;
         }
 
+        console.log(inputCells);
         return playTimedGrid;
     }
 
@@ -165,12 +169,15 @@ function timedGame() {
             for (let j = rowLower; j < rowUpper; j++) { // Row index
                 for (let k = colLower; k < colUpper; k++) { // Column index
                     if (dispTimedGrid[j][k] === 0) {
+                        cellNum = ((i-1)*9) + (j % 3 * 3 + k % 3 + 1); // Reverse calculates to get cell number
+                        console.log(i,j,k);
+                        console.log(cellNum);
                         box.innerHTML += `
                         <div class="cell">
                         <label for inputVal></label>
-                        <input class="input-cell" name="inputVal" id="inputVal" type="number" step="1" min="1" max="9" maxlength="1"></div>`;
+                        <input class="input-cell" id="cell-${cellNum}" name="inputVal" id="inputVal" type="number" step="1" min="1" max="9" maxlength="1"></div>`;
                     } else {
-                        box.innerHTML += `<div class="cell">${(dispTimedGrid[j][k])}</div>`;
+                        box.innerHTML += `<div class="cell"">${(dispTimedGrid[j][k])}</div>`;
                     }
                 }
             }
@@ -180,10 +187,10 @@ function timedGame() {
     // Display Timed grid on load
     displayTimedGrid();
 
-    // Display Solved grid
+    // Display solved grid
     function displaySolvedTimedGrid() {
 
-        displayTimedGridSolution = SolvedTimedGrid;
+        displayTimedGridSolution = solvedTimedGrid;
 
         for (i = 1; i < 10; i++) { // Box number
             let solBox = document.getElementById(`box-${i}`);
