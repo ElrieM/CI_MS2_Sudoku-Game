@@ -7,7 +7,8 @@ i {
     font-family: 'Raleway', sans-serif;
 }
 
-.container-game {
+.container-game,
+#stopwatch.timer {
     font-family: 'EB Garamond', serif;
 }
 
@@ -207,35 +208,60 @@ main.flex-shrink-0 {
 https://css-tricks.com/snippets/css/complete-guide-grid/#basics-and-browser-support
 https://rachelandrew.co.uk/archives/2018/04/27/grid-level-2-and-subgrid/ */
 
-#button-container,
-#timer-heading {
+
+.game-container {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
+}
+
+.mobile-controls {
+    display: none;
+    visibility: collapse;
+}
+
+.desktop-controls {
+    display: contents;
+    visibility: visible;
+}
+
+.timer-heading {
+    margin-top: 1em;
+}
+
+.button-container,
+.level-select {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 }
 
 #level-select {
     width: 8em;
-    font-size: x-small;
+    font-size: large;
 }
 
 .stopwatch-container {
-    min-height: 54vh;
+    min-height: fit-content;
+    padding-bottom: 1.5rem;
 }
 
 .timer {
-    font-size: 4.5em;
+    font-size: 5em;
     text-align: center;
 }
 
-.timer-button-container{
+.timer-button-container {
+    margin-top: .5em;
     text-align-last: center;
     display: flex;
     align-content: space-between;
-    justify-content: center;
+    justify-content: space-between;
     font-size: x-large;
 }
 
 #game-grid {
+    margin-top: 1.5rem;
     font-family: 'EB Garamond', serif;
     font-size: 1.5rem;
     border: 3px solid;
@@ -266,9 +292,9 @@ https://rachelandrew.co.uk/archives/2018/04/27/grid-level-2-and-subgrid/ */
 
 .input-cell {
     background-color: #fff;
-    width:100%;
-    height:100%;
-    text-align:center;
+    width: 100%;
+    height: 100%;
+    text-align: center;
 }
 
 table {
@@ -282,31 +308,63 @@ table {
 
     /* ---- Mobile ---- */
 
+    .mobile-controls {
+        display: contents;
+        visibility: visible;
+    }
+    
+    .desktop-controls {
+        display: none;
+        visibility: collapse;
+    }
+
+    .timer-heading {
+        margin-top: .5em;
+    }
+
+    .button-container,
+    .level-select {
+        padding-top: .5em;
+        padding-bottom: unset;
+        margin-top: .5em;
+    }
+
     .stopwatch-container {
         min-height: unset;
+        margin: 0;
+        padding:0;
     }
 
     .timer {
         font-size: xx-large;
     }
-    
-    .timer-button-container{
+
+    .timer-button-container {
         font-size: unset;
     }
-    
+
     #game-grid {
-        margin-left: 5%;
-        margin-right: 5%;
         margin-top: 5%;
         font-size: 100%;
         border: 3px solid;
-        width: 90%;
-        height: 45vh;
+        width: 280px;
+        height: 280px;
     }
+
 
     header>.h1,
     h1 {
         font-size: calc(1.5rem + 1.5vw);
+    }
+
+    .h2,
+    h2 {
+        padding: 0;
+    }
+    .h3,
+    h3 {
+        font-size: calc(.9rem + 0.3vw);
+
     }
 
 }
@@ -321,10 +379,11 @@ table {
     .timer {
         font-size: xx-large;
     }
-    
-    .timer-button-container{
+
+    .timer-button-container {
         font-size: unset;
     }
+
     #game-grid {
         margin-left: 10%;
         margin-right: 10%;
@@ -445,6 +504,7 @@ textarea.form-control {
 @media only screen and (max-width: 767px) {
 
     /* ---- Mobile ---- */
+
     .img-fluid {
         width: 240;
     }
@@ -456,7 +516,16 @@ textarea.form-control {
 }
 
 a.btn.btn-link {
-    font-size: large;
+    font-size: medium;
+}
+
+.btn-info {
+    height: 10%;
+}
+
+#level-select {
+    width: 6.5em;
+    font-size: medium;
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {

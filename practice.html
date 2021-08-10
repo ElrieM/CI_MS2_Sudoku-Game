@@ -41,80 +41,53 @@
     <main class="flex-shrink-0">
         <div class="wrapper-page container">
             <div class="row">
-                <!-- Container for game grid-->
+                 <!-- Container for game grid-->
+                 <div class="col-xs-6 col-lg-6">
+                    <div class="game-container">
+                        <div id="game-grid">
+                            <div class="box" id="box-1"></div>
+                            <div class="box" id="box-2"></div>
+                            <div class="box" id="box-3"></div>
+                            <div class="box" id="box-4"></div>
+                            <div class="box" id="box-5"></div>
+                            <div class="box" id="box-6"></div>
+                            <div class="box" id="box-7"></div>
+                            <div class="box" id="box-8"></div>
+                            <div class="box" id="box-9"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Container for timer and controls -->
                 <div class="col-xs-6 col-lg-6">
-                    <div id="button-container">
+                    <div id="timer-heading">
+                        <div class="timer-button-container">
+                            <h2>TIMER</h2>
+                            <button class="btn btn-info" id="start"> Start </button>
+                            <button class="btn btn-info" id="stop"> Pause </button>
+                        </div>
+                    </div>
+                    <div class="stopwatch-container">
+                        <div class="timer" id="stopwatch">00:00</div>
+                    </div>
+                    <div class="button-container">
+                        <h3>Game Controls</h3>
                         <button class="btn btn-info" id="newButton">New</button>
                         <button class="btn btn-info" id="solveButton">Solve</button>
                         <button class="btn btn-info" id="restartButton">Restart</button>
+                    </div>
+                    <div class="level-select">
                         <!-- Adapted from https://getbootstrap.com/docs/5.0/forms/select/ -->
+                        <h3>Select game level:</h3>
                         <select class="form-select" id="level-select" aria-label="game-level">
                             <option value="20" selected>Easy</option> <!-- 81 * 25% for easy -->
                             <option value="30">Medium</option> <!-- 81 * 37.5% for medium -->
                             <option value="40">Difficult</option> <!-- 81 * 50% for difficult -->
                         </select>
                     </div>
-                    <div id="game-grid">
-                        <div class="box" id="box-1"></div>
-                        <div class="box" id="box-2"></div>
-                        <div class="box" id="box-3"></div>
-                        <div class="box" id="box-4"></div>
-                        <div class="box" id="box-5"></div>
-                        <div class="box" id="box-6"></div>
-                        <div class="box" id="box-7"></div>
-                        <div class="box" id="box-8"></div>
-                        <div class="box" id="box-9"></div>
-                    </div>
                 </div>
-                <div class="col-xs-6 col-lg-6">
-                    <div id="timer-heading">
-                        <h2>TIMER</h2>
-                    </div>
-                    <div class="stopwatch-container">
-                        <div class="timer" id="stopwatch">00:00</div>
-                        <div class="timer-button-container">
-                            <button id="start"> Start </button>
-                            <button id="stop"> Pause </button>
-                        </div>
-                        <br>
-                        <div id="scores">
-                            <!-- Adapted from https://getbootstrap.com/docs/5.1/content/tables/ -->
-                            <table class="table table-bordered table-hover">
-                                <thead>
-                                    <tr>
-                                        <th>Game Level</th>
-                                        <th>Time</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                    </div>
-                </div>
+
+               
             </div>
-        </div>
     </main>
     <!-- Page footer -->
     <footer class="footer mt-auto py-3">

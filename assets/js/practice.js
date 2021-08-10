@@ -13,7 +13,6 @@ var level = document.getElementById('level-select');
 level.addEventListener("change", function () {
     levelBlank = this.value;
     practiceGame();
-    console.log(totalBlank);
 }, false);
 
 function practiceGame() {
@@ -23,6 +22,8 @@ function practiceGame() {
     if (totalBlank == undefined) {
         totalBlank = 20;
     }
+
+    localStorage.setItem('totalBlank', levelBlank);
 
     // New game button: creates new puzzle and resets stopwatch timer
     document.getElementById("newButton").addEventListener("click", function () {
@@ -45,7 +46,7 @@ function practiceGame() {
             solveGrid(solvedGrid, playGrid);
             createPracticeGame(playGrid);
             displayPracticeGrid();
-        }, 1000);
+        }, 100);
     });
 
     // Restart game button: creates new puzzle and resets stopwatch timer
