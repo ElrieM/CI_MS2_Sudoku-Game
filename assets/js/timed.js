@@ -169,13 +169,11 @@ function timedGame() {
             for (let j = rowLower; j < rowUpper; j++) { // Row index
                 for (let k = colLower; k < colUpper; k++) { // Column index
                     if (dispTimedGrid[j][k] === 0) {
-                        cellNum = ((i-1)*9) + (j % 3 * 3 + k % 3 + 1); // Reverse calculates to get cell number
-                        console.log(i,j,k);
-                        console.log(cellNum);
+                        cellNum = ((i - 1) * 9) + (j % 3 * 3 + k % 3 + 1); // Reverse calculates to get cell number
                         box.innerHTML += `
                         <div class="cell">
                         <label for inputVal></label>
-                        <input class="input-cell" id="cell-${cellNum}" name="inputVal" id="inputVal" type="number" step="1" min="1" max="9" maxlength="1"></div>`;
+                        <input class="input-cell" id="cell-${cellNum}" name="inputVal-${cellNum}" type="number" step="1" min="1" max="9" maxlength="1"></div>`;
                     } else {
                         box.innerHTML += `<div class="cell"">${(dispTimedGrid[j][k])}</div>`;
                     }
