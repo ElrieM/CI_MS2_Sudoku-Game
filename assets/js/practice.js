@@ -2,7 +2,6 @@
 
 window.onload = function () {
     practiceGame();
-    resetTimer();
     startTimer();
 };
 
@@ -34,7 +33,6 @@ function practiceGame() {
         createPracticeGame(playGrid);
         displayPracticeGrid();
         resetTimer();
-        startTimer();
     });
 
     // Solve game button: shows puzzle solution and resets stops stopwatch timer
@@ -242,8 +240,6 @@ function startTimer() {
         timerCycle();
     }
 }
-// Starts timer on load
-startTimer();
 
 function stopTimer() {
     if (stoptime == false) {
@@ -283,4 +279,5 @@ function resetTimer() {
     timer.innerHTML = '00:00';
     min = 0;
     sec = 0;
+    startTimer();
 }
