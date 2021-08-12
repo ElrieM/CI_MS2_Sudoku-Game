@@ -16,17 +16,18 @@ level.addEventListener("change", function () {
     let levelSeconds = 0;
     timedGame();
     if (levelBlank == 20) {
-        levelSeconds = 300;
+        levelSeconds = 300; // 5 minutes * 60 seconds
     } else if (levelBlank == 30) {
-        levelSeconds = 600;
+        levelSeconds = 600; // 10 minutes * 60 seconds
     } else if (levelBlank == 40) {
-        levelSeconds = 900;
+        levelSeconds = 900; // 15 minutes * 60 seconds
     }
     gameSeconds = levelSeconds;
     localStorage.setItem('gameSeconds', levelSeconds);
     resetCountdown();
 }, false);
 
+// Generates game for play, starting with solution and then creating grid for play with random blank cells
 function timedGame() {
 
     totalBlank = levelBlank;
@@ -42,17 +43,16 @@ function timedGame() {
         if (totalBlank == 0) {
             totalBlank = levelBlank;
         }
-        solveTimedGrid(solvedTimedGrid, playTimedGrid);
-        createTimedGame(playTimedGrid);
-        displayTimedGrid();
-        resetCountdown();
+        solveTimedGrid(solvedTimedGrid, playTimedGrid); // generates solution
+        createTimedGame(playTimedGrid); // generates game grid
+        displayTimedGrid(); // display game grid
+        resetCountdown(); // resets timer
     });
 
-    // solve game button: shows puzzle solution and resets stops stopwatch Countdown
+    // Solve game button: shows puzzle solution and resets stops stopwatch Countdown
     // Alert adapted from https://www.tutorialspoint.com/How-to-delay-a-JavaScript-function-call-using-JavaScript
     document.getElementById("solveButton").addEventListener("click", function () {
         displaySolvedTimedGrid();
-        stopCountdown();
         setTimeout(function () {
             alert("Play again?");
             solveTimedGrid(solvedTimedGrid, playTimedGrid);
@@ -71,6 +71,7 @@ function timedGame() {
 
     // Puzzle creating function Adapted from https://github.com/reymon359/web-experiments/blob/master/Sudoku%20Board%20Generator/script.js
 
+    // Initial solved grid
     var solvedTimedGrid = [
         [5, 3, 4, 6, 7, 8, 9, 1, 2],
         [6, 7, 2, 1, 9, 5, 3, 4, 8],
@@ -83,7 +84,9 @@ function timedGame() {
         [3, 4, 5, 2, 8, 6, 1, 7, 9]
     ];
 
-    var playTimedGrid = [
+    // Initial play grid (same as solved grid until blank cells are removed)
+    // Sets array form of 9 rows with 9 values each
+  var playTimedGrid = [
         [5, 3, 4, 6, 7, 8, 9, 1, 2],
         [6, 7, 2, 1, 9, 5, 3, 4, 8],
         [1, 9, 8, 3, 4, 2, 5, 6, 7],
@@ -98,8 +101,10 @@ function timedGame() {
     // Create game grid solution
     function solveTimedGrid(solvedTimedGrid, playTimedGrid) {
 
+        // Randomly select number of times to add to grid
         let randomNum = Math.floor((Math.random() * 8 - 2) + 1); // Randomise grid by adding 1 for a random amount of times
 
+        // Adds 1 to cell for selected random number of times
         for (let i = 0; i < 9; i++) {
             for (let j = 0; j < 9; j++) {
                 solvedTimedGrid[i][j] += randomNum;
@@ -120,6 +125,7 @@ function timedGame() {
 
         let randCell;
 
+        // Converts random cell into row and column, replaces selected cell with 0
         for (let m = 0; m < totalBlank; m++) {
             randCell = Math.floor(Math.random() * (81 - 1) + 1);
 
@@ -239,30 +245,23 @@ function timedGame() {
 var timeDisplay = document.getElementById("countdownTimer");
 
 var intervalHandle;
-var stoptime = true;
 let secondsRemaining = gameSeconds;
 var min;
 var sec;
 
 function countdownCycle() {
-    console.log(totalBlank, gameSeconds);
-
-    // turn the seconds into mm:ss
+    
+    // converts remaining / game seconds into mm:ss
     min = Math.floor(secondsRemaining / 60);
     sec = secondsRemaining - (min * 60);
-
-    console.log(min, sec);
 
     //add a leading zero (as a string value) if seconds less than 10
     if (sec < 10) {
         sec = "0" + sec;
     }
 
-    // concatenate with colon
-    var message = min.toString() + ":" + sec;
-
-    // now change the display
-    timeDisplay.innerHTML = message;
+    // Update time displayed every second
+    timeDisplay.innerHTML = min.toString() + ":" + sec;
 
     // stop is down to zero
     if (secondsRemaining === 0) {
@@ -276,14 +275,13 @@ function countdownCycle() {
 
 }
 
+// Starts countdown cycle
 function startCountdown() {
     //every second, call the countdownCycle function
-    // have to make it into a variable so that you can stop the interval later!!!
     intervalHandle = setInterval(countdownCycle, 1000);
-
 }
 
-
+// Resets countdown timer
 function resetCountdown() {
     secondsRemaining = gameSeconds;
 }
