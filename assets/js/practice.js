@@ -15,46 +15,46 @@ level.addEventListener("change", function () {
     practiceGame();
 }, false);
 
+// Generates game for play, starting with solution and then creating grid for play with random blank cells
 function practiceGame() {
 
-    totalBlank = levelBlank;
+    totalBlank = levelBlank; // fetches number of blank cells to generate
 
     if (totalBlank == undefined) {
         totalBlank = 20;
     }
 
-    localStorage.setItem('totalBlank', levelBlank);
+    localStorage.setItem('totalBlank', levelBlank); // Stores number of cells to be blank for later usage in play grid
 
     // New game button: creates new puzzle and resets stopwatch timer
     document.getElementById("newButton").addEventListener("click", function () {
         if (totalBlank == 0) {
             totalBlank = levelBlank;
         }
-        solveGrid(solvedGrid, playGrid);
-        createPracticeGame(playGrid);
-        displayPracticeGrid();
-        resetTimer();
+        solveGrid(solvedGrid, playGrid); // generates solution
+        createPracticeGame(playGrid); // generates game grid
+        displayPracticeGrid(); // display game grid
+        resetTimer(); // resets timer
     });
 
     // Solve game button: shows puzzle solution and resets stops stopwatch timer
     // Alert adapted from https://www.tutorialspoint.com/How-to-delay-a-JavaScript-function-call-using-JavaScript
     document.getElementById("solveButton").addEventListener("click", function () {
-        displaySolvedGrid();
-        stopTimer();
+        displaySolvedGrid(); // Displays solved game grid
         setTimeout(function () {
             alert("Play again?");
             solveGrid(solvedGrid, playGrid);
             createPracticeGame(playGrid);
             displayPracticeGrid();
+            resetTimer();
         }, 100);
     });
 
     // Restart game button: creates new puzzle and resets stopwatch timer
     document.getElementById("restartButton").addEventListener("click", function () {
         totalBlank = 0;
-        console.log(totalBlank);
         displayPracticeGrid();
-        startTimer();
+        startTimer(); // Continues countdown (in case game is paused when restarted)
     });
 
     // Button to start timer
@@ -65,6 +65,7 @@ function practiceGame() {
 
     // Puzzle creating function Adapted from https://github.com/reymon359/web-experiments/blob/master/Sudoku%20Board%20Generator/script.js
 
+    // Initial solved grid
     var solvedGrid = [
         [8, 6, 1, 7, 9, 4, 3, 5, 2],
         [3, 5, 2, 1, 6, 8, 7, 4, 9],
@@ -77,6 +78,8 @@ function practiceGame() {
         [1, 8, 9, 3, 4, 7, 2, 6, 5]
     ];
 
+    // Initial play grid (same as solved grid until blank cells are removed)
+    // Sets array form of 9 rows with 9 values each
     var playGrid = [
         [8, 6, 1, 7, 9, 4, 3, 5, 2],
         [3, 5, 2, 1, 6, 8, 7, 4, 9],
@@ -92,8 +95,10 @@ function practiceGame() {
     // Create game grid solution
     function solveGrid(solvedGrid, playGrid) {
 
-        let randomTimes = Math.floor((Math.random() * 8-1) + 1); // Randomise grid by adding 1 for a random amount of times
+        // Randomly select number of times to add to grid
+        let randomTimes = Math.floor((Math.random() * 8 - 1) + 1); // Randomise grid by adding 1 for a random amount of times
 
+        // Adds 1 to cell for selected random number of times
         for (let i = 0; i < 9; i++) {
             for (let j = 0; j < 9; j++) {
                 solvedGrid[i][j] += randomTimes;
@@ -114,6 +119,7 @@ function practiceGame() {
 
         let randomCell;
 
+        // Converts random cell into row and column, replaces selected cell with 0
         for (let m = 0; m < totalBlank; m++) {
             randomCell = Math.floor(Math.random() * (81 - 1) + 1);
 
@@ -122,7 +128,6 @@ function practiceGame() {
 
             playGrid[selectedRow][selectedCol] = 0;
         }
-
         return playGrid;
     }
 

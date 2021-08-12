@@ -8,7 +8,6 @@ window.onload = function () {
 var levelBlank = 20;
 var gameSeconds = 300;
 
-
 var level = document.getElementById('level-select');
 // Assign number of cells blank based on level selection
 // Adapted from https://stackoverflow.com/questions/37538217/how-to-get-addeventlistener-to-work-with-a-select-tag
@@ -23,6 +22,7 @@ level.addEventListener("change", function () {
     } else if (levelBlank == 40) {
         levelSeconds = 900;
     }
+    gameSeconds = levelSeconds;
     localStorage.setItem('gameSeconds', levelSeconds);
     resetCountdown();
 }, false);
