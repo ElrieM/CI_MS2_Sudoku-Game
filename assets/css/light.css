@@ -36,6 +36,10 @@ footer i {
   color: #f8f1ff;
 }
 
+.card:hover {
+  background-color: #6561768c;
+}
+
 .input-cell {
   background-color: var(--header-back);
 }

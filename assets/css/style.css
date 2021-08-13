@@ -25,9 +25,17 @@ header span {
 }
 
 :root {
-    --light: #f8f1ff;
-    --bright: #4F5B33;
-    --dark: #0E151C;
+    --light: #DECDF5;
+    --bright: #ADBD89;
+    --dark: #a8c4c3;
+}
+
+.navbar {
+    padding:0;
+}
+
+header>.h1, h1 {
+    margin: 0;
 }
 
 .theme-switches {
@@ -36,10 +44,9 @@ header span {
 }
 
 .switch {
-    border: 3px solid black;
+    border: 3px solid;
     border-radius: 50px;
-    height: 20px;
-    width: 20px;
+    padding: 1px;
     margin: 15px;
     cursor: pointer;
 }
@@ -104,6 +111,7 @@ main.flex-shrink-0 {
     height: 45vh;
     padding-top: 25%;
     padding-bottom: 25%;
+    cursor: pointer;
 }
 
 .fs-1 {
@@ -542,6 +550,6 @@ a.btn.btn-link {
 
     /* ---- Large laptops and desktops ---- */
     .img-fluid {
-        width: 600;
+        width: 450;
     }
 }

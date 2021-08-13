@@ -3,7 +3,7 @@
   --back-color: #4f6073;
   --primary-color: #eee;
   --header-back: #a8c4c3;
-  --header-text: #0E151C;
+  --header-text: #3d4b59;
   --b-info: #60848b;
 }
 
@@ -33,7 +33,11 @@ footer i {
 
 .card {
   background-color: #ccc;
-  color: var(--primary-color);
+  color: #4f6073;
+}
+
+.card:hover {
+  background-color: rgb(153, 152, 152);
 }
 
 .input-cell {
