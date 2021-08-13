@@ -229,6 +229,8 @@ function practiceGame() {
         }
     }
 
+    console.log(solvedGrid);
+
 }
 
 

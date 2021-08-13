@@ -28,7 +28,7 @@ footer i {
 #game-grid,
 .stopwatch-container {
   background-color: #FFF;
-  color: #0e151f;
+  color: var(--primary-color);
 }
 
 .card {
@@ -42,6 +42,7 @@ footer i {
 
 .input-cell {
   background-color: var(--header-back);
+  color: var(--primary-color);
 }
 
 .table {
@@ -52,6 +53,11 @@ footer i {
   --bs-table-hover-bg: var(--header-bg);
   color: var(--primary-color);
   border-color: #dee2e6;
+}
+
+#level-select {
+  background-color: #fff;
+  color: var(--primary-color);
 }
 
 /* Formatting contact page */
@@ -72,11 +78,16 @@ footer i {
 }
 
 .btn-info:hover,
-.btn-info:focus {
+.btn-info:focus,
+.btn-info:active {
   color: #dddca6;
   background-color: #4f5b33;
   border-color: #291420;
   box-shadow: unset;
+}
+
+.btn-info:hover {
+  border-width: 2px;
 }
 
 /* Formatting error page */

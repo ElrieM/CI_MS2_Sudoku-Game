@@ -42,6 +42,21 @@ footer i {
 
 .input-cell {
   background-color: var(--header-back);
+  color: var(--primary-color);
+}
+
+.form-select {
+  color: var(--primary-color);
+}
+
+.form-select:focus {
+  border-color: var(--primary-color);
+  box-shadow: var(--header-back);
+}
+
+#level-select {
+  background-color: #fff;
+  color: var(--primary-color);
 }
 
 /* Formatting contact page */
@@ -71,9 +86,9 @@ footer i {
 
 .table {
   --bs-table-bg: var(--back-color);
-  --bs-table-active-color:  var( --header-text);
+  --bs-table-active-color: var(--header-text);
   --bs-table-active-bg: var(--header-bg);
-  --bs-table-hover-color: var( --header-text);
+  --bs-table-hover-color: var(--header-text);
   --bs-table-hover-bg: var(--header-bg);
   color: var(--primary-color);
   border-color: #dee2e6;

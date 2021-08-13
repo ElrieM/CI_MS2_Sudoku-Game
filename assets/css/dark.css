@@ -4,7 +4,7 @@
   --primary-color: #eee;
   --header-back: #a8c4c3;
   --header-text: #3d4b59;
-  --b-info: #60848b;
+  --bs-info: #60848b;
 }
 
 body {
@@ -28,7 +28,7 @@ footer i {
 #game-grid,
 .stopwatch-container {
   background-color: #dee6e6;
-  color: #0e151f;
+  color: var(--header-text);
 }
 
 .card {
@@ -42,6 +42,7 @@ footer i {
 
 .input-cell {
   background-color: var(--header-back);
+  color: var(--header-text);
 }
 
 .table {
@@ -52,6 +53,11 @@ footer i {
   --bs-table-hover-bg: var(--header-bg);
   color: var(--primary-color);
   border-color: #dee2e6;
+}
+
+#level-select {
+  background-color: #dee6e6;
+  color: var(--back-color);
 }
 
 /* Formatting contact page */
