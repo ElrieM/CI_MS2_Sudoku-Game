@@ -314,6 +314,15 @@ table {
     margin-right: 10%;
 }
 
+/* Modal formatting */
+.modal-body{
+    padding: 5em;
+  }
+
+.modal-body > p {
+    font-size: larger;
+}
+
 @media only screen and (max-width: 767px) {
 
     /* ---- Mobile ---- */

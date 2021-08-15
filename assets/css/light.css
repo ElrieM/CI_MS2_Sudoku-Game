@@ -59,6 +59,13 @@ footer i {
   color: var(--primary-color);
 }
 
+/* Pause module formatting */
+.modal-header,
+.modal-footer {
+  background-color: var(--header-back);
+  color: var(--header-text);
+}
+
 /* Formatting contact page */
 
 #contact-wrapper {

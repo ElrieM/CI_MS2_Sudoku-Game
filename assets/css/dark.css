@@ -60,6 +60,18 @@ footer i {
   color: var(--back-color);
 }
 
+/* Pause module formatting */
+.modal-header,
+.modal-footer {
+  background-color: var(--header-back);
+  color: var(--header-text);
+}
+
+.modal-body {
+  background-color: var(--back-color);
+  color: var(--primary-color);
+}
+
 /* Formatting contact page */
 
 #contact-wrapper {
