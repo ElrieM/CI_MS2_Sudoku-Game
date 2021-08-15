@@ -66,6 +66,12 @@ footer i {
   color: var(--header-text);
 }
 
+.modal-body {
+  background-color: var(--back-color);
+  color: var(--primary-color);
+}
+
+
 /* Formatting contact page */
 
 #contact-wrapper {
