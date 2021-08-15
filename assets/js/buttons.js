@@ -17,7 +17,6 @@ var continueBtn = document.getElementById('continue-btn');
 var exitBtn = document.getElementById('exit-btn');
 var closeXSolve = document.getElementById('close-top-solve');
 
-
 // Solve modal, used in practice and challenge games
 
 // Modal for solve button, adapted from https://www.w3schools.com/howto/howto_css_modals.asp

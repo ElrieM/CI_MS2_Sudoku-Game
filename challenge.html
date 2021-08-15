@@ -84,6 +84,29 @@
                 </div>
             </div>
         </div>
+
+        <!-- Modal for solve button -->
+        <div class="modal" id="solveModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            aria-labelledby="solveModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2 class="modal-title" id="solveModalLabel">Game Ended</h2>
+                        <button id="close-top-solve" type="button" class="btn-close" data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p class="text-center">Click anywhere to play another game</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button id="continue-btn" type="button" class="btn btn-secondary"
+                            data-bs-dismiss="modal">Continue</button>
+                        <button id="exit-btn" type="button" class="btn btn-secondary"
+                            data-bs-dismiss="modal">Exit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
     <!-- Page footer -->
     <footer class="footer mt-auto py-2">
@@ -105,7 +128,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
     </script>
-    <script src="assets/js/buttons.js"></script>
+    <script src="assets/js/themes.js"></script>
     <script src="assets/js/buttons.js"></script>
     <script src="assets/js/timed.js"></script>
 </body>

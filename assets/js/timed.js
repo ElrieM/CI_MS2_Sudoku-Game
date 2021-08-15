@@ -54,12 +54,12 @@ function timedGame() {
     document.getElementById("solveButton").addEventListener("click", function () {
         displaySolvedTimedGrid();
         setTimeout(function () {
-            alert("Play again?");
             solveTimedGrid(solvedTimedGrid, playTimedGrid);
             createTimedGame(playTimedGrid);
             displayTimedGrid();
             resetCountdown();
-        }, 100);
+            solveModal.style.display = "block";
+        }, 2000);
     });
 
     // Restart game button: creates new puzzle and resets stopwatch Countdown

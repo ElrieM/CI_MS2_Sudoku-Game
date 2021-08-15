@@ -26,11 +26,11 @@ document.getElementById("newButton").addEventListener("click", function () {
 document.getElementById("solveButton").addEventListener("click", function () {
     displaySolvedGrid(); // Displays solved game grid
     setTimeout(function () {
-        solveModal.style.display = "block";
         practiceGame(); // Generates new game
         displayPracticeGrid(); // Displays puzzle with blank cells for new game
         resetTimer(); // Resets timer to start from nil
-    }, 100);
+        solveModal.style.display = "block";
+    }, 2000);
 });
 
 // Restart game button: creates new puzzle and resets stopwatch timer
