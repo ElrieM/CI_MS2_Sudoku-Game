@@ -11,33 +11,40 @@ function runChallenge() {
     window.location.href = 'challenge.html';
 }
 
-// Theme changer
-// Adapted from https://www.studytonight.com/post/build-a-theme-switcher-for-your-website-with-javascript
 
-let switches = document.getElementsByClassName('switch');
-let style = localStorage.getItem('style');
+var solveModal = document.getElementById('solveModal');
+var continueBtn = document.getElementById('continue-btn');
+var exitBtn = document.getElementById('exit-btn');
+var closeXSolve = document.getElementById('close-top-solve');
 
-if (style == null) {
-    setTheme('light');
-} else {
-    setTheme(style);
-}
 
-for (let i of switches) {
-    i.addEventListener('click', function () {
-        let theme = this.dataset.theme;
-        console.log(theme);
-        setTheme(theme);
-    });
-}
+// Solve modal, used in practice and challenge games
 
-function setTheme(theme) {
-    if (theme == 'light') {
-        document.getElementById('switcher-id').href = './assets/css/light.css';
-    } else if (theme == 'bright') {
-        document.getElementById('switcher-id').href = './assets/css/bright.css';
-    } else if (theme == 'dark') {
-        document.getElementById('switcher-id').href = './assets/css/dark.css';
+// Modal for solve button, adapted from https://www.w3schools.com/howto/howto_css_modals.asp
+// When the user clicks on close button, close the modal
+exitBtn.onclick = function () {
+    solveModal.style.display = "none";
+    window.location.href = 'index.html';
+};
+
+// Continue button, resets timer and generates new game
+continueBtn.onclick = function () {
+    solveModal.style.display = "none";
+    practiceGame(); // Generates new puzzle
+    displayPracticeGrid(); // Displays puzzle with blank cells for game
+    resetTimer(); // Resets timer to start from nil
+};
+
+// When the user clicks on the close X at the top, close the modal
+closeXSolve.onclick = function () {
+    solveModal.style.display = "none";
+    resetTimer();
+};
+
+// When the user clicks anywhere outside of the modal, close the modal
+window.onclick = function (event) {
+    if (event.target == solveModal) {
+        solveModal.style.display = "none";
+        resetTimer();
     }
-    localStorage.setItem('style', theme);
-}
+};

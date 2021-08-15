@@ -6,7 +6,7 @@ window.onload = function () {
     startTimer();
 };
 
-var modal = document.getElementById('pauseModal');
+var pauseModal = document.getElementById('pauseModal');
 var close = document.getElementById('close-btn');
 var closeX = document.getElementById('close-top');
 
@@ -26,7 +26,7 @@ document.getElementById("newButton").addEventListener("click", function () {
 document.getElementById("solveButton").addEventListener("click", function () {
     displaySolvedGrid(); // Displays solved game grid
     setTimeout(function () {
-        alert("Play again?");
+        solveModal.style.display = "block";
         practiceGame(); // Generates new game
         displayPracticeGrid(); // Displays puzzle with blank cells for new game
         resetTimer(); // Resets timer to start from nil
@@ -47,7 +47,7 @@ document.getElementById("start").addEventListener("click", startTimer);
 // Button to stop timer (pauses game)
 document.getElementById("stop").addEventListener("click", function () {
     stopTimer();
-    modal.style.display = "block";
+    pauseModal.style.display = "block";
 });
 
 // Puzzle creating function Adapted from https://github.com/reymon359/web-experiments/blob/master/Sudoku%20Board%20Generator/script.js
@@ -302,17 +302,20 @@ function resetTimer() {
 // Modal for pause button, adapted from https://www.w3schools.com/howto/howto_css_modals.asp
 // When the user clicks on close button, close the modal
 close.onclick = function () {
-    modal.style.display = "none";
+    pauseModal.style.display = "none";
+    startTimer();
 };
 
 // When the user clicks on the close X at the top, close the modal
 closeX.onclick = function () {
-    modal.style.display = "none";
+    pauseModal.style.display = "none";
+    startTimer();
 };
 
 // When the user clicks anywhere outside of the modal, close the modal
 window.onclick = function (event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
+    if (event.target == pauseModal) {
+        pauseModal.style.display = "none";
+        startTimer();
     }
 };

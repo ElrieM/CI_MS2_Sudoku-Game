@@ -1,16 +1,5 @@
 /* jshint esversion: 6 */
 
-// Runs practice game
-// Practice game has the ability to play various game
-function runPractice() {
-    window.location.href = 'practice.html';
-}
-
-// Runs challenge game
-function runChallenge() {
-    window.location.href = 'challenge.html';
-}
-
 // Theme changer
 // Adapted from https://www.studytonight.com/post/build-a-theme-switcher-for-your-website-with-javascript
 
