@@ -15,9 +15,15 @@ body {
 
 /* Formatting header and footer */
 header,
-footer {
+footer,
+.offcanvas-header {
   background-color: var(--header-back);
   color: var(--header-text);
+}
+
+.offcanvas-body {
+  background-color: var(--back-color);
+  color: var(--primary-color);
 }
 
 footer i {

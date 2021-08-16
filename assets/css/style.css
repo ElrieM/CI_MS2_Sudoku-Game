@@ -38,15 +38,19 @@ header>.h1, h1 {
     margin: 0;
 }
 
+
+/* Footer formatting */
+
 .theme-switches {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
 }
 
 .switch {
+    font-size: x-large;
     border: 3px solid;
     border-radius: 50px;
-    padding: 1px;
+    padding: 8px;
     margin: 15px;
     cursor: pointer;
 }
@@ -67,6 +71,9 @@ header>.h1, h1 {
     background-color: var(--dark);
 }
 
+.offcanvas {
+    height: auto;
+}
 /* Centre body */
 
 main.flex-shrink-0 {
@@ -305,13 +312,6 @@ https://rachelandrew.co.uk/archives/2018/04/27/grid-level-2-and-subgrid/ */
     text-align: center;
     border: none;
     cursor:text;
-}
-
-table {
-    margin-top: 1rem;
-    max-width: 80%;
-    margin-left: 10%;
-    margin-right: 10%;
 }
 
 /* Modal formatting */
