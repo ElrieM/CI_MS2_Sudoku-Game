@@ -2,6 +2,7 @@
 :root {
   --back-color: #f8f1ff;
   --primary-color: #656176;
+  --bs-primary: #656176;
   --header-back: #DECDF5;
   --header-text: #534d56;
   --bs-info: #656176;
@@ -23,7 +24,7 @@ footer i {
   color: var(--header-text);
 }
 
-/* Formatting game page */
+/* Formatting game pages (challenge, practice) */
 
 #game-grid,
 .stopwatch-container {
@@ -32,8 +33,8 @@ footer i {
 }
 
 .card {
-  background-color: #656176;
-  color: #f8f1ff;
+  background-color: var(--bs-info);
+  color: var(--back-color);
 }
 
 .card:hover {
@@ -43,15 +44,6 @@ footer i {
 .input-cell {
   background-color: var(--header-back);
   color: var(--primary-color);
-}
-
-.form-select {
-  color: var(--primary-color);
-}
-
-.form-select:focus {
-  border-color: var(--primary-color);
-  box-shadow: var(--header-back);
 }
 
 #level-select {
@@ -71,48 +63,46 @@ footer i {
   color: var(--primary-color);
 }
 
-
 /* Formatting contact page */
 
 #contact-wrapper {
-  border: 5px solid #656176;
+  border: 5px solid;
 }
 
 .form-control {
   background-color: #FFF;
-  color: #4f6073;
+  color: var(--primary-color)
+}
+
+.form-select {
+  border: var(--primary-color);
 }
 
 .btn-info {
-  color: #f8f1ff;
-  background-color: #656176;
-  border-color: #534d56;
+  color: var(--back-color);
+  background-color: var(--bs-info);
+  border-color: var(--header-text);
 }
 
 .btn-info:hover,
-.btn-info:focus {
-  color: #f8f1ff;
-  background-color: #656176;
-  border-color: #534d56;
+.btn-info:focus,
+.btn-info:active {
+  color: var(--back-color);
+  background-color: #6561768c;
+  border-color: var(--header-text);
   box-shadow: unset;
 }
 
-.table {
-  --bs-table-bg: var(--back-color);
-  --bs-table-active-color: var(--header-text);
-  --bs-table-active-bg: var(--header-bg);
-  --bs-table-hover-color: var(--header-text);
-  --bs-table-hover-bg: var(--header-bg);
-  color: var(--primary-color);
-  border-color: #dee2e6;
+.btn-info:hover {
+  border-width: 2px;
 }
 
 /* Formatting error page */
 
 .btn-link {
-  color: #656176;
+  color: var(--primary-color);       
 }
 
 .btn-link:hover {
-  color: #534d56;
+  color: var(--header-text);
 }

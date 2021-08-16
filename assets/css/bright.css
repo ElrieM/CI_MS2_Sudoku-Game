@@ -2,9 +2,10 @@
 :root {
   --back-color: #DDDCA6;
   --primary-color: #63183C;
+  --bs-primary: #63183C;
   --header-back: #ADBD89;
   --header-text: #291420;
-  --bs-info: #4f5b33;
+  --bs-info: #EAC7AE;
 }
 
 body {
@@ -32,7 +33,7 @@ footer i {
 }
 
 .card {
-  background-color: #EAC7AE;
+  background-color: var(--bs-info);
   color: var(--primary-color);
 }
 
@@ -43,16 +44,6 @@ footer i {
 .input-cell {
   background-color: var(--header-back);
   color: var(--primary-color);
-}
-
-.table {
-  --bs-table-bg: var(--back-color);
-  --bs-table-active-color:  var( --header-text);
-  --bs-table-active-bg: var(--header-bg);
-  --bs-table-hover-color: var( --header-text);
-  --bs-table-hover-bg: var(--header-bg);
-  color: var(--primary-color);
-  border-color: #dee2e6;
 }
 
 #level-select {
@@ -75,26 +66,30 @@ footer i {
 /* Formatting contact page */
 
 #contact-wrapper {
-  border: 5px solid #63183C;
+  border: 5px solid;
 }
 
 .form-control {
   background-color: #FFF;
-  color: #4f6073;
+  color: var(--primary-color)
+}
+
+.form-select {
+  border: var(--primary-color);
 }
 
 .btn-info {
-  color: #DDDCA6;
+  color: var(--back-color);
   background-color: #4F5B33;
-  border-color: #291420;
+  border-color: var(--header-text);
 }
 
 .btn-info:hover,
 .btn-info:focus,
 .btn-info:active {
-  color: #dddca6;
-  background-color: #4f5b33;
-  border-color: #291420;
+  color: var(--back-color);
+  background-color: #4f5b33a6;
+  border-color: var(--header-text);
   box-shadow: unset;
 }
 
@@ -105,7 +100,7 @@ footer i {
 /* Formatting error page */
 
 .btn-link {
-  color: #63183C;       
+  color: var(--primary-color);       
 }
 
 .btn-link:hover {
