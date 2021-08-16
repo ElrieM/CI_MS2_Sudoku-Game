@@ -1,108 +1,181 @@
-<h1 align="center">Sudoku Showdown</h1>
+<h1 align="center">Sudoku Time</h1>
 
 [View the live project here.](https://elriem.github.io/CI_MS2_Sudoku-Game/)
 
-# Contents <!-- omit in toc -->
+This website hosts Sudoku puzzles to complete within a fixed time, or to time how long it takes to complete the puzzle. 
+
+## Contents <!-- omit in toc -->
 
 - [1. User Experience (UX)](#1-user-experience-ux)
-  - [1.1 Target audience](#11-target-audience)
-  - [1.2 User Stories](#12-user-stories)
-    - [First Time Visitor Goals](#first-time-visitor-goals)
-    - [Returning Visitor Goals](#returning-visitor-goals)
-    - [Frequent User Goals](#frequent-user-goals)
-    - [Site Owner Goals](#site-owner-goals)
-  - [1.3 Design](#13-design)
+  - [1.1 Strategy Plane](#11-strategy-plane)
+    - [1.1.1 Target audience](#111-target-audience)
+    - [1.1.2 User Stories](#112-user-stories)
+      - [First Time Visitor Goals](#first-time-visitor-goals)
+      - [Returning / Frequent Visitor Goals](#returning--frequent-visitor-goals)
+      - [Site Owner Goals](#site-owner-goals)
+  - [1.2 Scope Plane](#12-scope-plane)
+    - [1.2.1 Requirements and functional specifications](#121-requirements-and-functional-specifications)
+    - [1.2.2 Features](#122-features)
+      - [Existing Features](#existing-features)
+      - [Features Left to Implement](#features-left-to-implement)
+  - [1.3 Structure Plane](#13-structure-plane)
+    - [1.3.1 Wireframes](#131-wireframes)
+  - [1.4 Skeleton Plane](#14-skeleton-plane)
+  - [1.5 Surface Plane](#15-surface-plane)
     - [Colour Scheme](#colour-scheme)
     - [Typography](#typography)
     - [Imagery](#imagery)
-  - [1.4 Structure](#14-structure)
-  - [1.5 Wireframes](#15-wireframes)
-- [2. Features](#2-features)
-  - [2.1 Existing Features](#21-existing-features)
-  - [2.2 Features Left to Implement](#22-features-left-to-implement)
-- [3 Technologies Used](#3-technologies-used)
-  - [3.1 Language Used](#31-language-used)
-  - [3.2 Frameworks, Libraries & Programs Used](#32-frameworks-libraries--programs-used)
-- [4. Testing](#4-testing)
-  - [4.1 Validator tools](#41-validator-tools)
-  - [4.2 Testing User Stories from User Experience (UX) Section](#42-testing-user-stories-from-user-experience-ux-section)
-    - [First Time Visitor Goals](#first-time-visitor-goals-1)
-    - [Returning Visitor Goals](#returning-visitor-goals-1)
-    - [Frequent User Goals](#frequent-user-goals-1)
-    - [Site Owner Goals](#site-owner-goals-1)
-      - [14. As the Site Owner, I want to inform students (existing and prospective) of upcoming events](#14-as-the-site-owner-i-want-to-inform-students-existing-and-prospective-of-upcoming-events)
-  - [4.3. Further Testing](#43-further-testing)
-  - [4.4 Testing Bugs - Resolved](#44-testing-bugs---resolved)
-  - [4.5 Known Bugs](#45-known-bugs)
-- [5. Deployment](#5-deployment)
-  - [5.1. GitHub Pages](#51-github-pages)
-  - [5.2. Forking the GitHub Repository](#52-forking-the-github-repository)
-  - [5.3. Making a Local Clone](#53-making-a-local-clone)
-- [6. Credits](#6-credits)
-  - [6.1. Code](#61-code)
-  - [6.2. Content](#62-content)
-  - [6.3. Media](#63-media)
-  - [6.4. Acknowledgements](#64-acknowledgements)
+- [2 Technologies Used](#2-technologies-used)
+  - [2.1 Language Used](#21-language-used)
+  - [2.2 Frameworks, Libraries & Programs Used](#22-frameworks-libraries--programs-used)
+- [4. Deployment](#4-deployment)
+  - [4.1. GitHub Pages](#41-github-pages)
+  - [4.2. Forking the GitHub Repository](#42-forking-the-github-repository)
+  - [4.3. Making a Local Clone](#43-making-a-local-clone)
+- [5. Credits](#5-credits)
+  - [5.1. Code](#51-code)
+  - [5.2. Content](#52-content)
+  - [5.3. Media](#53-media)
+  - [5.4. Acknowledgements](#54-acknowledgements)
 
 # 1. User Experience (UX)
 
-This website was created for Sudoku enthusiasts, offering an opportunity to improve your time to completion and compete for the best completion time against other site visitors.
+## 1.1 Strategy Plane
 
-## 1.1 Target audience
+This website was created for Sudoku enthusiasts, offering an opportunity to improve puzzle completion times and the challenge of completing a puzzle within a fixed average completion time at easy, medium and difficult levels.
+
+### 1.1.1 Target audience
 
 - New Sudoku players interested looking for a new hobby.
-- Prospective players hoping to gain the potential health benefits of playing Sudoku (improved thinking skills, concentration, memory etc.)
-- Seasoned players in improving their puzzle completion times.
-- Players with a competitive streak hoping to guage how they stack up against other players.
+- Returning palyers looking to improve their puzzle completion times and practice techniques.
+- Players who want to challenge themselves to complete a puzzle within a limited period of time.
 
-## 1.2 User Stories
+### 1.1.2 User Stories
 
-### First Time Visitor Goals
+#### First Time Visitor Goals
 
-  1. As a First Time Visitor, I want to easily navigate from the landing page to the sections that interest me.
-  2. As a First Time Visitor, I want to have access to and learn the rules of the game.
-  3. As a First Time Visitor, I want to practice to improve my completion times.
-  4. As a First Time Visitor, I want to see a log of my completion times while I am playing a practice game to monitor improvement.
-  5. As a First TIme Visitor, I want to view hints and tips on how best to approach the game.
-  6. As a First Time Visitor, I want to be able to have unlimited access to new puzzles.
-  7. As a First Time Visitor, I want to be able to change the background to my preference (dark / light / colourful).
-  8. As a First Time Visitor, I want to have the option of being alerted when I've made an error in completing the puzzle.
+  1. As a First Time Visitor, As a Returning Visitor, I want to easily navigate from the landing page to the game (challenge / practice).
+  2. As a First Time Visitor, I want to have access to and learn the rules.
+  3. As a First Time Visitor, I want to view hints and tips on how best to approach the game.
+  4. As a First Time Visitor,I want to practice different puzzles to improve my completion times.
+  5. As a First Time Visitor,  I want to have access new puzzles on demand.
+  6. As a First Time Visitor, I want to see the solved puzzle if I get stuck.
   
-### Returning Visitor Goals
+#### Returning / Frequent Visitor Goals
   
-  9. As a Returning Visitor, I want to easily navigate from the landing page to the game (challenge / practice).
-  10. As a Returning Visitor, I want to view hints and tips to improve my game completion times.
-  11. As a Returning Visitor, I want to have unlimited access to new puzzles.
-  12. As a Returning Visitor, I want to have the option of being alerted when I've made an error in completing the puzzle.
-  13. As a Returning Visitor, I want to be able to change the background to my preference (dark / light / colourful).
+  7. As a Returning / Frequent Visitor, I want to easily navigate from the landing page to the game (challenge / practice).
+  8. As a Returning / Frequent Visitor, I want to view hints and tips to improve my game completion times.
+  9. As a Returning / Frequent Visitor, I want to have access new puzzles on demand.
+  10. As a Returning / Frequent Visitor, I want to complete games with a time limit to compare my times to the average.
+  11. As a Returning / Frequent Visitor, I want to be able to change the background to my preference (dark / light / colourful).
 
-### Frequent User Goals
-  
-  14. As a Frequent User, I want to easily navigate from the landing page to the game (challenge / practice).
-  15. As a Frequent User, I want to have unlimited access to new puzzles.
-  16. As a Frequent User, I want to be able to change the background to my preference (dark / light / colourful).
-  17. As a Frequent User, I want to be compare my skills to other players in a daily challenge.
-  18. As a Frequent User, I want to practice to improve my completion times.
+#### Site Owner Goals
 
-### Site Owner Goals
+  12. As the Site Owner, I want to attract and retain users and ultimately replace their paper games. 
+  13. As the Site Owner, I want to make it easy and convenient for users to send suggestions for improvement or bug reports to a dedicated mailbox, thereby improving the chances of them returning.
 
-  12. As the Site Owner, I want users to attract and retain new users. 
-  13. As the Site Owner, I want to receive users' suggestions for improvement or bug reports in a dedicated mailbox.
+## 1.2 Scope Plane
 
-## 1.3 Design
+### 1.2.1 Requirements and functional specifications
+
+- Header and Footer
+  - Simple header with Logo that returns to landing page
+  - Footer with icons, navigates
+    -  Home (landing page) - best practice, 
+    -  Settings popover - change theme
+    -  Contact page - report bugs / suggestions or contact
+- Landing page
+  - Large and clearly visible buttons to navigate to practice game / challenge game / rules
+- Practice game page
+  - Randomly generated puzzle, covering majority of page
+  - Number input cells to select / type answers
+  - Stopwatch timer to record time spent
+  - New button to generate new puzzle
+  - Solve button to view solution, generate new puzzle or exit to landing page
+  - Restart button to reset the board - timer continues, purpose is to remove inputs and try again
+  - Level selector to change between easy, medium, or difficult (more or less cells missing)
+  - Timer start button
+  - Timer pause button - creates popup to hide puzzle while "stepping away"
+- Challenge game page
+  - Randomly generated puzzle, covering majority of page
+  - Number input cells to select / type answers
+  - Stopwatch timer to record time spent
+  - New button to generate new puzzle
+  - Solve button to view solution, generate new puzzle or exit to landing page
+  - Restart button to reset the board - time countdown continues, purpose is to remove inputs and try again
+  - Level selector to change between easy, medium, or difficult (more or less cells missing)
+
+### 1.2.2 Features
+
+#### Existing Features
+
+- Responsive on all device sizes
+- Interactive elements
+- Game set at different levels - easy, medium, difficult
+- Games randomly generated, with random cells left blank
+- Practice with stopwatch timer - records how long it takes to complete puzzle
+- Challenge with countdown timer - time limit to complete puzzle based on average time at that level
+- Puzzle solution to (self) compare against inputs
+- Rules with strategy for completion
+- Contact form to report bugs / make suggestions
+
+#### Features Left to Implement
+
+- Puzzle for the day challenge, where site visitors can compete for better completion time
+- Scoreboard to store best scored times and levels of all visitors
+- Check inputs against solution
+- Save last 5 completion times and levels in practice game to track improvement
+
+## 1.3 Structure Plane
+
+1.3.1 Site Map
+
+- Landing page to act as main menu.
+- Return to landing page, settings and contact form can be accessed from all pages
+- Schematic website flow can be seen [here](assets/../docs/other/flow.png)
+
+### 1.3.1 Wireframes
+
+- Home / Landing page - [view](docs\wireframes\home.png)
+- Game page - [view](docs\wireframes\game.png)
+- Rules page - [view](docs\wireframes\rules.png)
+
+## 1.4 Skeleton Plane
+
+## 1.5 Surface Plane
 
 ### Colour Scheme
 
-- For the colour scheme, I wanted a more "serious" colour due to the nature of the game. After reading an article by 99designs (11 website color schemes to help you find the perfect palette)[https://en.99designs.nl/blog/tips/website-color-schemes/], I performed a Google search for grey colour palettes.
+- For the colour scheme, I wanted to keep the colour schemes simple due to the nature of the game. 
 
-- The main colours, selected from (grey website colour scheme search results)[https://www.google.com/search?q=grey+website+colour+scheme&rlz=1C1GEWG_nlNL954NL954&sxsrf=ALeKk01QQVHPWpUXTISKdEMnsKMCC5cSlQ:1625736050935&source=lnms&tbm=isch&sa=X&ved=2ahUKEwjttsHektPxAhXRC-wKHRKcBYIQ_AUoAXoECAEQAw&biw=1920&bih=937#imgrc=Rm5ReKnHhzM44M] and colormind (using #ccc to generate a palette)[http://colormind.io/bootstrap/] are:
-  - Light Shades - #EEE (background for Light theme / text for Dark theme)
-  - Light Accent - #8A6C8F (buttons on Dark theme)
-  - Main brand colour - #CCC
-  - Dark accent - #969ABF (buttons on Light theme)
-  - Dark shades - #333 (background for Dark theme / text for Light theme)
+- The main colours for the three themes were:
+  - Bright, generated by uploading [a picture from Pexels](\docs\other\bright.jpg\) to coolors (https://coolors.co/291420-adbd89-eac7ae-63183c-dddca6)
+    - #DDDCA6 Pale Spring Bud - Background colour
+    - #ADBD89 Olivine - Header and footer background colour
+    - #EAC7AE Desert Sand - Navigation buttons on landing page 
+    - #291420 Dark Purple - Header text
+    - #63183C Tyrian Purple - Content text
+    - #FFF White - puzzle and timer background
+    - Snapshot of palette images can be viewed [here](docs\other\color-palette_bright.png\)
+    - Attribution: [Photo by Pixabay from Pexels](https://www.pexels.com/photo/butterfly-perched-on-flower-462118/)
+    
+  - Light, generated by uploading [a picture from Pexels](\docs\other\light.jpg\) to coolors (https://coolors.co/ffffff-f7f1ff-decdf5-656176-534d56)
+    - #F7F1FF Magnolia - Background colour and Content text
+    - #DECDF5 Thistle - Header and footer background colour
+    - #656176 Old Lavendar - Navigation buttons on landing page 
+    - #534D56 Dark Liver - Header text
+    - #FFF White - puzzle and timer background
+    - Snapshot of palette images can be viewed [here](docs\other\color-palette_light.png\)
+    - Attribution: [Photo by Pixabay from Pexels]https://www.pexels.com/photo/pink-and-purple-flower-field-262713/)
 
-- Snapshot of palette images can be viewed [here](docs\other\color-palette.png) and [here](docs\other\color-palette_(ccc).png).
+  - Dark, generated by uploading [a picture from Pexels](\docs\other\dark.jpg\) to coolors (https://coolors.co/4f6073-eeeeee-a8c4c3-3d4b59-60848b)
+    - #3D4B59 Charcoal - Background colour
+    - #4F6073 Black Coral - Header and footer background colour
+    - #EEE Cultured - Navigation buttons on landing page, puzzle and timer background
+    - #534D56 Dark Liver - Header and Content text
+    - #60848B Steel Teal - Puzzle input cells
+    - Snapshot of palette images can be viewed [here](docs\other\color-palette_dark.png\)
+    - Attribution: [Photo by Pixabay from Pexels](https://www.pexels.com/photo/close-up-of-leaf-326055/)
 
 ### Typography
 
@@ -112,44 +185,17 @@ This website was created for Sudoku enthusiasts, offering an opportunity to impr
 
 ### Imagery
 
-- I opted for a simple background on the landing page because I wanted it to be more of an interactive "navigation tool".
+- I opted for a simple background on the because the puzzle grid is already quite busy and a busy background would add unnecessary distraction.
 
-- Since the majority of time is expected to be spent on the puzzle page, I selected background images for behind the page. The puzzle is quite plain, and adding the background is a nice way to passively engage the site user and leave them with a positive experience of the website. I opted for a more nature-focused theme, representing calm and beauty.
+# 2 Technologies Used
 
-  - Background - Dark theme: [Close Up of Leaf](https://www.pexels.com/photo/close-up-of-leaf-326055/)
-  - Background - Colourful theme: [Butterfly Perched on Flower](https://www.pexels.com/photo/butterfly-perched-on-flower-462118/)
-  - Background - Light theme: [Pink and Purple Flower Field](https://www.pexels.com/photo/pink-and-purple-flower-field-262713/)
-
-## 1.4 Structure
-
-- 
-
-## 1.5 Wireframes
-
-- Home page - [view](docs\wireframes\home.png)
-- Game page - [view](docs\wireframes\game.png)
-- Rules page - [view](docs\wireframes\rules.png)
-
-# 2. Features
-
-## 2.1 Existing Features
-
-- Responsive on all device sizes
-- Interactive elements
-
-## 2.2 Features Left to Implement
-
-- Difficult levels
-
-# 3 Technologies Used
-
-## 3.1 Language Used
+## 2.1 Language Used
 
 - [HTML 5](https://en.wikipedia.org/wiki/HTML5)
 - [CSS](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
 - [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
 
-## 3.2 Frameworks, Libraries & Programs Used
+## 2.2 Frameworks, Libraries & Programs Used
 
 ### - [Bootstrap 5:](https://getbootstrap.com/docs/5.0/getting-started/introduction/) <!-- omit in toc -->
 
@@ -188,9 +234,9 @@ This website was created for Sudoku enthusiasts, offering an opportunity to impr
 
 - Used to create mockups for README file.
 
-# 5. Deployment
+# 4. Deployment
 
-## 5.1. GitHub Pages
+## 4.1. GitHub Pages
 
 The project was deployed to GitHub Pages as follows:
 
@@ -202,7 +248,7 @@ The project was deployed to GitHub Pages as follows:
 5. The page refreshes automatically.
 6. Scroll to "Your site is published at..." for the puslished site link in the "GitHub Pages" section.
 
-## 5.2. Forking the GitHub Repository
+## 4.2. Forking the GitHub Repository
 
 A fork is a copy of the repository, allowing you to experiment with changes without affecting the original project.
 
@@ -213,7 +259,7 @@ A fork is a copy of the repository, allowing you to experiment with changes with
 
 Alternatively, click [here](https://docs.github.com/en/github/getting-started-with-github/quickstart/fork-a-repo) for a guide to fork a repository.
 
-## 5.3. Making a Local Clone
+## 4.3. Making a Local Clone
 
 A clone allows you to create a local copy of a repository on your computer and sync between your computer and the GitHub repository.
 
@@ -226,15 +272,15 @@ A clone allows you to create a local copy of a repository on your computer and s
 
 Alternatively, click [here](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository-from-github/cloning-a-repository) for a guide to clone a repository.
 
-# 6. Credits
+# 5. Credits
 
-## 6.1. Code
+## 5.1. Code
 
 - Bootstrap 5: Bootstrap Library used to make the site responsive using the Bootstrap Grid System
 - W3schools.com used for making changes to formatting and customising Bootstrap content used.
 - FreeCodeCamp for guidance on using flexbox for page layout, [here](https://www.freecodecamp.org/news/learn-flexbox-build-5-layouts/)
 
-## 6.2. Content
+## 5.2. Content
 - Rules page:
   - Sudoku rules and solve approach from [here](https://masteringsudoku.com/sudoku-rules-beginners/)
 - Contact page:
@@ -242,10 +288,10 @@ Alternatively, click [here](https://docs.github.com/en/github/creating-cloning-a
   - Address randomly generated from [here](https://www.fakeaddressgenerator.com/World/Netherlands_address_generator)
   - Guidance on how to embed Google Maps on website from [here](https://www.geeksforgeeks.org/how-to-add-google-map-inside-html-page-without-using-api-key/)
 
-## 6.3. Media
+## 5.3. Media
 
 -
 
-## 6.4. Acknowledgements
+## 5.4. Acknowledgements
 
 - 
