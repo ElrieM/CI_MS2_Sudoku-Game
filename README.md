@@ -19,15 +19,19 @@ This website hosts Sudoku puzzles to complete within a fixed time, or to time ho
       - [Existing Features](#existing-features)
       - [Features Left to Implement](#features-left-to-implement)
   - [1.3 Structure Plane](#13-structure-plane)
-    - [1.3.1 Wireframes](#131-wireframes)
+    - [Site Map](#site-map)
   - [1.4 Skeleton Plane](#14-skeleton-plane)
+    - [1.4.1 Navigation](#141-navigation)
+    - [1.4.2 Wireframes](#142-wireframes)
   - [1.5 Surface Plane](#15-surface-plane)
-    - [Colour Scheme](#colour-scheme)
+    - [Colour scheme](#colour-scheme)
     - [Typography](#typography)
     - [Imagery](#imagery)
 - [2 Technologies Used](#2-technologies-used)
   - [2.1 Language Used](#21-language-used)
   - [2.2 Frameworks, Libraries & Programs Used](#22-frameworks-libraries--programs-used)
+- [3. Testing](#3-testing)
+      - [Click here to go to testing](#click-here-to-go-to-testing)
 - [4. Deployment](#4-deployment)
   - [4.1. GitHub Pages](#41-github-pages)
   - [4.2. Forking the GitHub Repository](#42-forking-the-github-repository)
@@ -128,23 +132,29 @@ This website was created for Sudoku enthusiasts, offering an opportunity to impr
 
 ## 1.3 Structure Plane
 
-1.3.1 Site Map
+### Site Map
 
-- Landing page to act as main menu.
+- Landing page to act as main menu
 - Return to landing page, settings and contact form can be accessed from all pages
 - Schematic website flow can be seen [here](assets/../docs/other/flow.png)
 
-### 1.3.1 Wireframes
+## 1.4 Skeleton Plane
+
+### 1.4.1 Navigation
+
+- Landing page navigates to Practice and Challenge pages, and Rules page.
+- Practice, Challenge and Rules pages navigate to landing page, with settings and contact page accessible from header and footer.
+
+### 1.4.2 Wireframes
 
 - Home / Landing page - [view](docs\wireframes\home.png)
-- Game page - [view](docs\wireframes\game.png)
+- Game (practice & challenge) page - [view](docs\wireframes\game.png)
 - Rules page - [view](docs\wireframes\rules.png)
-
-## 1.4 Skeleton Plane
+- Contact page - [view](docs\wireframes\contact.png)
 
 ## 1.5 Surface Plane
 
-### Colour Scheme
+### Colour scheme
 
 - For the colour scheme, I wanted to keep the colour schemes simple due to the nature of the game. 
 
@@ -197,7 +207,7 @@ This website was created for Sudoku enthusiasts, offering an opportunity to impr
 
 ## 2.2 Frameworks, Libraries & Programs Used
 
-### - [Bootstrap 5:](https://getbootstrap.com/docs/5.0/getting-started/introduction/) <!-- omit in toc -->
+### - [Bootstrap 5:](https://getbootstrap.com/docs/5.1/getting-started/introduction/) <!-- omit in toc -->
 
 - Bootstrap was used to assist with the responsiveness and styling of the website:
   - Horizontal alignment navs & tabs used for navbar
@@ -212,7 +222,7 @@ This website was created for Sudoku enthusiasts, offering an opportunity to impr
 
 ### - [jQuery:](https://jquery.com/) <!-- omit in toc -->
 
-- jQuery in conjunction with Bootstrap make the navbar, modal, accordion and carousel responsive.
+- jQuery in conjunction with Bootstrap make the navbar and modal responsive.
 
 ### - [Git:](https://git-scm.com/) <!-- omit in toc -->
 
@@ -233,6 +243,10 @@ This website was created for Sudoku enthusiasts, offering an opportunity to impr
 ### - [Am I Responsive:](http://ami.responsivedesign.is/) <!-- omit in toc -->
 
 - Used to create mockups for README file.
+
+# 3. Testing
+
+#### [Click here to go to testing](TESTING.md)
 
 # 4. Deployment
 
@@ -281,16 +295,15 @@ Alternatively, click [here](https://docs.github.com/en/github/creating-cloning-a
 - FreeCodeCamp for guidance on using flexbox for page layout, [here](https://www.freecodecamp.org/news/learn-flexbox-build-5-layouts/)
 
 ## 5.2. Content
+  - Created favicon from logo using https://www.favicon.cc/?
 - Rules page:
   - Sudoku rules and solve approach from [here](https://masteringsudoku.com/sudoku-rules-beginners/)
 - Contact page:
-  - Phone number, email address and WhatsApp contact numbers are fictional.
-  - Address randomly generated from [here](https://www.fakeaddressgenerator.com/World/Netherlands_address_generator)
-  - Guidance on how to embed Google Maps on website from [here](https://www.geeksforgeeks.org/how-to-add-google-map-inside-html-page-without-using-api-key/)
+
 
 ## 5.3. Media
 
--
+- 
 
 ## 5.4. Acknowledgements
 

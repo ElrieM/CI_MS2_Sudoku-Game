@@ -15,32 +15,19 @@
         integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
     <!-- CSS only -->
     <link rel="stylesheet" href="assets/css/style.css">
+    <!-- jQuery -->
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <!--- Theme switch CSS -->
     <link rel="stylesheet" id="switcher-id" href="">
-    <script src="assets/js/themes.js"></script>
     <title>SUDOKU TIME | Contact</title>
+    <!-- emailJS -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
     <script type="text/javascript">
         (function () {
             // https://dashboard.emailjs.com/admin/integration
             emailjs.init('user_mr0K8kcbIy3rrGRuzg2V6');
         })();
-    </script>
-    <script type="text/javascript">
-        window.onload = function () {
-            document.getElementById('contact-form').addEventListener('submit', function (event) {
-                event.preventDefault();
-                // generate a five digit number for the contact_number variable
-                this.contact_number.value = Math.random() * 100000 | 0;
-                // these IDs from the previous steps
-                emailjs.sendForm('Sudoku', 'MS2-Contact-Form', this)
-                    .then(function () {
-                        console.log('SUCCESS!');
-                    }, function (error) {
-                        console.log('FAILED...', error);
-                    });
-            });
-        }
     </script>
 </head>
 
@@ -62,38 +49,38 @@
     <!-- Contact form section -->
     <main class="flex-shrink-0" id="contact-page">
         <div class="container" id="contact-wrapper">
-            <!-- Form adapted from Bootstrap 5 (https://getbootstrap.com/docs/5.1/forms/layout/) -->
-            <div id="contact-heading">
-                <h2 class="mt-3 text-center fs-2">Contact</h2>
+        <!-- Form adapted from Bootstrap 5 (https://getbootstrap.com/docs/5.1/forms/layout/) -->
+    <div id="contact-heading">
+        <h2 class="mt-3 text-center fs-2">Contact</h2>
+    </div>
+    <form id="contact-form">
+        <!-- Contact name -->
+        <div class="row mb-3">
+            <div class="col-12">
+                <label for="user_name" class="col-sm-2 col-form-label">Name</label>
+                <input type="text" class="form-control" id="user_name" name="user_name">
             </div>
-            <form id="contact-form">
-                <!-- Contact name -->
-                <div class="row mb-3">
-                    <div class="col-12">
-                        <label for="user_name" class="col-sm-2 col-form-label">Name</label>
-                        <input type="text" class="form-control" id="user_name" name="user_name">
-                    </div>
-                </div>
-                <!-- Contact email address -->
-                <div class="row mb-3">
-                    <div class="col-12">
-                        <label for="user_email" class="col-sm-2 col-form-label">Email</label>
-                        <input type="email" class="form-control" id="user_email" name="user_email">
-                    </div>
-                </div>
-                <!-- Contact message -->
-                <div class="row mb-3">
-                    <div class="col-12">
-                        <labelfor="user_message" class="col-sm-2 col-form-label">Message</label>
-                            <textarea class="form-control" aria-label="With textarea" name="user_message"
-                                id="message-block"></textarea>
-                    </div>
-                </div>
-                <!-- Contact submit form -->
-                <div class="col-12">
-                    <input type="submit" value="Send" class="btn btn-info">
-                </div>
-            </form>
+        </div>
+        <!-- Contact email address -->
+        <div class="row mb-3">
+            <div class="col-12">
+                <label for="user_email" class="col-sm-2 col-form-label">Email</label>
+                <input type="email" class="form-control" id="user_email" name="user_email">
+            </div>
+        </div>
+        <!-- Contact message -->
+        <div class="row mb-3">
+            <div class="col-12">
+                <labelfor="user_message" class="col-sm-2 col-form-label">Message</label>
+                    <textarea class="form-control" aria-label="With textarea" name="user_message"
+                        id="message-block"></textarea>
+            </div>
+        </div>
+        <!-- Contact submit form -->
+        <div class="col-12">
+            <input type="submit" value="Send" class="btn btn-info">
+        </div>
+    </form>
         </div>
     </main>
     <!-- Page footer -->
@@ -137,6 +124,8 @@
     </script>
     </script>
     <script src="assets/js/buttons.js"></script>
+    <script src="assets/js/themes.js"></script>
+    <script src="assets/js/email.js"></script>
 </body>
 
 </html>
