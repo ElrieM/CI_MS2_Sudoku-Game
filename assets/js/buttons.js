@@ -11,7 +11,6 @@ function runChallenge() {
     window.location.href = 'challenge.html';
 }
 
-
 var solveModal = document.getElementById('solveModal');
 var continueBtn = document.getElementById('continue-btn');
 var exitBtn = document.getElementById('exit-btn');
