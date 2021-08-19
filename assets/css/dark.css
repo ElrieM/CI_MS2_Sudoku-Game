@@ -92,15 +92,16 @@ footer i {
 
 .btn-info {
   color: var(--primary-color);
-  background-color: var(--bs-info);
+  background-color: var(--header-text);
   border-color: #50666a;
 }
 
 .btn-info:hover,
-.btn-info:focus {
-  color: var(--primary-color);
-  background-color: var(--bs-info);
-  border-color: #50666a;
+.btn-info:focus,
+.btn-info:active {
+  color: var(--header-text);
+  background-color: var(--header-back);
+  border-color: #4a6a70;
   box-shadow: unset;
 }
 

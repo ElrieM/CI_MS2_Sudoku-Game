@@ -104,8 +104,8 @@ footer i {
 .btn-info:focus,
 .btn-info:active {
   color: var(--back-color);
-  background-color: #4f5b33a6;
-  border-color: var(--header-text);
+  background-color: var(--header-text);
+  border-color: var(--header-back);
   box-shadow: unset;
 }
 
