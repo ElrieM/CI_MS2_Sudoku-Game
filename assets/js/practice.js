@@ -26,11 +26,9 @@ document.getElementById("newButton").addEventListener("click", function () {
 document.getElementById("solveButton").addEventListener("click", function () {
     displaySolvedGrid(); // Displays solved game grid
     setTimeout(function () {
-        practiceGame(); // Generates new game
-        displayPracticeGrid(); // Displays puzzle with blank cells for new game
         resetTimer(); // Resets timer to start from nil
         solveModal.style.display = "block";
-    }, 2000);
+    }, 100);
 });
 
 // Restart game button: creates new puzzle and resets stopwatch timer
@@ -201,7 +199,7 @@ function displaySolvedGrid() {
     displayGridSolution = solvedGrid;
 
     for (i = 1; i < 10; i++) { // Box number
-        let solBox = document.getElementById(`box-${i}`);
+        let solBox = document.getElementById(`solBox-${i}`);
         solBox.innerHTML = ""; // Clears previous grid
 
         // Sets value of row based on box
