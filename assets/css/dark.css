@@ -21,6 +21,16 @@ footer,
   color: var(--header-text);
 }
 
+.navbar-light .navbar-nav .nav-link.active,
+.navbar-light .navbar-nav .show>.nav-link {
+  color: var(--header-text);
+  background-color: var(--header-back);
+}
+
+.navbar-light .navbar-nav .nav-link{
+  color: var(--primary-color);
+}
+
 .offcanvas-body {
   background-color: var(--back-color);
   color: var(--primary-color);
@@ -38,12 +48,12 @@ footer i {
   color: var(--header-text);
 }
 
-.card {
+.nav-button  {
   background-color: var(--primary-color);
   color: var(--back-color);
 }
 
-.card:hover {
+.nav-button :hover {
   background-color: rgb(152, 152, 152);
 }
 

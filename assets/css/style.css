@@ -123,11 +123,14 @@ main.flex-shrink-0 {
     margin-right: 5%;
 }
 
-.card {
-    height: 45vh;
-    padding-top: 25%;
-    padding-bottom: 25%;
-    cursor: pointer;
+.nav-button  {
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+
+.col-lg-4 {
+    width: 31%;
+    margin: 1%;
 }
 
 .fs-1 {
@@ -152,19 +155,23 @@ main.flex-shrink-0 {
         margin-right: 5%;
     }
 
-    .card {
-        margin-top: 3vh;
-        padding-top: 2.5vh;
-        padding-bottom: 2.5vh;
-        height: 18vh;
+    .nav-button  {
+        padding-top: auto;
+    }
+
+    .col-lg-4 {
+        width: 95%;
+        margin-left: auto;
+        margin-right: auto;
+        height: 19vh;
     }
 
     .fs-1 {
-        font-size: calc(2rem + 1.5vw) !important;
+        font-size: calc(1.5rem + 1.5vw) !important;
     }
 
     .fs-2 {
-        font-size: calc(1.5rem + 2vw) !important;
+        font-size: calc(1rem + 2vw) !important;
     }
 
     .fs-3 {
@@ -175,12 +182,14 @@ main.flex-shrink-0 {
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
     /* ---- Tablet ---- */
+    #buttons-container {
+        margin-top: auto;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
 
-    .card {
-        margin-top: 1em;
-        padding-top: 1rem;
-        padding-bottom: 1rem;
-        height: 20vh;
+    .nav-button  {
+        width: 98%;
     }
 
     .fs-1 {
@@ -206,10 +215,9 @@ main.flex-shrink-0 {
         margin-right: 5%;
     }
 
-    .card {
-        padding-top: 25%;
-        padding-bottom: 25%;
-        height: 45vh;
+    .nav-button {
+        padding-top: 10%;
+        padding-bottom: 10%;
     }
 
     .fs-1 {

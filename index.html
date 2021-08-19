@@ -23,64 +23,91 @@
 <body class="d-flex flex-column">
     <!-- Page header -->
     <header>
+        <!-- Adapted from https://getbootstrap.com/docs/5.1/components/navbar/#responsive-behaviors -->
         <nav class="navbar sticky-top navbar-light">
-            <div class="container">
-                <a class="navbar-brand" href="index.html#">
-                    <img src="assets/images/logo.png" alt="logo" width="100" height="100">
+            <div class="container-fluid">
+                <a class="navbar-brand disabled" href="index.html">
+                    <img src="assets/images/logo.png" alt="Return home" aria-label="Home" width="100" height="100">
                 </a>
-                <h1>Sudoku Time</h1>
-                <h2>Home</h2>
+                <h1 class="navbar-text">Sudoku Time</h1>
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+                    aria-labelledby="offcanvasNavbarLabel">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+                        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                            aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" aria-label="Practice game" href="practice.html">Practice</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" aria-label="Challenge game" href="challenge.html">Challenge</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" aria-label="Rules" href="rules.html">Rules</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
             </div>
         </nav>
     </header>
 
     <!-- Content section -->
     <main class="flex-shrink-0">
+
         <!-- Bootstrap 5 for website layout grid https://getbootstrap.com/docs/5.1/layout/grid/#row-columns -->
         <div class="container-flex" id="buttons-container">
             <div class="row">
-                <div id="btn-practice" class="col-lg-4 d-grid gap-3 mx-auto">
-                    <!-- Card component using Bootstrap 5 https://getbootstrap.com/docs/5.1/components/card/ -->
-                    <div class="card text-center" onclick="runPractice()">
-                        <!-- Pencil icon, representing Practice, from FontAwesome https://fontawesome.com/v5.15/icons/pencil-alt?style=solid-->
-                        <h2 class="fs-1"><i class="fas fa-pencil-alt nav-page"></i></h2>
-                        <h2 class="fs-2">Practice</h2>
-                    </div>
-                </div>
-                <div id="btn-challenge" class="col-lg-4 d-grid gap-3 mx-auto">
-                    <!-- Card component using Bootstrap 5 https://getbootstrap.com/docs/5.1/components/card/ -->
-                    <div class="card text-center" onclick="runChallenge()">
-                        <!-- Trophy icon, representing Challenge, from FontAwesome https://fontawesome.com/v5.15/icons/trophy?style=solid-->
-                        <h2 class="fs-1"><i class="fas fa-trophy nav-page"></i></h2>
-                        <h2 class="fs-2">Challenge</h2>
-                    </div>
-                </div>
-                <div id="btn-rules" class="col-lg-4 d-grid gap-3 mx-auto">
-                    <!-- Card component using Bootstrap 5 https://getbootstrap.com/docs/5.1/components/card/ -->
-                    <div class="card text-center" onclick="window.location.href = 'rules.html';">
-                        <!-- Book icon, representing Rules, from FontAwesome https://fontawesome.com/v5.15/icons/book?style=solid-->
-                        <h2 class="fs-1"><i class="fas fa-book nav-page"></i></h2>
-                        <h2 class="fs-2">Rules</h2>
-                    </div>
-                </div>
+                <button id="btn-practice" class="nav-button col-lg-4 d-grid text-center" onclick="runPractice()">
+                    <!-- Pencil icon, representing Practice, from FontAwesome https://fontawesome.com/v5.15/icons/pencil-alt?style=solid-->
+                    <h2 class="fs-1" aria-label="Practice game button">
+                        <i class="fas fa-pencil-alt nav-page"></i>
+                    </h2>
+                    <h2 class="fs-2">Practice</h2>
+                </button>
+                <button id="btn-challenge" class="nav-button col-lg-4 d-grid text-center" onclick="runChallenge()">
+                    <!-- Trophy icon, representing Challenge, from FontAwesome https://fontawesome.com/v5.15/icons/trophy?style=solid-->
+                    <h2 class="fs-1" aria-label="Challenge game button"><i class="fas fa-trophy nav-page"></i></h2>
+                    <h2 class="fs-2">Challenge</h2>
+                </button>
+                <button id="btn-rules" class="nav-button col-lg-4 d-grid text-center"
+                    onclick="window.location.href = 'rules.html';">
+                    <!-- Book icon, representing Rules, from FontAwesome https://fontawesome.com/v5.15/icons/book?style=solid-->
+                    <h2 class="fs-1"><i class="fas fa-book nav-page"></i></h2>
+                    <h2 class="fs-2" aria-label="Rules button">Rules</h2>
+                </button>
             </div>
         </div>
     </main>
 
     <!-- Page footer -->
-    <footer class="footer mt-auto py-2">
+    <footer class=" footer mt-auto py-2">
         <!-- Bootstrap 5 navigation tabs https://getbootstrap.com/docs/5.1/components/navs-tabs/#fill-and-justify -->
         <div id="footer" class="container-flex">
-            <ul class="nav nav-fill disabled" aria-label="Home">
+            <ul class="nav nav-fill disabled">
                 <li class="nav-item fs-3">
-                    <a class="nav-link" aria-current="page" href="index.html"><i class="fas fa-home"></i></a>
+                    <a class="nav-link" aria-current="page" aria-label="Home" href="index.html"><i
+                            class="fas fa-home"></i></a>
                 </li>
                 <li class="nav-item fs-3">
-                    <a class="nav-link" data-bs-toggle="offcanvas" href="#offcanvasSettings" role="button"
-                        aria-controls="offcanvasSettings"><i class="fas fa-cog"></i></a>
+                    <a class="nav-link" aria-label="Settings toggle" data-bs-toggle="offcanvas"
+                        href="#offcanvasSettings" role="button" aria-controls="offcanvasSettings"><i
+                            class="fas fa-cog"></i></a>
                 </li>
                 <li class="nav-item fs-3">
-                    <a class="nav-link" href="contact-form.html"><i class="fas fa-comment"></i></a>
+                    <a class="nav-link" aria-label="Contact page" href="contact-form.html"><i
+                            class="fas fa-comment"></i></a>
                 </li>
             </ul>
         </div>
@@ -89,16 +116,18 @@
         <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasSettings"
             aria-labelledby="offcanvasSettingsLabel">
             <div class="offcanvas-header">
-                <h4 class="offcanvas-title" id="offcanvasSettingsLabel">Settings</h4>
+                <h3 class="offcanvas-title" id="offcanvasSettingsLabel">Settings</h3>
                 <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
                     aria-label="Close"></button>
             </div>
             <div class="offcanvas-body">
                 <p>Ready to see things differently? Select a theme below:</p>
                 <div class="theme-switches">
-                    <div data-theme="light" class="switch" id="switch-1"><i class="fas fa-sun"></i></div>
+                    <div data-theme="light" class="switch" id="switch-1"><i class="fas fa-sun"></i>
+                    </div>
                     <div data-theme="bright" class="switch" id="switch-2"><i class="fas fa-leaf"></i></div>
-                    <div data-theme="dark" class="switch" id="switch-3"><i class="fas fa-moon"></i></div>
+                    <div data-theme="dark" class="switch" id="switch-3"><i class="fas fa-moon"></i>
+                    </div>
                 </div>
             </div>
         </div>
