@@ -31,6 +31,10 @@ footer,
   color: var(--primary-color);
 }
 
+.nav-button:hover {
+  background-color: var(--bs-primary);
+}
+
 .offcanvas-body {
   background-color: var(--back-color);
   color: var(--primary-color);

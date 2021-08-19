@@ -156,7 +156,7 @@ main.flex-shrink-0 {
     }
 
     .nav-button  {
-        padding-top: auto;
+        padding-top: initial;
     }
 
     .col-lg-4 {
@@ -551,7 +551,7 @@ textarea.form-control {
 
 /* Error page formatting */
 .img-fluid {
-    width: 300;
+    width: 300px;
     max-width: 100%;
     height: auto;
 }
@@ -561,7 +561,7 @@ textarea.form-control {
     /* ---- Mobile ---- */
 
     .img-fluid {
-        width: 240;
+        width: 240px;
     }
 }
 
@@ -583,7 +583,7 @@ a.btn.btn-link {
 
     /* ---- Tablet ---- */
     .img-fluid {
-        width: 400;
+        width: 400px;
     }
 
 }
@@ -592,6 +592,6 @@ a.btn.btn-link {
 
     /* ---- Large laptops and desktops ---- */
     .img-fluid {
-        width: 450;
+        width: 450px;
     }
 }
