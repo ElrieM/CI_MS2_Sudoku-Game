@@ -2,13 +2,75 @@
 
 window.onload = function () {
     timedGame();
+    displayTimedGrid();
     startCountdown();
 };
 
-var levelBlank = 20;
-var gameSeconds = 300;
 
+var close = document.getElementById('close-btn');
+var closeX = document.getElementById('close-top');
+var inputCells = [];
+
+// Game control buttons
+// New game button: creates new puzzle and resets stopwatch Countdown
+document.getElementById("newTButton").addEventListener("click", function () {
+    if (totalBlank == 0) {
+        totalBlank = levelBlank;
+    }
+    timedGame(); // generates game grid
+    displayTimedGrid(); // display game grid
+    resetCountdown(); // resets timer
+});
+
+// Solve game button: shows puzzle solution and resets stops stopwatch Countdown
+// Alert adapted from https://www.tutorialspoint.com/How-to-delay-a-JavaScript-function-call-using-JavaScript
+document.getElementById("solveTButton").addEventListener("click", function () {
+    displaySolvedTimedGrid();
+    setTimeout(function () {
+        resetCountdown();
+        solveModalTimed.style.display = "block";
+    }, 100);
+});
+
+// Restart game button: creates new puzzle and resets stopwatch Countdown
+document.getElementById("restartTButton").addEventListener("click", function () {
+    totalBlank = 0;
+    displayTimedGrid();
+});
+
+// Puzzle creating function Adapted from https://github.com/reymon359/web-experiments/blob/master/Sudoku%20Board%20Generator/script.js
+
+// Initial solved grid
+var solvedTimedGrid = [
+    [5, 3, 4, 6, 7, 8, 9, 1, 2],
+    [6, 7, 2, 1, 9, 5, 3, 4, 8],
+    [1, 9, 8, 3, 4, 2, 5, 6, 7],
+    [8, 5, 9, 7, 6, 1, 4, 2, 3],
+    [4, 2, 6, 8, 5, 3, 7, 9, 1],
+    [7, 1, 3, 9, 2, 4, 8, 5, 6],
+    [9, 6, 1, 5, 3, 7, 2, 8, 4],
+    [2, 8, 7, 4, 1, 9, 6, 2, 5],
+    [3, 4, 5, 2, 8, 6, 1, 7, 9]
+];
+
+// Initial play grid (same as solved grid until blank cells are removed)
+// Sets array form of 9 rows with 9 values each
+var playTimedGrid = [
+    [5, 3, 4, 6, 7, 8, 9, 1, 2],
+    [6, 7, 2, 1, 9, 5, 3, 4, 8],
+    [1, 9, 8, 3, 4, 2, 5, 6, 7],
+    [8, 5, 9, 7, 6, 1, 4, 2, 3],
+    [4, 2, 6, 8, 5, 3, 7, 9, 1],
+    [7, 1, 3, 9, 2, 4, 8, 5, 6],
+    [9, 6, 1, 5, 3, 7, 2, 8, 4],
+    [2, 8, 7, 4, 1, 9, 6, 2, 5],
+    [3, 4, 5, 2, 8, 6, 1, 7, 9]
+];
+
+var levelBlank = 20; // Initial game level set to easy
+var gameSeconds = 300; // Initial game seconds to play
 var level = document.getElementById('level-select');
+
 // Assign number of cells blank based on level selection
 // Adapted from https://stackoverflow.com/questions/37538217/how-to-get-addeventlistener-to-work-with-a-select-tag
 level.addEventListener("change", function () {
@@ -23,6 +85,12 @@ level.addEventListener("change", function () {
         levelSeconds = 900; // 15 minutes * 60 seconds
     }
     gameSeconds = levelSeconds;
+
+    if (totalBlank == undefined) {
+        totalBlank = 20;
+    }
+
+    localStorage.setItem('totalBlank', levelBlank);
     localStorage.setItem('gameSeconds', levelSeconds);
     resetCountdown();
 }, false);
@@ -30,73 +98,8 @@ level.addEventListener("change", function () {
 // Generates game for play, starting with solution and then creating grid for play with random blank cells
 function timedGame() {
 
-    totalBlank = levelBlank;
-
-    if (totalBlank == undefined) {
-        totalBlank = 20;
-    }
-
-    localStorage.setItem('totalBlank', levelBlank);
-
-    // New game button: creates new puzzle and resets stopwatch Countdown
-    document.getElementById("newButton").addEventListener("click", function () {
-        if (totalBlank == 0) {
-            totalBlank = levelBlank;
-        }
-        solveTimedGrid(solvedTimedGrid, playTimedGrid); // generates solution
-        createTimedGame(playTimedGrid); // generates game grid
-        displayTimedGrid(); // display game grid
-        resetCountdown(); // resets timer
-    });
-
-    // Solve game button: shows puzzle solution and resets stops stopwatch Countdown
-    // Alert adapted from https://www.tutorialspoint.com/How-to-delay-a-JavaScript-function-call-using-JavaScript
-    document.getElementById("solveButton").addEventListener("click", function () {
-        displaySolvedTimedGrid();
-        setTimeout(function () {
-            solveTimedGrid(solvedTimedGrid, playTimedGrid);
-            createTimedGame(playTimedGrid);
-            displayTimedGrid();
-            resetCountdown();
-            solveModal.style.display = "block";
-        }, 2000);
-    });
-
-    // Restart game button: creates new puzzle and resets stopwatch Countdown
-    document.getElementById("restartButton").addEventListener("click", function () {
-        totalBlank = 0;
-        console.log(totalBlank);
-        displayTimedGrid();
-    });
-
-    // Puzzle creating function Adapted from https://github.com/reymon359/web-experiments/blob/master/Sudoku%20Board%20Generator/script.js
-
-    // Initial solved grid
-    var solvedTimedGrid = [
-        [5, 3, 4, 6, 7, 8, 9, 1, 2],
-        [6, 7, 2, 1, 9, 5, 3, 4, 8],
-        [1, 9, 8, 3, 4, 2, 5, 6, 7],
-        [8, 5, 9, 7, 6, 1, 4, 2, 3],
-        [4, 2, 6, 8, 5, 3, 7, 9, 1],
-        [7, 1, 3, 9, 2, 4, 8, 5, 6],
-        [9, 6, 1, 5, 3, 7, 2, 8, 4],
-        [2, 8, 7, 4, 1, 9, 6, 2, 5],
-        [3, 4, 5, 2, 8, 6, 1, 7, 9]
-    ];
-
-    // Initial play grid (same as solved grid until blank cells are removed)
-    // Sets array form of 9 rows with 9 values each
-  var playTimedGrid = [
-        [5, 3, 4, 6, 7, 8, 9, 1, 2],
-        [6, 7, 2, 1, 9, 5, 3, 4, 8],
-        [1, 9, 8, 3, 4, 2, 5, 6, 7],
-        [8, 5, 9, 7, 6, 1, 4, 2, 3],
-        [4, 2, 6, 8, 5, 3, 7, 9, 1],
-        [7, 1, 3, 9, 2, 4, 8, 5, 6],
-        [9, 6, 1, 5, 3, 7, 2, 8, 4],
-        [2, 8, 7, 4, 1, 9, 6, 2, 5],
-        [3, 4, 5, 2, 8, 6, 1, 7, 9]
-    ];
+    totalBlank = levelBlank; // fetches number of blank cells to generate
+    console.log(totalBlank);
 
     // Create game grid solution
     function solveTimedGrid(solvedTimedGrid, playTimedGrid) {
@@ -136,108 +139,110 @@ function timedGame() {
         }
         return playTimedGrid;
     }
+    createTimedGame(playTimedGrid);
+    return solvedTimedGrid, playTimedGrid;
+}
 
-    // Display game grid, showing nil values as blank cells
-    function displayTimedGrid() {
+
+// Display game grid, showing nil values as blank cells
+function displayTimedGrid() {
         gridSolution = solvedTimedGrid;
         let inputCells = [];
 
-        dispTimedGrid = createTimedGame(playTimedGrid);
+    dispTimedGrid = playTimedGrid;
 
-        for (i = 1; i < 10; i++) { // Box number
-            let box = document.getElementById(`box-${i}`);
-            box.innerHTML = ""; // Clears previous grid
+    for (i = 1; i < 10; i++) { // Box number
+        let box = document.getElementById(`box-${i}`);
+        box.innerHTML = ""; // Clears previous grid
 
-            // Sets value of row based on box
-            if (i === 1 || i === 2 || i === 3) {
-                rowLower = 1 - 1;
-                rowUpper = 3;
-            } else if (i === 4 || i === 5 || i === 6) {
-                rowLower = 4 - 1;
-                rowUpper = 6;
-            } else if (i === 7 || i === 8 || i === 9) {
-                rowLower = 7 - 1;
-                rowUpper = 9;
-            }
-
-            // Sets value of column based on box
-            if (i === 1 || i === 4 || i === 7) {
-                colLower = 1 - 1;
-                colUpper = 3;
-            } else if (i === 2 || i === 5 || i === 8) {
-                colLower = 4 - 1;
-                colUpper = 6;
-            } else if (i === 3 || i === 6 || i === 9) {
-                colLower = 7 - 1;
-                colUpper = 9;
-            }
-
-            // Displays values in grid
-            for (let j = rowLower; j < rowUpper; j++) { // Row index
-                for (let k = colLower; k < colUpper; k++) { // Column index
-                    if (dispTimedGrid[j][k] === 0) {
-                        inputCells.push(gridSolution[j][k]);
-                        cellNum = ((i - 1) * 9) + (j % 3 * 3 + k % 3 + 1); // Reverse calculates to get cell number
-                        box.innerHTML += `
-                        <div class="cell">
-                        <input class="input-cell" id="cell-${cellNum}" name="inputVal-${cellNum}" type="number" step="1" min="1" max="9" maxlength="1"></div>`;
-                    } else {
-                        box.innerHTML += `<div class="cell"">${(dispTimedGrid[j][k])}</div>`;
-                    }
-                }
-            }
+        // Sets value of row based on box
+        if (i === 1 || i === 2 || i === 3) {
+            rowLower = 1 - 1;
+            rowUpper = 3;
+        } else if (i === 4 || i === 5 || i === 6) {
+            rowLower = 4 - 1;
+            rowUpper = 6;
+        } else if (i === 7 || i === 8 || i === 9) {
+            rowLower = 7 - 1;
+            rowUpper = 9;
         }
-    }
 
-    // Display timed grid on load
-    displayTimedGrid();
+        // Sets value of column based on box
+        if (i === 1 || i === 4 || i === 7) {
+            colLower = 1 - 1;
+            colUpper = 3;
+        } else if (i === 2 || i === 5 || i === 8) {
+            colLower = 4 - 1;
+            colUpper = 6;
+        } else if (i === 3 || i === 6 || i === 9) {
+            colLower = 7 - 1;
+            colUpper = 9;
+        }
 
-    // Display solved grid
-    function displaySolvedTimedGrid() {
-
-        displayTimedGridSolution = solvedTimedGrid;
-
-        for (i = 1; i < 10; i++) { // Box number
-            let solBox = document.getElementById(`box-${i}`);
-            solBox.innerHTML = ""; // Clears previous grid
-
-            // Sets value of row based on box
-            if (i === 1 || i === 2 || i === 3) {
-                rowLowerSol = 1 - 1;
-                rowUpperSol = 3;
-            } else if (i === 4 || i === 5 || i === 6) {
-                rowLowerSol = 4 - 1;
-                rowUpperSol = 6;
-            } else if (i === 7 || i === 8 || i === 9) {
-                rowLowerSol = 7 - 1;
-                rowUpperSol = 9;
-            }
-
-            // Sets value of column based on box
-            if (i === 1 || i === 4 || i === 7) {
-                colLowerSol = 1 - 1;
-                colUpperSol = 3;
-            } else if (i === 2 || i === 5 || i === 8) {
-                colLowerSol = 4 - 1;
-                colUpperSol = 6;
-            } else if (i === 3 || i === 6 || i === 9) {
-                colLowerSol = 7 - 1;
-                colUpperSol = 9;
-            }
-
-            // Displays values in grid
-            for (let j = rowLowerSol; j < rowUpperSol; j++) { // Row index
-                for (let k = colLowerSol; k < colUpperSol; k++) { // Column index
-                    if (displayTimedGridSolution[j][k] === 0) {
-                        solBox.innerHTML += `<div class="cell"></div>`;
-                    } else {
-                        solBox.innerHTML += `<div class="cell">${(displayTimedGridSolution[j][k])}</div>`;
-                    }
+        // Displays values in grid
+        for (let j = rowLower; j < rowUpper; j++) { // Row index
+            for (let k = colLower; k < colUpper; k++) { // Column index
+                if (dispTimedGrid[j][k] === 0) {
+                    inputCells.push(gridSolution[j][k]);
+                    cellNum = ((i - 1) * 9) + (j % 3 * 3 + k % 3 + 1); // Reverse calculates to get cell number
+                    box.innerHTML += `
+                        <div class="cell">
+                        <input class="input-cell" aria-label="row ${j} cell ${k}" id="cell-${cellNum}" name="inputVal-${cellNum}" type="number" step="1" min="1" max="9" maxlength="1"></div>`;
+                } else {
+                    box.innerHTML += `<div class="cell"">${(dispTimedGrid[j][k])}</div>`;
                 }
             }
         }
     }
 }
+
+// Display solved grid
+function displaySolvedTimedGrid() {
+
+    displayTimedGridSolution = solvedTimedGrid;
+
+    for (i = 1; i < 10; i++) { // Box number
+        let solBox = document.getElementById(`solTBox-${i}`);
+        solBox.innerHTML = ""; // Clears previous grid
+
+        // Sets value of row based on box
+        if (i === 1 || i === 2 || i === 3) {
+            rowLowerSol = 1 - 1;
+            rowUpperSol = 3;
+        } else if (i === 4 || i === 5 || i === 6) {
+            rowLowerSol = 4 - 1;
+            rowUpperSol = 6;
+        } else if (i === 7 || i === 8 || i === 9) {
+            rowLowerSol = 7 - 1;
+            rowUpperSol = 9;
+        }
+
+        // Sets value of column based on box
+        if (i === 1 || i === 4 || i === 7) {
+            colLowerSol = 1 - 1;
+            colUpperSol = 3;
+        } else if (i === 2 || i === 5 || i === 8) {
+            colLowerSol = 4 - 1;
+            colUpperSol = 6;
+        } else if (i === 3 || i === 6 || i === 9) {
+            colLowerSol = 7 - 1;
+            colUpperSol = 9;
+        }
+
+        // Displays values in grid
+        for (let j = rowLowerSol; j < rowUpperSol; j++) { // Row index
+            for (let k = colLowerSol; k < colUpperSol; k++) { // Column index
+                if (displayTimedGridSolution[j][k] === 0) {
+                    solBox.innerHTML += `<div class="cell"></div>`;
+                } else {
+                    solBox.innerHTML += `<div class="cell">${(displayTimedGridSolution[j][k])}</div>`;
+                }
+            }
+        }
+    }
+}
+
+console.log(solvedTimedGrid);
 
 // Countdown Countdown on loading page
 // Adapted from https://codepen.io/jmikey/pen/tFHrp 
@@ -249,7 +254,7 @@ var min;
 var sec;
 
 function countdownCycle() {
-    
+
     // converts remaining / game seconds into mm:ss
     min = Math.floor(secondsRemaining / 60);
     sec = secondsRemaining - (min * 60);
@@ -287,10 +292,10 @@ function resetCountdown() {
 
 // Solve modal, used in practice and challenge games
 
-var solveModal = document.getElementById('solveModal');
-var continueBtn = document.getElementById('continue-btn');
-var exitBtn = document.getElementById('exit-btn');
-var closeXSolve = document.getElementById('close-top-solve');
+var solveModal = document.getElementById('solveModalTimed');
+var continueBtn = document.getElementById('continue-timed-btn');
+var exitBtn = document.getElementById('exit-timed-btn');
+var closeXSolve = document.getElementById('close-top-timed-solve');
 
 // Modal for solve button, adapted from https://www.w3schools.com/howto/howto_css_modals.asp
 // When the user clicks on close button, close the modal
@@ -299,16 +304,21 @@ exitBtn.onclick = function () {
     window.location.href = 'index.html';
 };
 
+// Continue button, resets timer and generates new game
+continueBtn.onclick = function () {
+    solveModal.style.display = "none";
+    timedGame(); // Generates new puzzle
+    displayTimedGrid(); // Displays puzzle with blank cells for game
+};
+
 // When the user clicks on the close X at the top, close the modal
 closeXSolve.onclick = function () {
     solveModal.style.display = "none";
-    resetTimer();
 };
 
 // When the user clicks anywhere outside of the modal, close the modal
 window.onclick = function (event) {
     if (event.target == solveModal) {
         solveModal.style.display = "none";
-        resetTimer();
     }
 };

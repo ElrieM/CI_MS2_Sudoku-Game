@@ -93,9 +93,9 @@
                     </div>
                     <div class="button-container">
                         <h3>Game Controls</h3>
-                        <button class="btn btn-info" id="newButton">New</button>
-                        <button class="btn btn-info" id="solveButton">Solve</button>
-                        <button class="btn btn-info" id="restartButton">Restart</button>
+                        <button class="btn btn-info" id="newTButton">New</button>
+                        <button class="btn btn-info" id="solveTButton">Solve</button>
+                        <button class="btn btn-info" id="restartTButton">Restart</button>
                     </div>
                     <div class="level-select">
                         <!-- Adapted from https://getbootstrap.com/docs/5.1/forms/select/ -->
@@ -111,22 +111,35 @@
         </div>
 
         <!-- Modal for solve button -->
-        <div class="modal" id="solveModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-            aria-labelledby="solveModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal" id="solveModalTimed" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            aria-labelledby="solveModalTimedLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h2 class="modal-title" id="solveModalLabel">Game Ended</h2>
-                        <button id="close-top-solve" type="button" class="btn-close" data-bs-dismiss="modal"
+                        <h2 class="modal-title" id="solveModalTimedLabel">Game Ended</h2>
+                        <button id="close-top-timed-solve" type="button" class="btn-close" data-bs-dismiss="modal"
                             aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
+                        <div class="game-container">
+                            <div id="solved-timed-grid" class="game-grid">
+                                <div class="box" id="solTBox-1"></div>
+                                <div class="box" id="solTBox-2"></div>
+                                <div class="box" id="solTBox-3"></div>
+                                <div class="box" id="solTBox-4"></div>
+                                <div class="box" id="solTBox-5"></div>
+                                <div class="box" id="solTBox-6"></div>
+                                <div class="box" id="solTBox-7"></div>
+                                <div class="box" id="solTBox-8"></div>
+                                <div class="box" id="solTBox-9"></div>
+                            </div>
+                        </div>
                         <p class="text-center">Click anywhere to play another game</p>
                     </div>
                     <div class="modal-footer">
-                        <button id="continue-btn" type="button" class="btn btn-secondary"
+                        <button id="continue-timed-btn" type="button" class="btn btn-secondary"
                             data-bs-dismiss="modal">Continue</button>
-                        <button id="exit-btn" type="button" class="btn btn-secondary"
+                        <button id="exit-timed-btn" type="button" class="btn btn-secondary"
                             data-bs-dismiss="modal">Exit</button>
                     </div>
                 </div>
