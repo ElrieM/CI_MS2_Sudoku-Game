@@ -147,19 +147,25 @@
         </div>
     </main>
     <!-- Page footer -->
-    <footer class="footer mt-auto py-2">
+    <footer class=" footer mt-auto py-2">
         <!-- Bootstrap 5 navigation tabs https://getbootstrap.com/docs/5.1/components/navs-tabs/#fill-and-justify -->
         <div id="footer" class="container-flex">
             <ul class="nav nav-fill">
                 <li class="nav-item fs-3">
-                    <a class="nav-link" aria-current="page" href="index.html"><i class="fas fa-home"></i></a>
+                    <a class="nav-link" aria-label="Home" href="index.html#">
+                        <i class="fas fa-home"></i>
+                    </a>
                 </li>
                 <li class="nav-item fs-3">
-                    <a class="nav-link" data-bs-toggle="offcanvas" href="#offcanvasSettings" role="button"
-                        aria-controls="offcanvasSettings"><i class="fas fa-cog"></i></a>
+                    <a class="nav-link" aria-label="Settings toggle" data-bs-toggle="offcanvas"
+                        href="#offcanvasSettings" role="button" aria-controls="offcanvasSettings">
+                        <i class="fas fa-cog"></i>
+                    </a>
                 </li>
                 <li class="nav-item fs-3">
-                    <a class="nav-link" href="contact-form.html"><i class="fas fa-comment"></i></a>
+                    <a class="nav-link" aria-label="Contact page" href="contact-form.html">
+                        <i class="fas fa-comment"></i>
+                    </a>
                 </li>
             </ul>
         </div>
@@ -168,16 +174,18 @@
         <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasSettings"
             aria-labelledby="offcanvasSettingsLabel">
             <div class="offcanvas-header">
-                <h4 class="offcanvas-title" id="offcanvasSettingsLabel">Settings</h4>
+                <h2 class="offcanvas-title" id="offcanvasSettingsLabel">Settings</h2>
                 <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
                     aria-label="Close"></button>
             </div>
             <div class="offcanvas-body">
                 <p>Ready to see things differently? Select a theme below:</p>
                 <div class="theme-switches">
-                    <div data-theme="light" class="switch" id="switch-1"><i class="fas fa-sun"></i></div>
+                    <div data-theme="light" class="switch" id="switch-1"><i class="fas fa-sun"></i>
+                    </div>
                     <div data-theme="bright" class="switch" id="switch-2"><i class="fas fa-leaf"></i></div>
-                    <div data-theme="dark" class="switch" id="switch-3"><i class="fas fa-moon"></i></div>
+                    <div data-theme="dark" class="switch" id="switch-3"><i class="fas fa-moon"></i>
+                    </div>
                 </div>
             </div>
         </div>
