@@ -31,13 +31,13 @@
                 </a>
                 <h1 class="navbar-text">Sudoku Time</h1>
                 <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
-                    data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                    data-bs-target="#offcanvasNavbar" aria-label="Menu" aria-controls="offcanvasNavbar">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
                     aria-labelledby="offcanvasNavbarLabel">
                     <div class="offcanvas-header">
-                        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+                        <h2 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h2>
                         <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
                             aria-label="Close"></button>
                     </div>
@@ -68,27 +68,21 @@
         <!-- Bootstrap 5 for website layout grid https://getbootstrap.com/docs/5.1/layout/grid/#row-columns -->
         <div class="container-flex" id="buttons-container">
             <div class="row">
-                <button id="btn-practice" class="nav-button col-lg-4 d-grid text-center" onclick="runPractice()">
+                <button id="btn-practice" class="nav-button col-lg-4 d-grid text-center fs-2" onclick="runPractice()">
                     <!-- Pencil icon, representing Practice, from FontAwesome https://fontawesome.com/v5.15/icons/pencil-alt?style=solid-->
-                    <p class="fs-2" aria-label="Practice game button">
-                        <i class="fs-1 fas fa-pencil-alt nav-page"></i>
-                        <br>
-                        Practice</p>
+                    <i class="fs-1 fas fa-pencil-alt nav-page"></i>
+                    Practice
                 </button>
-                <button id="btn-challenge" class="nav-button col-lg-4 d-grid text-center" onclick="runChallenge()">
+                <button id="btn-challenge" class="nav-button col-lg-4 d-grid text-center fs-2" onclick="runChallenge()">
                     <!-- Trophy icon, representing Challenge, from FontAwesome https://fontawesome.com/v5.15/icons/trophy?style=solid-->
-                    <p class="fs-2" aria-label="Challenge game button">
-                        <i class="fs-1 fas fa-trophy nav-page"></i>
-                        <br>
-                        Challenge</p>
+                    <i class="fs-1 fas fa-trophy nav-page"></i>
+                    Challenge
                 </button>
-                <button id="btn-rules" class="nav-button col-lg-4 d-grid text-center"
+                <button id="btn-rules" class="nav-button col-lg-4 d-grid text-center fs-2"
                     onclick="window.location.href = 'rules.html';">
                     <!-- Book icon, representing Rules, from FontAwesome https://fontawesome.com/v5.15/icons/book?style=solid-->
-                    <p class="fs-2" aria-label="Rules button">
-                        <i class="fs-1 fas fa-book nav-page"></i>
-                        <br>
-                        Rules</p>
+                    <i class=" fs-1 fas fa-book nav-page"></i>
+                    Rules
                 </button>
             </div>
         </div>
@@ -119,7 +113,7 @@
         <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasSettings"
             aria-labelledby="offcanvasSettingsLabel">
             <div class="offcanvas-header">
-                <h3 class="offcanvas-title" id="offcanvasSettingsLabel">Settings</h3>
+                <h2 class="offcanvas-title" id="offcanvasSettingsLabel">Settings</h2>
                 <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
                     aria-label="Close"></button>
             </div>
