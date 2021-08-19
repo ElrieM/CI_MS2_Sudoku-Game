@@ -2,6 +2,15 @@
 
 /* ALL PAGES */
 /* Setting fonts */
+html {
+    min-height: 100vh;
+    height: 100vh;
+}
+
+body {
+    min-height: 100vh;
+}
+
 body,
 i {
     font-family: 'Raleway', sans-serif;
