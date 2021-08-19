@@ -185,7 +185,7 @@ function displayPracticeGrid() {
                 if (displayGrid[j][k] === 0) {
                     box.innerHTML += `
                         <div class="cell">
-                        <input class="input-cell" name="inputVal" id="inputVal" type="number" step="1" min="1" max="9" maxlength="1">
+                        <input class="input-cell" aria-label="row ${j} cell ${k}" name="inputVal" id="inputVal" type="number" step="1" min="1" max="9" maxlength="1">
                         </div>`;
                 } else {
                     box.innerHTML += `<div class="cell">${(displayGrid[j][k])}</div>`;
