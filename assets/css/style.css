@@ -448,6 +448,23 @@ https://rachelandrew.co.uk/archives/2018/04/27/grid-level-2-and-subgrid/ */
 
 }
 
+/* -------------------------------------------------- RULES PAGE */
+
+.rule-img {
+    width: 100%;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+    /* ---- Tablet ---- */
+
+
+    .col-md-12 {
+        width: 50%;
+        display: inline-flex;
+    }
+}
+
 /* -------------------------------------------------- CONTACT PAGE */
 
 /* Contact form formatting */
