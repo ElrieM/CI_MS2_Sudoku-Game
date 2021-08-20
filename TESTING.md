@@ -1,66 +1,87 @@
-# 4. Testing
+# 3. Testing
 
-## 4.1 Validator tools
+- The website was tested on Google Chrome, Firefox and Microsoft Edge.
+
+- The website was viewed on a variety of devices, including:
+
+| Name | Type | Browser | Version | Nature | 
+| --- | --- | --- | --- | --- |
+| iPhone Xs | Mobile | Safari | 14.1.2 | Physical |
+| iPhone 11s | Mobile | Safari | 14.1.2 | Physical |
+| iPhone 5/SE | Mobile | Chrome simulation | Chrome simulation | Emulator |
+| Galaxy Note 3 | Mobile | Chrome simulation | | Emulator |
+| iPad | Tablet | Chrome simulation | | Emulator |
+| Surface Duo | Tablet | Chrome simulation | | Emulator | 
+| Toshiba Satellite L850-F33V | Desktop | Chrome | | Physical |
+| Dell Inspiron 15 5515 with 24" Dell monitor | Desktop | Chrome | | Physical |
+| Dell Inspiron 15 5515 with 24" Dell monitor | Desktop | Firefox | 91.0.1 | Physical |
+| Dell Inspiron 15 5515 with 24" Dell monitor | Desktop | Microsoft Edge | 92.0.902.78 | Physical |
+
+- Friends and family were asked to review the site and documentation to point out bugs and /or user experience issues.
+
+- [3. Testing](#3-testing)
+  - [3.1 Manual testing](#31-manual-testing)
+    - [3.1.1 HTML - W3C Markup Validator](#311-html---w3c-markup-validator)
+    - [3.1.2 CSS - W3C CSS Validator](#312-css---w3c-css-validator)
+    - [3.1.3 Accessibility - WAVE Web Accessibility Evaluation Tool](#313-accessibility---wave-web-accessibility-evaluation-tool)
+    - [3.1.4 Performance - Chrome Lighthouse](#314-performance---chrome-lighthouse)
+    - [First Time Visitor Goals](#first-time-visitor-goals)
+    - [Returning Visitor Goals](#returning-visitor-goals)
+    - [Frequent User Goals](#frequent-user-goals)
+    - [Site Owner Goals](#site-owner-goals)
+      - [14. As the Site Owner, I want to inform students (existing and prospective) of upcoming events](#14-as-the-site-owner-i-want-to-inform-students-existing-and-prospective-of-upcoming-events)
+  - [3.2 Automated testing](#32-automated-testing)
+  - [4.4 Testing Bugs - Resolved](#44-testing-bugs---resolved)
+  - [4.5 Known Bugs](#45-known-bugs)
+
+## 3.1 Manual testing
 
 The following tools were used to validate every page of project to ensure there were no syntax errors in the project:
 
-- HTML - W3C Markup Validator
-  - Pages tested:
+### 3.1.1 HTML - W3C Markup Validator
+- Pages tested:
   
-  | Page | Result |
-  | --- | --- |
-  | Home | No errors |
-  | About | No errors |
-  | Classes | No errors |
-  | Schedule and Rates | No errors |
-  | Contact | No errors |
-  | Error (404) | No errors |
+| Page | Outcome | Link |
+| --- | --- | --- |
+| Home | No errors | [results](docs/testing/test-results/validator-tools/w3c_html/w3c-html_index.png) |
+| Practice | No errors | [results](docs/testing/test-results/validator-tools/w3c_html/w3c-html_practice.png) |
+| Challenge | No errors | [results](docs/testing/test-results/validator-tools/w3c_html/w3c-html_challenge.png) |
+| Rules | No errors | [results](docs/testing/test-results/validator-tools/w3c_html/w3c-html_rules.png) |
+| Contact | No errors | [results]() |
+| Error (404) | No errors | [results](docs/testing/test-results/validator-tools/w3c_html/w3c-html_404.png) |
   
-  - Report can be found [here](docs/readme/test-results/validator-tools/html-validation.pdf).
-  
-- CSS - W3C CSS Validator
+### 3.1.2 CSS - W3C CSS Validator
   - All errors / warnings relate to Bootstrap and Font Awesome.
   - Summary of result:
     - No errors or warnings from CSS style file unrelated to Bootstrap;
-    - Errors from Bootstrap 5.0 (unused / unrecognised errors); and
+    - Errors from Bootstrap 5.1 (unused / unrecognised errors); and
     - Errors from FontAwesome.
-  - Report can be found [here](docs/readme/test-results/validator-tools/css-validation.png).
+  - Report can be found [here](docs/testing/test-results/validator-tools/w3c_css/w3c-css.png).
   
-- Accessibility - WAVE Web Accessibility Evaluation Tool
-  - Pages tested:
+### 3.1.3 Accessibility - WAVE Web Accessibility Evaluation Tool
+- Pages tested:
   
-  | Page | Result - Errors | Result - Warnings |
-  | --- | --- | --- |
-  | Home | No errors | Alert for duplicate link |
-  | About | No errors | Alert for duplicate link |
-  | Classes | No errors | Alert for duplicate link |
-  | Schedule and Rates | No errors | i) Alert for duplicate link ii) Timetable and PDF |
-  | Contact | No errors | Alert for duplicate link |
-  | Error (404) | No errors | Alert for duplicate link |
-
-  - Summary of results:
-    - Alert on all pages for duplicate link (logo and home both go to home page). Ignored, user expectation that clicking on the Logo will lead back to landing / home page;
-    - Class Schedule, which uses a timetable and PDF download, flagged as potential problem. No changes made, schedule layout and sizing unlikely to cause reader errors from overlapping information and PDF is an optional download.
-  - Report can be found [here](docs/readme/test-results/validator-tools/wave-validation.pdf).
-  
-- Performance - Chrome Lighthouse
+| Page | Result - Errors | Result - Warnings | Link |
+| --- | --- | --- | --- |
+| Home | No errors | Alert for redundant link | [results](docs/testing/test-results/validator-tools/wave_accessibility/wave_index.png) |
+| Practice | No errors | Alert for redundant link | [results](docs/testing/test-results/validator-tools/wave_accessibility/wave_practice.png) |
+| Challenge | No errors | Alert for redundant link | [results](docs/testing/test-results/validator-tools/wave_accessibility/wave_challenge.png) |
+| Rules | No errors | Alert for redundant link | [results](docs/testing/test-results/validator-tools/wave_accessibility/wave_rules.png) |
+| Contact | No errors | Alert for redundant link | [results]() |
+| Error (404) | No errors | Alert for redundant link | [results](docs/testing/test-results/validator-tools/wave_accessibility/wave_404.png) |
+ 
+### 3.1.4 Performance - Chrome Lighthouse
   - Pages tested (mobile and desktop tested on each):
-    - Home;
-    - About;
-    - Classes;
-    - Schedule and Rates;
-    - Contact; and
-    - Error (404).
-  - Summary of results:
-    - Performance between 94 and 100;
-    - Accessibility between 97 and 100;
-    - Best Practices at 100;
-    - SEO between 98 and 100 on all pages except landing page;
-    - Landing page SEO score of 89 / 91 (desktop / mobile respectively) due to the signup block at the bottom of the screen not having a href target (links directly to modal block in banner).
-  - Report can be found [here](docs/readme/test-results/validator-tools/lighthouse-validation.pdf).
-
-## 4.2 Testing User Stories from User Experience (UX) Section
-
+    
+  | Page | Scores - Desktop | Scores - Mobile | Link |
+  | --- | --- | --- | --- |
+  | Home | Performance - 100, Accessibility - 100, Best Practices - 100, SEO - 100 | Performance - 97, Accessibility - 100, Best Practices - 100, SEO - 100 | [Desktop results](assets/testing/../../docs/testing/test-results/validator-tools/lighthouse/lighthouse_index.png), [Mobile results](assets/testing/../../docs/testing/test-results/validator-tools/lighthouse/lighthouse_index_mobile.png) |
+  | Practice | Performance - 100, Accessibility - 98, Best Practices - 100, SEO - 100 | Performance - 98, Accessibility - 96, Best Practices - 100, SEO - 95 | [Desktop results](assets/testing/../../docs/testing/test-results/validator-tools/lighthouse/lighthouse_practice.png), [Mobile results](assets/testing/../../docs/testing/test-results/validator-tools/lighthouse/lighthouse_practice_mobile.png) |
+  | Challenge |  Performance - 100, Accessibility - 100, Best Practices - 100, SEO - 100 | Performance - 98, Accessibility - 98, Best Practices - 100, SEO - 97 | [Desktop results](assets/testing/../../docs/testing/test-results/validator-tools/lighthouse/lighthouse_challenge.png), [Mobile results](assets/testing/../../docs/testing/test-results/validator-tools/lighthouse/lighthouse_challenge_mobile.png) |
+  | Rules | Performance - 100, Accessibility - 100, Best Practices - 100, SEO - 100 | Performance - 99, Accessibility - 100, Best Practices - 100, SEO - 100 | [Desktop results](assets/testing/../../docs/testing/test-results/validator-tools/lighthouse/lighthouse_rules.png), [Mobile results](assets/testing/../../docs/testing/test-results/validator-tools/lighthouse/lighthouse_rules_mobile.png) |
+  | Contact |  |  | [results]() |
+  | Error (404) | Performance - 99, Accessibility - 100, Best Practices - 100, SEO - 100 | Performance - 94, Accessibility - 100, Best Practices - 100, SEO - 100 | [Desktop results](assets/testing/../../docs/testing/test-results/validator-tools/lighthouse/lighthouse_404.png), [Mobile results](assets/testing/../../docs/testing/test-results/validator-tools/lighthouse/lighthouse_404_mobile.png) |
+  
 ### First Time Visitor Goals
 
 #### 1. As a First Time Visitor, I want to easily understand the main purpose of the site and learn more about the wellness centre. <!-- omit in toc -->
@@ -167,17 +188,7 @@ The following tools were used to validate every page of project to ensure there 
 |14.1) | Home page contains Upcoming Events section with events for the next 4 months (3 on tablet) | View Upcoming Events section on Home page, check layout and details all showing with no overlap | Events appearing in blocks under Upcoming Events heading at the bottom of the Home page, showing instructor, date and price | Tested in 7.1 of Test 7. Returning Visitor: <br><br> 4 events (inline on dektop, stacked in mobile) and 3 events (inline on tablet) showing all details and instructor image as expected | [Results](docs/readme/test-results/user-stories/returning/returning-7_1.png) |
 |14.2) | Button in Header (desktops) and subscribe banner on Home page to subscribe for newsletter to receive updates in inbox | Test functioning of signup  modal | Signup modal submits to Code Institute Form Dump | Tested in 7.3 of Test 7. Returning Visitor: <br><br> Form appears from button on all pages (desktop only) and home page banner link on all devices | [Results](docs/readme/test-results/user-stories/returning/returning-7_3.png) |
 
-## 4.3. Further Testing
-
-- The website was tested on Google Chrome, Internet Explorer and Microsoft Edge.
-- The website was viewed on a variety of devices, including:
-  - iPhone Xs,
-  - iPhone 11s,
-  - Lenovo ThinkPad P53,
-  - Toshiba Satellite L850-F33V,
-  - Dell Inspiron 15 5515 with 24" Dell monitor.
-- Significant testing was performed to ensure all pages linked correctly.
-- Friends and family were asked to review the site and documentation to point out bugs and /or user experience issues.
+## 3.2 Automated testing
 
 ## 4.4 Testing Bugs - Resolved
 
