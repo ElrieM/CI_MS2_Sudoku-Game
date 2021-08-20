@@ -32,7 +32,7 @@ footer,
 }
 
 .nav-button:hover {
-  background-color: var(--bs-primary);
+  background-color: var(--header-text);
 }
 
 .offcanvas-body {
@@ -55,10 +55,6 @@ footer i {
 .nav-button {
   background-color: var(--bs-info);
   color: var(--back-color);
-}
-
-.nav-button :hover {
-  background-color: #6561768c;
 }
 
 .input-cell {

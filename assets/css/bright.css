@@ -53,8 +53,8 @@ footer i {
   color: var(--primary-color);
 }
 
-.nav-button :hover {
-  background-color: #eac7ae65;
+.nav-button:hover {
+  background-color: var(--header-back);
 }
 
 .input-cell {
