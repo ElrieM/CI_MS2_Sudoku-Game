@@ -8,18 +8,14 @@ This website hosts Sudoku puzzles to complete within a fixed time, or to time ho
 
 - [1. User Experience (UX)](#1-user-experience-ux)
   - [1.1 Strategy Plane](#11-strategy-plane)
-    - [1.1.1 Target audience](#111-target-audience)
-    - [1.1.2 User Stories](#112-user-stories)
-      - [First Time Visitor Goals](#first-time-visitor-goals)
-      - [Returning / Frequent Visitor Goals](#returning--frequent-visitor-goals)
-      - [Site Owner Goals](#site-owner-goals)
+    - [Target audience](#target-audience)
   - [1.2 Scope Plane](#12-scope-plane)
     - [1.2.1 Requirements and functional specifications](#121-requirements-and-functional-specifications)
-    - [1.2.2 Features](#122-features)
-      - [Existing Features](#existing-features)
-      - [Features Left to Implement](#features-left-to-implement)
+    - [1.2.2 User Stories](#122-user-stories)
+      - [Site Visitor Goals](#site-visitor-goals)
+      - [Site Owner Goals](#site-owner-goals)
   - [1.3 Structure Plane](#13-structure-plane)
-    - [Site Map](#site-map)
+    - [Structure](#structure)
   - [1.4 Skeleton Plane](#14-skeleton-plane)
     - [1.4.1 Navigation](#141-navigation)
     - [1.4.2 Wireframes](#142-wireframes)
@@ -27,20 +23,23 @@ This website hosts Sudoku puzzles to complete within a fixed time, or to time ho
     - [Colour scheme](#colour-scheme)
     - [Typography](#typography)
     - [Imagery](#imagery)
-- [2 Technologies Used](#2-technologies-used)
+- [2. Technologies Used](#2-technologies-used)
   - [2.1 Language Used](#21-language-used)
   - [2.2 Frameworks, Libraries & Programs Used](#22-frameworks-libraries--programs-used)
-- [3. Testing](#3-testing)
+- [3. Features](#3-features)
+      - [3.1 Existing Features](#31-existing-features)
+      - [3.2 Features Left to Implement](#32-features-left-to-implement)
+- [4. Testing](#4-testing)
       - [Click here to go to testing](#click-here-to-go-to-testing)
-- [4. Deployment](#4-deployment)
-  - [4.1. GitHub Pages](#41-github-pages)
-  - [4.2. Forking the GitHub Repository](#42-forking-the-github-repository)
-  - [4.3. Making a Local Clone](#43-making-a-local-clone)
-- [5. Credits](#5-credits)
-  - [5.1. Code](#51-code)
-  - [5.2. Content](#52-content)
-  - [5.3. Media](#53-media)
-  - [5.4. Acknowledgements](#54-acknowledgements)
+- [5. Deployment](#5-deployment)
+  - [5.1. GitHub Pages](#51-github-pages)
+  - [5.2. Forking the GitHub Repository](#52-forking-the-github-repository)
+  - [5.3. Making a Local Clone](#53-making-a-local-clone)
+- [6. Credits](#6-credits)
+  - [6.1. Code](#61-code)
+  - [6.2. Content](#62-content)
+  - [6.3. Media](#63-media)
+  - [6.4. Acknowledgements](#64-acknowledgements)
 
 # 1. User Experience (UX)
 
@@ -48,48 +47,21 @@ This website hosts Sudoku puzzles to complete within a fixed time, or to time ho
 
 This website was created for Sudoku enthusiasts, offering an opportunity to improve puzzle completion times and the challenge of completing a puzzle within a fixed average completion time at easy, medium and difficult levels.
 
-### 1.1.1 Target audience
+### Target audience
 
 - New Sudoku players interested looking for a new hobby.
 - Returning palyers looking to improve their puzzle completion times and practice techniques.
 - Players who want to challenge themselves to complete a puzzle within a limited period of time.
-
-### 1.1.2 User Stories
-
-#### First Time Visitor Goals
-
-  1. As a First Time Visitor, As a Returning Visitor, I want to easily navigate from the landing page to the game (challenge / practice).
-  2. As a First Time Visitor, I want to have access to and learn the rules.
-  3. As a First Time Visitor, I want to view hints and tips on how best to approach the game.
-  4. As a First Time Visitor,I want to practice different puzzles to improve my completion times.
-  5. As a First Time Visitor,  I want to have access new puzzles on demand.
-  6. As a First Time Visitor, I want to see the solved puzzle if I get stuck.
-  
-#### Returning / Frequent Visitor Goals
-  
-  7. As a Returning / Frequent Visitor, I want to easily navigate from the landing page to the game (challenge / practice).
-  8. As a Returning / Frequent Visitor, I want to view hints and tips to improve my game completion times.
-  9. As a Returning / Frequent Visitor, I want to have access new puzzles on demand.
-  10. As a Returning / Frequent Visitor, I want to complete games with a time limit to compare my times to the average.
-  11. As a Returning / Frequent Visitor, I want to be able to change the background to my preference (dark / light / colourful).
-
-#### Site Owner Goals
-
-  12. As the Site Owner, I want to attract and retain users and ultimately replace their paper games. 
-  13. As the Site Owner, I want to make it easy and convenient for users to send suggestions for improvement or bug reports to a dedicated mailbox, thereby improving the chances of them returning.
 
 ## 1.2 Scope Plane
 
 ### 1.2.1 Requirements and functional specifications
 
 - Header and Footer
-  - Simple header with Logo that returns to landing page
-  - Footer with icons, navigates
-    -  Home (landing page) - best practice, 
-    -  Settings popover - change theme
-    -  Contact page - report bugs / suggestions or contact
-- Landing page
-  - Large and clearly visible buttons to navigate to practice game / challenge game / rules
+  - Simple header with Logo that returns to landing page and dropdown menu
+  - Hamburger menu on all device sizes
+  - Footer with icons, navigates to Home (landing page), Settings popover (change theme), Contact page (report bugs / suggestions or contact)
+- Landing page - Large and clearly visible buttons to navigate to practice game / challenge game / rules
 - Practice game page
   - Randomly generated puzzle, covering majority of page
   - Number input cells to select / type answers
@@ -103,40 +75,48 @@ This website was created for Sudoku enthusiasts, offering an opportunity to impr
 - Challenge game page
   - Randomly generated puzzle, covering majority of page
   - Number input cells to select / type answers
-  - Stopwatch timer to record time spent
+  - Countdowm timer to attempt completing the puzzle in average time
   - New button to generate new puzzle
   - Solve button to view solution, generate new puzzle or exit to landing page
   - Restart button to reset the board - time countdown continues, purpose is to remove inputs and try again
   - Level selector to change between easy, medium, or difficult (more or less cells missing)
+- Give users the option to customise website
 
-### 1.2.2 Features
+### 1.2.2 User Stories
 
-#### Existing Features
+#### Site Visitor Goals
 
-- Responsive on all device sizes
-- Interactive elements
-- Game set at different levels - easy, medium, difficult
-- Games randomly generated, with random cells left blank
-- Practice with stopwatch timer - records how long it takes to complete puzzle
-- Challenge with countdown timer - time limit to complete puzzle based on average time at that level
-- Puzzle solution to (self) compare against inputs
-- Rules with strategy for completion
-- Contact form to report bugs / make suggestions
+  1. As a Site Visitor, I want to easily navigate the website's pages from the header and footer.
+  2. As a Site Visitor, I want to have access to and learn the rules.
+  3. As a Site Visitor, I want to view hints and tips on how best to approach the game.
+  4. As a Site Visitor, I want to have access to new puzzles on demand.
+  5. As a Site Visitor, I want to practice different puzzles to improve my completion times.
+  6. As a Site Visitor, I want to complete games with a time limit to compare my times to the average.
+  7. As a Site Visitor, I want to see the solved puzzle if I get stuck.
+  8. As a Site Visitor, I want to be able to change the background to my preference (dark / light / colourful).
 
-#### Features Left to Implement
+#### Site Owner Goals
 
-- Puzzle for the day challenge, where site visitors can compete for better completion time
-- Scoreboard to store best scored times and levels of all visitors
-- Check inputs against solution
-- Save last 5 completion times and levels in practice game to track improvement
+  9. As the Site Owner, I want to make it easy and convenient for users to send suggestions for improvement or bug reports to a dedicated mailbox, thereby improving the chances of them returning.
+  10. As the Site Owner, I want to attract and retain users and ultimately replace their paper games. 
 
 ## 1.3 Structure Plane
 
-### Site Map
+### Structure
 
+The website consists of the following pages:
 - Landing page to act as main menu
-- Return to landing page, settings and contact form can be accessed from all pages
-- Schematic website flow can be seen [here](assets/../docs/other/flow.png)
+- Practice game page
+- Challenge game page
+- Rules page
+- Contact page
+- 404 error page
+- Header:
+  - Navigation button to all pages
+- Footer: 
+  - Return to landing page, settings and contact form
+ 
+Schematic website flow can be seen [here](assets/../docs/other/flow.png)
 
 ## 1.4 Skeleton Plane
 
@@ -197,7 +177,7 @@ This website was created for Sudoku enthusiasts, offering an opportunity to impr
 
 - I opted for a simple background on the because the puzzle grid is already quite busy and a busy background would add unnecessary distraction.
 
-# 2 Technologies Used
+# 2. Technologies Used
 
 ## 2.1 Language Used
 
@@ -244,13 +224,34 @@ This website was created for Sudoku enthusiasts, offering an opportunity to impr
 
 - Used to create mockups for README file.
 
-# 3. Testing
+# 3. Features
+
+#### 3.1 Existing Features
+
+- Responsive on all device sizes
+- Interactive elements
+- Game set at different levels - easy, medium, difficult
+- Games randomly generated, with random cells left blank
+- Practice with stopwatch timer - records how long it takes to complete puzzle
+- Challenge with countdown timer - time limit to complete puzzle based on average time at that level
+- Puzzle solution to (self) compare against inputs
+- Rules with strategy for completion
+- Contact form to report bugs / make suggestions
+
+#### 3.2 Features Left to Implement
+
+- Puzzle for the day challenge, where site visitors can compete for better completion time
+- Scoreboard to store best scored times and levels of all visitors
+- Check inputs against solution
+- Save last 5 completion times and levels in practice game to track improvement
+
+# 4. Testing
 
 #### [Click here to go to testing](TESTING.md)
 
-# 4. Deployment
+# 5. Deployment
 
-## 4.1. GitHub Pages
+## 5.1. GitHub Pages
 
 The project was deployed to GitHub Pages as follows:
 
@@ -262,7 +263,7 @@ The project was deployed to GitHub Pages as follows:
 5. The page refreshes automatically.
 6. Scroll to "Your site is published at..." for the puslished site link in the "GitHub Pages" section.
 
-## 4.2. Forking the GitHub Repository
+## 5.2. Forking the GitHub Repository
 
 A fork is a copy of the repository, allowing you to experiment with changes without affecting the original project.
 
@@ -273,7 +274,7 @@ A fork is a copy of the repository, allowing you to experiment with changes with
 
 Alternatively, click [here](https://docs.github.com/en/github/getting-started-with-github/quickstart/fork-a-repo) for a guide to fork a repository.
 
-## 4.3. Making a Local Clone
+## 5.3. Making a Local Clone
 
 A clone allows you to create a local copy of a repository on your computer and sync between your computer and the GitHub repository.
 
@@ -286,25 +287,25 @@ A clone allows you to create a local copy of a repository on your computer and s
 
 Alternatively, click [here](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository-from-github/cloning-a-repository) for a guide to clone a repository.
 
-# 5. Credits
+# 6. Credits
 
-## 5.1. Code
+## 6.1. Code
 
 - Bootstrap 5: Bootstrap Library used to make the site responsive using the Bootstrap Grid System
 - W3schools.com used for making changes to formatting and customising Bootstrap content used.
 - FreeCodeCamp for guidance on using flexbox for page layout, [here](https://www.freecodecamp.org/news/learn-flexbox-build-5-layouts/)
 
-## 5.2. Content
+## 6.2. Content
   - Created favicon from logo using https://www.favicon.cc/?
 - Rules page:
   - Sudoku rules and solve approach from [here](https://masteringsudoku.com/sudoku-rules-beginners/)
-- Contact page:
 
+## 6.3. Media
 
-## 5.3. Media
+- [Font Awesome](http://fontawesome.com)
 
-- 
+- [Google Fonts](https://fonts.google.com/)
 
-## 5.4. Acknowledgements
+## 6.4. Acknowledgements
 
 - 
