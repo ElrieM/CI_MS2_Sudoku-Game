@@ -81,10 +81,6 @@ footer i {
 
 /* Formatting contact page */
 
-#contact-wrapper {
-  border: 5px solid;
-}
-
 .form-control {
   background-color: var(--primary-color);
   color: var(--back-color);
