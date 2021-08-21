@@ -1,16 +1,16 @@
 /* jshint esversion: 6 */
 
-// Test 404 error page
-describe('404 error page test', () => {
-    it('Loads 404 page and check contents', () => {
-        // Navigate to 404 error page
-        cy.visit('https://elriem.github.io/CI_MS2_Sudoku-Game/404.html');
+// Test contact page
+describe('contact page test', () => {
+    it('Loads contact page and check contents', () => {
+        // Navigate to contact page
+        cy.visit('https://elriem.github.io/CI_MS2_Sudoku-Game/contact.html');
         
         // Test page loaded
-        cy.url().should('include', "404.html");
+        cy.url().should('include', "contact.html");
         
         // Check contents
-        cy.get('.text-center').should('include.text', "Page Not Found");
+        cy.get('.text-center').should('include.text', "Contact");
         
         // Test navigation bar links
         // Navigates to Landing page
@@ -28,7 +28,7 @@ describe('404 error page test', () => {
         cy.title().should('include', "Challenge");
         cy.go('back');
 
-        // Navigates to Rules game page
+        // Navigates to Rules page
         cy.get('.navbar-nav').contains('Rules').click({force: true});
         cy.title().should('include', "Rules");
         cy.go('back');

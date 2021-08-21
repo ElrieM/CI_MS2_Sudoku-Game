@@ -27,16 +27,8 @@
     - [4.1.4 Performance - Chrome Lighthouse](#414-performance---chrome-lighthouse)
     - [4.1.5 JSHint](#415-jshint)
     - [4.1.6 User Experience testing](#416-user-experience-testing)
-      - [User Story 1. As a Site Visitor, I want to easily navigate the website's pages from the header and footer](#user-story-1-as-a-site-visitor-i-want-to-easily-navigate-the-websites-pages-from-the-header-and-footer)
-      - [User Story 2. As a Site Visitor, I want to have access to and learn the rules](#user-story-2-as-a-site-visitor-i-want-to-have-access-to-and-learn-the-rules)
-      - [User Story 3. As a Site Visitor, I want to view hints and tips on how best to approach the game](#user-story-3-as-a-site-visitor-i-want-to-view-hints-and-tips-on-how-best-to-approach-the-game)
-      - [User Story 4. As a Site Visitor, I want to have access to new puzzles on demand](#user-story-4-as-a-site-visitor-i-want-to-have-access-to-new-puzzles-on-demand)
-      - [User Story 5. As a Site Visitor, I want to practice different puzzles to improve my completion times](#user-story-5-as-a-site-visitor-i-want-to-practice-different-puzzles-to-improve-my-completion-times)
-      - [User Story 6. As a Site Visitor, I want to complete games with a time limit to compare my times to the average](#user-story-6-as-a-site-visitor-i-want-to-complete-games-with-a-time-limit-to-compare-my-times-to-the-average)
-      - [User Story 7. As a Site Visitor, I want to see the solved puzzle if I get stuck](#user-story-7-as-a-site-visitor-i-want-to-see-the-solved-puzzle-if-i-get-stuck)
-      - [User Story 8. As a Site Visitor, I want to be able to change the background to my preference (dark / light / colourful)](#user-story-8-as-a-site-visitor-i-want-to-be-able-to-change-the-background-to-my-preference-dark--light--colourful)
-      - [User Story 9. As the Site Owner, I want to make it easy and convenient for users to send suggestions for improvement or bug reports to a dedicated mailbox, thereby improving the chances of them returning](#user-story-9-as-the-site-owner-i-want-to-make-it-easy-and-convenient-for-users-to-send-suggestions-for-improvement-or-bug-reports-to-a-dedicated-mailbox-thereby-improving-the-chances-of-them-returning)
   - [4.2 Automated testing](#42-automated-testing)
+    - [Tested page](#tested-page)
   - [4.3 Testing Bugs - Resolved](#43-testing-bugs---resolved)
   - [4.4 Known Bugs](#44-known-bugs)
 
@@ -102,7 +94,7 @@ The following tools were used to validate every page of project to ensure there 
 
 ### 4.1.6 User Experience testing  
 
-#### User Story 1. As a Site Visitor, I want to easily navigate the website's pages from the header and footer <!-- omit from toc -->
+#### User Story 1. As a Site Visitor, I want to easily navigate the website's pages from the header and footer <!-- omit in toc -->
 
 1.1 Header with Navigation Bar
 
@@ -144,11 +136,11 @@ The following tools were used to validate every page of project to ensure there 
   | Click on Challenge button | Navigates to challenge game | Desktop, Tablet, Mobile| All passed |
   | Click on Rules button | Navigates to rules page | Desktop, Tablet, Mobile| All passed |
 
-#### User Story 2. As a Site Visitor, I want to have access to and learn the rules <!-- omit from toc -->
+#### User Story 2. As a Site Visitor, I want to have access to and learn the rules <!-- omit in toc -->
 
-#### User Story 3. As a Site Visitor, I want to view hints and tips on how best to approach the game <!-- omit from toc -->
+#### User Story 3. As a Site Visitor, I want to view hints and tips on how best to approach the game <!-- omit in toc -->
 
-#### User Story 4. As a Site Visitor, I want to have access to new puzzles on demand <!-- omit from toc -->
+#### User Story 4. As a Site Visitor, I want to have access to new puzzles on demand <!-- omit in toc -->
 
 4.1 Practice game page
 
@@ -176,7 +168,7 @@ The following tools were used to validate every page of project to ensure there 
   | Press New button | New puzzle generated and timer restarts | Desktop, Tablet, Mobile| All passed |  
   | Switch through different devices | Puzzle fits on page without scrolling | Desktop, Tablet, Mobile| All passed |
 
-#### User Story 5. As a Site Visitor, I want to practice different puzzles to improve my completion times <!-- omit from toc -->
+#### User Story 5. As a Site Visitor, I want to practice different puzzles to improve my completion times <!-- omit in toc -->
 
 5.1 Practice game page
 
@@ -197,7 +189,7 @@ The following tools were used to validate every page of project to ensure there 
   | Click on pause button | Modal pops up to cover up puzzle, closes when clicking on exit / outside of block | Desktop, Tablet, Mobile | All passed | Popup doesn't close when clicking outside of box |
   | Change game level selector | Number of empty input cells changes at each level | Desktop, Tablet, Mobile | All passed |
 
-#### User Story 6. As a Site Visitor, I want to complete games with a time limit to compare my times to the average <!-- omit from toc -->
+#### User Story 6. As a Site Visitor, I want to complete games with a time limit to compare my times to the average <!-- omit in toc -->
 
 6.1 Challenge game page
 
@@ -215,7 +207,7 @@ The following tools were used to validate every page of project to ensure there 
   | Click on restart button | Input cells reset to empty, time countdown continues counting | Desktop, Tablet, Mobile | All passed |
   | Change game level selector | Number of empty input cells and countdown time changes at each level | Desktop, Tablet, Mobile | All passed |
 
-#### User Story 7. As a Site Visitor, I want to see the solved puzzle if I get stuck <!-- omit from toc -->
+#### User Story 7. As a Site Visitor, I want to see the solved puzzle if I get stuck <!-- omit in toc -->
 
 7.1 Practice game page
 
@@ -237,7 +229,7 @@ The following tools were used to validate every page of project to ensure there 
   | --- | --- | --- | --- |
   | Click solve button | Modal pops up with solution, closes when clicking on exit / outside of block. New puzzle generates if continued or navigate to home page if exit clicked | Timer doesn't stop, modal doesn't move, new puzzle doesn't generate on clicking outside window |  
 
-#### User Story 8. As a Site Visitor, I want to be able to change the background to my preference (dark / light / colourful)  <!-- omit from toc -->
+#### User Story 8. As a Site Visitor, I want to be able to change the background to my preference (dark / light / colourful)  <!-- omit in toc -->
 
 - Requirements considered
   - Give users the option to customise website
@@ -249,7 +241,7 @@ The following tools were used to validate every page of project to ensure there 
   | Click on bright theme | Background colour and text colour changes | Desktop, Tablet, Mobile | Navigation buttons on landing page doesn't change when hovered on |
   | Click on dark theme | Background colour and text colour changes | Desktop, Tablet, Mobile | Navigation buttons on landing page doesn't change when hovered on, only icon background highlights |
 
-#### User Story 9. As the Site Owner, I want to make it easy and convenient for users to send suggestions for improvement or bug reports to a dedicated mailbox, thereby improving the chances of them returning <!-- omit from toc -->
+#### User Story 9. As the Site Owner, I want to make it easy and convenient for users to send suggestions for improvement or bug reports to a dedicated mailbox, thereby improving the chances of them returning <!-- omit in toc -->
 
 - Tests
   | Step | Expected Result | Devices | Test Result |
@@ -258,14 +250,29 @@ The following tools were used to validate every page of project to ensure there 
 
 ## 4.2 Automated testing
 
+Automated testing was performed using [Cypress](https://www.cypress.io/)
+
+![mockup](docs\testing\test-results\cypress\cypress_dashboard.png)
+
+![mockup](docs\testing\test-results\cypress\cypress_tests.png)
+
+### Tested page
+| Tested | Test file | Video |
+| --- | --- | --- |
+| Index | [Index test](cypress\integration\indexTest.js) | [Index recording](cypress\videos\indexTest.js.mp4) |
+| Practice | [Practice test](cypress\integration\practiceTest.js) | [Practice recording](cypress\videos\practiceTest.js.mp4) |
+| Challenge | [Challenge test](cypress\integration\challengeTest.js) | [Challenge recording](cypress\videos\challengeTest.js.mp4) |
+| Rules | [Rules test](cypress\integration\rulesTest.js) | [Rules recording](cypress\videos\rulesTest.js.mp4) |
+| Contact | [Contact test](cypress\integration\contactTest.js) | [Index recording](cypress\videos\contactTest.js.mp4) |
+
+Average run duration: 48s 774ms.
+
 ## 4.3 Testing Bugs - Resolved
 
 | Bug Found | Solution |
 | --- | ---- |
-| Pause button on practice game page - popup doesn't close when clicking anywhere on page" | |
-| Number of input cells outstanding less than expected | |
-| Solve modal doens't generate new puzzle when clicked outside ||
-| Solve modal doesn't move or resize ||
+| Solve modal doesn't generate new puzzle when clicked outside | Changed solve close function to include display game function |
+| Solve modal doesn't move or resize | Used jQuery dragable function to move. Resizing unresolved |
 | Navigation buttons on landing page doesn't change when hovered on in Light theme | Removed navpage class from icons in Index page and changed colour in light.css file |
 | Navigation buttons on landing page doesn't change when hovered on in Bright theme | Removed navpage class from icons in Index page and changed colour and removed space between nav-button and :hover in bright.css file |
 | Navigation buttons on landing page doesn't change when hovered on in Dark theme | Removed navpage class from icons in Index page and removed space between nav-button and :hover in bright.css file |
@@ -276,3 +283,7 @@ The following tools were used to validate every page of project to ensure there 
 - The website is not optimised for Internet Explorer. No additional work was performed to optimise the site for IE as (extended) support has ended for customers since January 2020 and no further development of IE is expected.
 - Dropdown lists: items highlighted in blue. Could not locate the correct item to change the formatting.
 - Game input validation fails at only allowing single digit inputs.
+- Pause button on practice game page - popup doesn't close when clicking anywhere on page.
+- Number of input cells outstanding less than expected.
+- Solve modal doesn't resize.
+- Solve modal on smaller devices covers game, cannot compare as easily.
