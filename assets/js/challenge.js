@@ -316,7 +316,6 @@ continueBtn.onclick = function () {
     timedGame(); // Generates new puzzle
     displayTimedGrid(); // Displays puzzle with blank cells for game
     secondsRemaining = gameSeconds;
-    startCountdown();
 };
 
 // When the user clicks on the close X at the top, close the modal
@@ -325,7 +324,6 @@ closeXSolve.onclick = function () {
     timedGame(); // Generates new puzzle
     displayTimedGrid(); // Displays puzzle with blank cells for game
     secondsRemaining = gameSeconds;
-    startCountdown();
 };
 
 // When the user clicks anywhere outside of the modal, close the modal
@@ -335,7 +333,6 @@ window.onclick = function (event) {
         timedGame(); // Generates new puzzle
         displayTimedGrid(); // Displays puzzle with blank cells for game
         secondsRemaining = gameSeconds;
-    startCountdown();
     }
 };
 
