@@ -6,9 +6,40 @@ window.onload = function () {
     startTimer();
 };
 
+/* ------------------------------------------------------------------------------- */
+// Practice game generator
 var pauseModal = document.getElementById('pauseModal');
-var close = document.getElementById('close-btn');
+var closeBtn = document.getElementById('close-btn');
 var closeX = document.getElementById('close-top');
+var totalBlank;
+var levelBlank = 20; // Initial game level set to easy
+var level = document.getElementById('level-select');
+// Initial solved grid
+var solvedGrid = [
+    [8, 6, 1, 7, 9, 4, 3, 5, 2],
+    [3, 5, 2, 1, 6, 8, 7, 4, 9],
+    [4, 9, 7, 2, 5, 3, 1, 8, 6],
+    [2, 1, 8, 9, 7, 5, 6, 3, 4],
+    [6, 7, 5, 3, 4, 1, 9, 2, 8],
+    [9, 3, 4, 6, 8, 2, 5, 1, 7],
+    [5, 2, 6, 8, 1, 9, 4, 7, 3],
+    [7, 4, 3, 5, 2, 6, 8, 9, 1],
+    [1, 8, 9, 3, 4, 7, 2, 6, 5]
+];
+
+// Initial play grid (same as solved grid until blank cells are removed)
+// Sets array form of 9 rows with 9 values each
+var playGrid = [
+    [8, 6, 1, 7, 9, 4, 3, 5, 2],
+    [3, 5, 2, 1, 6, 8, 7, 4, 9],
+    [4, 9, 7, 2, 5, 3, 1, 8, 6],
+    [2, 1, 8, 9, 7, 5, 6, 3, 4],
+    [6, 7, 5, 3, 4, 1, 9, 2, 8],
+    [9, 3, 4, 6, 8, 2, 5, 1, 7],
+    [5, 2, 6, 8, 1, 9, 4, 7, 3],
+    [7, 4, 3, 5, 2, 6, 8, 9, 1],
+    [1, 8, 9, 3, 4, 7, 2, 6, 5]
+];
 
 // Game control buttons
 // New game button: creates new puzzle and resets stopwatch timer
@@ -39,9 +70,6 @@ document.getElementById("restartButton").addEventListener("click", function () {
 });
 
 // Timer control buttons
-// Button to start timer (continue after pausing)
-document.getElementById("start").addEventListener("click", startTimer);
-
 // Button to stop timer (pauses game)
 document.getElementById("stop").addEventListener("click", function () {
     stopTimer();
@@ -49,36 +77,6 @@ document.getElementById("stop").addEventListener("click", function () {
 });
 
 // Puzzle creating function Adapted from https://github.com/reymon359/web-experiments/blob/master/Sudoku%20Board%20Generator/script.js
-
-// Initial solved grid
-var solvedGrid = [
-    [8, 6, 1, 7, 9, 4, 3, 5, 2],
-    [3, 5, 2, 1, 6, 8, 7, 4, 9],
-    [4, 9, 7, 2, 5, 3, 1, 8, 6],
-    [2, 1, 8, 9, 7, 5, 6, 3, 4],
-    [6, 7, 5, 3, 4, 1, 9, 2, 8],
-    [9, 3, 4, 6, 8, 2, 5, 1, 7],
-    [5, 2, 6, 8, 1, 9, 4, 7, 3],
-    [7, 4, 3, 5, 2, 6, 8, 9, 1],
-    [1, 8, 9, 3, 4, 7, 2, 6, 5]
-];
-
-// Initial play grid (same as solved grid until blank cells are removed)
-// Sets array form of 9 rows with 9 values each
-var playGrid = [
-    [8, 6, 1, 7, 9, 4, 3, 5, 2],
-    [3, 5, 2, 1, 6, 8, 7, 4, 9],
-    [4, 9, 7, 2, 5, 3, 1, 8, 6],
-    [2, 1, 8, 9, 7, 5, 6, 3, 4],
-    [6, 7, 5, 3, 4, 1, 9, 2, 8],
-    [9, 3, 4, 6, 8, 2, 5, 1, 7],
-    [5, 2, 6, 8, 1, 9, 4, 7, 3],
-    [7, 4, 3, 5, 2, 6, 8, 9, 1],
-    [1, 8, 9, 3, 4, 7, 2, 6, 5]
-];
-
-var levelBlank = 20; // Initial game level set to easy
-var level = document.getElementById('level-select');
 
 // Assign number of cells blank based on level selection
 // Adapted from https://stackoverflow.com/questions/37538217/how-to-get-addeventlistener-to-work-with-a-select-tag
@@ -125,9 +123,10 @@ function practiceGame() {
 
     // Create play grid, empty randomly selected cells
     function createPracticeGame(playGrid) {
-        gridSolution = playGrid;
-
+        
         let randomCell;
+        let selectedRow;
+        let selectedCol;
 
         // Converts random cell into row and column, replaces selected cell with 0
         for (let m = 0; m < totalBlank; m++) {
@@ -147,9 +146,13 @@ function practiceGame() {
 // Display game grid, showing nil values as blank cells
 function displayPracticeGrid() {
 
-    displayGrid = playGrid;
+    let displayGrid = playGrid;
+    let rowLower;
+    let rowUpper;
+    let colLower;
+    let colUpper;
 
-    for (i = 1; i < 10; i++) { // Box number
+    for (let i = 1; i < 10; i++) { // Box number
         let box = document.getElementById(`box-${i}`);
         box.innerHTML = ""; // Clears previous grid
 
@@ -196,10 +199,16 @@ function displayPracticeGrid() {
 // Display solved grid
 function displaySolvedGrid() {
 
-    displayGridSolution = solvedGrid;
+    let displayGridSolution = solvedGrid;
 
-    for (i = 1; i < 10; i++) { // Box number
+    for (let i = 1; i < 10; i++) { // Box number
+        
         let solBox = document.getElementById(`solBox-${i}`);
+        let rowLowerSol;
+        let rowUpperSol;
+        let colLowerSol;
+        let colUpperSol;
+
         solBox.innerHTML = ""; // Clears previous grid
 
         // Sets value of row based on box
@@ -297,9 +306,10 @@ function resetTimer() {
     startTimer();
 }
 
+/* ------------------------------------------------------------------------------- */
 // Modal for pause button, adapted from https://www.w3schools.com/howto/howto_css_modals.asp
 // When the user clicks on close button, close the modal
-close.onclick = function () {
+closeBtn.onclick = function () {
     pauseModal.style.display = "none";
     startTimer();
 };
@@ -318,6 +328,7 @@ window.onclick = function (event) {
     }
 };
 
+/* ------------------------------------------------------------------------------- */
 // Solve modal, used in practice and challenge games
 
 var solveModal = document.getElementById('solveModal');
