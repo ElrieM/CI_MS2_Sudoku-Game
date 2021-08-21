@@ -8,13 +8,11 @@ window.onload = function () {
 
 /* ------------------------------------------------------------------------------- */
 // Practice game generator
-var pauseModal = document.getElementById('pauseModal');
-var closeBtn = document.getElementById('close-btn');
-var closeX = document.getElementById('close-top');
 var totalBlank;
 var levelBlank = 20; // Initial game level set to easy
 var level = document.getElementById('level-select');
 // Initial solved grid
+// Sets array form of 9 rows with 9 values each
 var solvedGrid = [
     [8, 6, 1, 7, 9, 4, 3, 5, 2],
     [3, 5, 2, 1, 6, 8, 7, 4, 9],
@@ -26,7 +24,6 @@ var solvedGrid = [
     [7, 4, 3, 5, 2, 6, 8, 9, 1],
     [1, 8, 9, 3, 4, 7, 2, 6, 5]
 ];
-
 // Initial play grid (same as solved grid until blank cells are removed)
 // Sets array form of 9 rows with 9 values each
 var playGrid = [
@@ -66,14 +63,6 @@ document.getElementById("solveButton").addEventListener("click", function () {
 document.getElementById("restartButton").addEventListener("click", function () {
     totalBlank = 0;
     displayPracticeGrid();
-    startTimer(); // Continues countdown (in case game is paused when restarted)
-});
-
-// Timer control buttons
-// Button to stop timer (pauses game)
-document.getElementById("stop").addEventListener("click", function () {
-    stopTimer();
-    pauseModal.style.display = "block";
 });
 
 // Puzzle creating function Adapted from https://github.com/reymon359/web-experiments/blob/master/Sudoku%20Board%20Generator/script.js
@@ -91,7 +80,8 @@ level.addEventListener("change", function () {
     }
 
     localStorage.setItem('totalBlank', levelBlank); // Stores number of cells to be blank for later usage in play grid
-
+    
+    resetTimer();
 }, false);
 
 // Generates game for play, starting with solution and then creating grid for play with random blank cells
@@ -123,7 +113,7 @@ function practiceGame() {
 
     // Create play grid, empty randomly selected cells
     function createPracticeGame(playGrid) {
-        
+
         let randomCell;
         let selectedRow;
         let selectedCol;
@@ -202,7 +192,7 @@ function displaySolvedGrid() {
     let displayGridSolution = solvedGrid;
 
     for (let i = 1; i < 10; i++) { // Box number
-        
+
         let solBox = document.getElementById(`solBox-${i}`);
         let rowLowerSol;
         let rowUpperSol;
@@ -251,6 +241,13 @@ function displaySolvedGrid() {
 console.log(solvedGrid);
 
 // Countup timer on loading page
+// Timer control buttons
+// Button to stop timer (pauses game)
+document.getElementById("stop").addEventListener("click", function () {
+    stopTimer();
+    pauseModal.style.display = "block";
+});
+
 // Adapted from https://dev.to/gspteck/create-a-stopwatch-in-javascript-2mak
 const timer = document.getElementById('stopwatch');
 
@@ -308,6 +305,11 @@ function resetTimer() {
 
 /* ------------------------------------------------------------------------------- */
 // Modal for pause button, adapted from https://www.w3schools.com/howto/howto_css_modals.asp
+
+var pauseModal = document.getElementById('pauseModal');
+var closeBtn = document.getElementById('close-btn');
+var closeX = document.getElementById('close-top');
+
 // When the user clicks on close button, close the modal
 closeBtn.onclick = function () {
     pauseModal.style.display = "none";
@@ -329,7 +331,7 @@ window.onclick = function (event) {
 };
 
 /* ------------------------------------------------------------------------------- */
-// Solve modal, used in practice and challenge games
+// Solve modal, displays solution to puzzle
 
 var solveModal = document.getElementById('solveModal');
 var continueBtn = document.getElementById('continue-btn');
