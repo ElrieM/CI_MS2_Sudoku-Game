@@ -45,7 +45,7 @@ The following tools were used to validate every page of project to ensure there 
 | Practice | No errors | [results](docs/testing/test-results/validator-tools/w3c_html/w3c-html_practice.png) |
 | Challenge | No errors | [results](docs/testing/test-results/validator-tools/w3c_html/w3c-html_challenge.png) |
 | Rules | No errors | [results](docs/testing/test-results/validator-tools/w3c_html/w3c-html_rules.png) |
-| Contact | No errors | [results]() |
+| Contact | No errors | [results](docs/testing/test-results/validator-tools/w3c_html/w3c-html_contact.png) |
 | Error (404) | No errors | [results](docs/testing/test-results/validator-tools/w3c_html/w3c-html_404.png) |
   
 ### 4.1.2 CSS - W3C CSS Validator
@@ -65,7 +65,7 @@ The following tools were used to validate every page of project to ensure there 
 | Practice | No errors | Alert for redundant link | [results](docs/testing/test-results/validator-tools/wave_accessibility/wave_practice.png) |
 | Challenge | No errors | Alert for redundant link | [results](docs/testing/test-results/validator-tools/wave_accessibility/wave_challenge.png) |
 | Rules | No errors | Alert for redundant link | [results](docs/testing/test-results/validator-tools/wave_accessibility/wave_rules.png) |
-| Contact | No errors | Alert for redundant link | [results]() |
+| Contact | No errors | Alert for redundant link | [results](docs/testing/test-results/validator-tools/wave_accessibility/wave_contact.png) |
 | Error (404) | No errors | Alert for redundant link | [results](docs/testing/test-results/validator-tools/wave_accessibility/wave_404.png) |
  
 ### 4.1.4 Performance - Chrome Lighthouse
