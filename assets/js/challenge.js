@@ -278,6 +278,7 @@ function countdownCycle() {
     if (secondsRemaining === 0) {
         alert("Time's Up!");
         clearInterval(intervalHandle);
+        resetCountdown();
     }
 
     //subtract from seconds remaining
