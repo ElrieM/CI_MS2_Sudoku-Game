@@ -333,13 +333,14 @@ https://rachelandrew.co.uk/archives/2018/04/27/grid-level-2-and-subgrid/ */
 }
 
 /* Modal formatting */
-.modal-dialog.modal-dialog-centered.modal-lg .modal-body {
-    height: 45vh;
-    padding-top: 20vh;
+#solveModal,
+#solveModalTimed {
+    height: 100%;
 }
 
-.modal-body > p {
-    font-size: larger;
+#solveModal .cell,
+#solveModalTimed .cell {
+    font-size: smaller;
 }
 
 @media only screen and (max-width: 767px) {
@@ -407,6 +408,8 @@ https://rachelandrew.co.uk/archives/2018/04/27/grid-level-2-and-subgrid/ */
     .btn {
         font-size: .6rem;
     }
+
+    
 
 }
 

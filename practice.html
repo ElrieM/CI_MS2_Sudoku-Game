@@ -11,6 +11,9 @@
     <!-- Bootstrap 5-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js" integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30=" crossorigin="anonymous"></script>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
         integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
@@ -137,7 +140,7 @@
         </div>
 
         <!-- Modal for solve button -->
-        <div class="modal" id="solveModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        <div class="modal ui-widget-content" id="solveModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
             aria-labelledby="solveModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
@@ -161,8 +164,7 @@
                             </div>
                         </div>
 
-                        <p class="text-center">Click continue to play another game</p>
-                        <p class="text-center">Click exit to return Home</p>
+                        <p class="text-center">Click <em>Continue</em> to play another game or <em>Exit</em> to return Home</p>
                     </div>
                     <div class="modal-footer">
                         <button id="continue-btn" type="button" class="btn btn-secondary"

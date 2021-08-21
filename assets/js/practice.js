@@ -80,7 +80,7 @@ level.addEventListener("change", function () {
     }
 
     localStorage.setItem('totalBlank', levelBlank); // Stores number of cells to be blank for later usage in play grid
-    
+
     resetTimer();
 }, false);
 
@@ -366,3 +366,8 @@ window.onclick = function (event) {
         resetTimer();
     }
 };
+
+// Make modal draggable
+$(function () {
+    $("#solveModal").draggable();
+});

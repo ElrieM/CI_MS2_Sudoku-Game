@@ -336,3 +336,8 @@ window.onclick = function (event) {
         displayTimedGrid(); // Displays puzzle with blank cells for game
     }
 };
+
+// Make modal draggable
+$(function () {
+    $("#solveModalTimed").draggable();
+});
