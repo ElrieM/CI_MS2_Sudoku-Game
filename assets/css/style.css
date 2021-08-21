@@ -499,6 +499,11 @@ textarea.form-control {
     font-size: smaller;
 }
 
+#confirm-submit {
+    margin: 0;
+    padding: 0;
+}
+
 @media only screen and (max-width: 767px) {
 
     /* ---- Mobile ---- */
