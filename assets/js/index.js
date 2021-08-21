@@ -2,12 +2,13 @@
 
 // Runs practice game
 // Practice game has the ability to play various game
-function runPractice() {
+
+document.getElementById('btn-practice').addEventListener("click", function () {
     window.location.href = 'practice.html';
-}
+});
+
 
 // Runs challenge game
-function runChallenge() {
+document.getElementById('btn-challenge').addEventListener("click", function () {
     window.location.href = 'challenge.html';
-}
-
+});
