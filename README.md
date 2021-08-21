@@ -226,6 +226,10 @@ Schematic website flow can be seen [here](assets/../docs/other/flow.png)
 
 - Used to create mockups for README file.
 
+### - [Resizing.app:](https://resizing.app/features/resize-png/) <!-- omit in toc -->
+
+- Resize PNG to reduce README file sizes.
+
 # 3. Features
 
 #### 3.1 Existing Features
