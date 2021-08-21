@@ -356,14 +356,18 @@ continueBtn.onclick = function () {
 // When the user clicks on the close X at the top, close the modal
 closeXSolve.onclick = function () {
     solveModal.style.display = "none";
-    resetTimer();
+    practiceGame(); // Generates new puzzle
+    displayPracticeGrid(); // Displays puzzle with blank cells for game
+    resetTimer(); // Resets timer to start from nil
 };
 
 // When the user clicks anywhere outside of the modal, close the modal
 window.onclick = function (event) {
     if (event.target == solveModal) {
         solveModal.style.display = "none";
-        resetTimer();
+        practiceGame(); // Generates new puzzle
+        displayPracticeGrid(); // Displays puzzle with blank cells for game
+        resetTimer(); // Resets timer to start from nil
     }
 };
 
