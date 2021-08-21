@@ -324,6 +324,8 @@ closeXSolve.onclick = function () {
     solveModal.style.display = "none";
     timedGame(); // Generates new puzzle
     displayTimedGrid(); // Displays puzzle with blank cells for game
+    secondsRemaining = gameSeconds;
+    startCountdown();
 };
 
 // When the user clicks anywhere outside of the modal, close the modal
@@ -332,6 +334,8 @@ window.onclick = function (event) {
         solveModal.style.display = "none";
         timedGame(); // Generates new puzzle
         displayTimedGrid(); // Displays puzzle with blank cells for game
+        secondsRemaining = gameSeconds;
+    startCountdown();
     }
 };
 
