@@ -17,7 +17,8 @@ i {
 }
 
 .container-game,
-#stopwatch.timer {
+#stopwatch.timer,
+#countdownTimer {
     font-family: 'EB Garamond', serif;
 }
 

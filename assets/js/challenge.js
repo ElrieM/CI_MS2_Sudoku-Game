@@ -6,10 +6,39 @@ window.onload = function () {
     startCountdown();
 };
 
-
-var close = document.getElementById('close-btn');
-var closeX = document.getElementById('close-top');
+/* ------------------------------------------------------------------------------- */
+// Challenge game generator
+var totalBlank;
+var levelBlank = 20; // Initial game level set to easy
+var gameSeconds = 300; // Initial game seconds to play
+var level = document.getElementById('level-select');
 var inputCells = [];
+// Initial solved grid
+// Sets array form of 9 rows with 9 values each
+var solvedTimedGrid = [
+    [5, 3, 4, 6, 7, 8, 9, 1, 2],
+    [6, 7, 2, 1, 9, 5, 3, 4, 8],
+    [1, 9, 8, 3, 4, 2, 5, 6, 7],
+    [8, 5, 9, 7, 6, 1, 4, 2, 3],
+    [4, 2, 6, 8, 5, 3, 7, 9, 1],
+    [7, 1, 3, 9, 2, 4, 8, 5, 6],
+    [9, 6, 1, 5, 3, 7, 2, 8, 4],
+    [2, 8, 7, 4, 1, 9, 6, 2, 5],
+    [3, 4, 5, 2, 8, 6, 1, 7, 9]
+];
+// Initial play grid (same as solved grid until blank cells are removed)
+// Sets array form of 9 rows with 9 values each
+var playTimedGrid = [
+    [5, 3, 4, 6, 7, 8, 9, 1, 2],
+    [6, 7, 2, 1, 9, 5, 3, 4, 8],
+    [1, 9, 8, 3, 4, 2, 5, 6, 7],
+    [8, 5, 9, 7, 6, 1, 4, 2, 3],
+    [4, 2, 6, 8, 5, 3, 7, 9, 1],
+    [7, 1, 3, 9, 2, 4, 8, 5, 6],
+    [9, 6, 1, 5, 3, 7, 2, 8, 4],
+    [2, 8, 7, 4, 1, 9, 6, 2, 5],
+    [3, 4, 5, 2, 8, 6, 1, 7, 9]
+];
 
 // Game control buttons
 // New game button: creates new puzzle and resets stopwatch Countdown
@@ -28,7 +57,7 @@ document.getElementById("solveTButton").addEventListener("click", function () {
     displaySolvedTimedGrid();
     setTimeout(function () {
         resetCountdown();
-        solveModalTimed.style.display = "block";
+        solveModal.style.display = "block";
     }, 100);
 });
 
@@ -40,43 +69,14 @@ document.getElementById("restartTButton").addEventListener("click", function () 
 
 // Puzzle creating function Adapted from https://github.com/reymon359/web-experiments/blob/master/Sudoku%20Board%20Generator/script.js
 
-// Initial solved grid
-var solvedTimedGrid = [
-    [5, 3, 4, 6, 7, 8, 9, 1, 2],
-    [6, 7, 2, 1, 9, 5, 3, 4, 8],
-    [1, 9, 8, 3, 4, 2, 5, 6, 7],
-    [8, 5, 9, 7, 6, 1, 4, 2, 3],
-    [4, 2, 6, 8, 5, 3, 7, 9, 1],
-    [7, 1, 3, 9, 2, 4, 8, 5, 6],
-    [9, 6, 1, 5, 3, 7, 2, 8, 4],
-    [2, 8, 7, 4, 1, 9, 6, 2, 5],
-    [3, 4, 5, 2, 8, 6, 1, 7, 9]
-];
-
-// Initial play grid (same as solved grid until blank cells are removed)
-// Sets array form of 9 rows with 9 values each
-var playTimedGrid = [
-    [5, 3, 4, 6, 7, 8, 9, 1, 2],
-    [6, 7, 2, 1, 9, 5, 3, 4, 8],
-    [1, 9, 8, 3, 4, 2, 5, 6, 7],
-    [8, 5, 9, 7, 6, 1, 4, 2, 3],
-    [4, 2, 6, 8, 5, 3, 7, 9, 1],
-    [7, 1, 3, 9, 2, 4, 8, 5, 6],
-    [9, 6, 1, 5, 3, 7, 2, 8, 4],
-    [2, 8, 7, 4, 1, 9, 6, 2, 5],
-    [3, 4, 5, 2, 8, 6, 1, 7, 9]
-];
-
-var levelBlank = 20; // Initial game level set to easy
-var gameSeconds = 300; // Initial game seconds to play
-var level = document.getElementById('level-select');
-
 // Assign number of cells blank based on level selection
 // Adapted from https://stackoverflow.com/questions/37538217/how-to-get-addeventlistener-to-work-with-a-select-tag
 level.addEventListener("change", function () {
     levelBlank = this.value;
     let levelSeconds = 0;
     timedGame();
+    displayTimedGrid();
+
     if (levelBlank == 20) {
         levelSeconds = 300; // 5 minutes * 60 seconds
     } else if (levelBlank == 30) {
@@ -92,6 +92,7 @@ level.addEventListener("change", function () {
 
     localStorage.setItem('totalBlank', levelBlank);
     localStorage.setItem('gameSeconds', levelSeconds);
+    
     resetCountdown();
 }, false);
 
@@ -124,9 +125,10 @@ function timedGame() {
 
     // Create play grid, empty randomly selected cells
     function createTimedGame(playTimedGrid) {
-        timedGrid = playTimedGrid;
-
+        
         let randCell;
+        let selRow;
+        let selCol;
 
         // Converts random cell into row and column, replaces selected cell with 0
         for (let m = 0; m < totalBlank; m++) {
@@ -146,12 +148,16 @@ function timedGame() {
 
 // Display game grid, showing nil values as blank cells
 function displayTimedGrid() {
-        gridSolution = solvedTimedGrid;
-        let inputCells = [];
 
-    dispTimedGrid = playTimedGrid;
+    let gridSolution = solvedTimedGrid;
+    let dispTimedGrid = playTimedGrid;
+    let rowLower;
+    let rowUpper;
+    let colLower;
+    let colUpper;
+    let cellNum;
 
-    for (i = 1; i < 10; i++) { // Box number
+    for (let i = 1; i < 10; i++) { // Box number
         let box = document.getElementById(`box-${i}`);
         box.innerHTML = ""; // Clears previous grid
 
@@ -199,10 +205,15 @@ function displayTimedGrid() {
 // Display solved grid
 function displaySolvedTimedGrid() {
 
-    displayTimedGridSolution = solvedTimedGrid;
+    let displayTimedGridSolution = solvedTimedGrid;
 
-    for (i = 1; i < 10; i++) { // Box number
+    for (let i = 1; i < 10; i++) { // Box number
         let solBox = document.getElementById(`solTBox-${i}`);
+        let rowLowerSol;
+        let rowUpperSol;
+        let colLowerSol;
+        let colUpperSol;
+
         solBox.innerHTML = ""; // Clears previous grid
 
         // Sets value of row based on box
@@ -271,7 +282,6 @@ function countdownCycle() {
     if (secondsRemaining === 0) {
         alert("Time's Up!");
         clearInterval(intervalHandle);
-        resetPage();
     }
 
     //subtract from seconds remaining
@@ -314,11 +324,15 @@ continueBtn.onclick = function () {
 // When the user clicks on the close X at the top, close the modal
 closeXSolve.onclick = function () {
     solveModal.style.display = "none";
+    timedGame(); // Generates new puzzle
+    displayTimedGrid(); // Displays puzzle with blank cells for game
 };
 
 // When the user clicks anywhere outside of the modal, close the modal
 window.onclick = function (event) {
     if (event.target == solveModal) {
         solveModal.style.display = "none";
+        timedGame(); // Generates new puzzle
+        displayTimedGrid(); // Displays puzzle with blank cells for game
     }
 };
