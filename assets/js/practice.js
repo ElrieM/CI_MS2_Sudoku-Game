@@ -65,7 +65,7 @@ document.getElementById("restartButton").addEventListener("click", function () {
     displayPracticeGrid();
 });
 
-// Puzzle creating function Adapted from https://github.com/reymon359/web-experiments/blob/master/Sudoku%20Board%20Generator/script.js
+// Puzzle creating function adapted from https://github.com/reymon359/web-experiments/blob/master/Sudoku%20Board%20Generator/script.js
 
 // Assign number of cells blank based on level selection
 // Adapted from https://stackoverflow.com/questions/37538217/how-to-get-addeventlistener-to-work-with-a-select-tag

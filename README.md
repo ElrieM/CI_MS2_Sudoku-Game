@@ -4,6 +4,8 @@
 
 This website hosts Sudoku puzzles to complete within a fixed time, or to time how long it takes to complete the puzzle. 
 
+![mockup](docs\other\responsive_landing.png)
+
 ## Contents <!-- omit in toc -->
 
 - [1. User Experience (UX)](#1-user-experience-ux)
@@ -241,8 +243,8 @@ Schematic website flow can be seen [here](assets/../docs/other/flow.png)
 #### 3.2 Features Left to Implement
 
 - Puzzle for the day challenge, where site visitors can compete for better completion time
-- Scoreboard to store best scored times and levels of all visitors
-- Check inputs against solution
+- Scoreboard to store best scored times and levels of all visitors on challenge game
+- Check inputs against solution in both puzzle games
 - Save last 5 completion times and levels in practice game to track improvement
 
 # 4. Testing
@@ -255,7 +257,7 @@ Schematic website flow can be seen [here](assets/../docs/other/flow.png)
 
 The project was deployed to GitHub Pages as follows:
 
-1. Log in to GitHub and locate the [GitHub Repository](#)
+1. Log in to GitHub and locate the [GitHub Repository](https://github.com/ElrieM/CI_MS2_Sudoku-Game)
 2. Locate the "Settings" button in the menu above the Repository.
    - Alternatively, click [here](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site) from the "Creating your site" section for a description of the process. ![GitHub menu](docs/readme/other/github-bar.png)
 3. Scroll down the Settings page until you locate the "Pages" section.![GitHub settings options](docs/readme/other/github-sidemenu.png)
@@ -267,7 +269,7 @@ The project was deployed to GitHub Pages as follows:
 
 A fork is a copy of the repository, allowing you to experiment with changes without affecting the original project.
 
-1. Log in to GitHub and locate the [GitHub Repository](#)
+1. Log in to GitHub and locate the [GitHub Repository](https://github.com/ElrieM/CI_MS2_Sudoku-Game)
 2. In the banner above the Repository, click on the "Fork" button.
 3. ![GitHub banner with Fork](docs/readme/other/github-forkmenu.png)
 4. If you have succeeded, you now have a copy of the original repository in your GitHub account.
@@ -278,8 +280,8 @@ Alternatively, click [here](https://docs.github.com/en/github/getting-started-wi
 
 A clone allows you to create a local copy of a repository on your computer and sync between your computer and the GitHub repository.
 
-1. Log in to GitHub and locate the [GitHub Repository](#)
-2. Click on Code, click on the copy button next to HTTPS to copy the URL. ![GitHub banner with Fork](docs/readme/other/github-forkmenu.png)
+1. Log in to GitHub and locate the [GitHub Repository](https://github.com/ElrieM/CI_MS2_Sudoku-Game)
+2. Click on Code, click on the copy button next to HTTPS to copy the URL. ![GitHub code](docs/readme/other/github-code.png)
 3. Open Git Bash.
 4. Change the current working directory to the location where the cloned directory should be stored.
 5. Type "git clone', then paste the URL copied in step 2.
@@ -294,18 +296,34 @@ Alternatively, click [here](https://docs.github.com/en/github/creating-cloning-a
 - Bootstrap 5: Bootstrap Library used to make the site responsive using the Bootstrap Grid System
 - W3schools.com used for making changes to formatting and customising Bootstrap content used.
 - FreeCodeCamp for guidance on using flexbox for page layout, [here](https://www.freecodecamp.org/news/learn-flexbox-build-5-layouts/)
+- MDN Web Docs for JavaScript [various topics](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+- [jQuery](https://jquery.com/) and [jQuery UI](https://jqueryui.com/) library for interactive modals
+- [emailJS](https://www.emailjs.com/) for contact form
 
 ## 6.2. Content
-  - Created favicon from logo using https://www.favicon.cc/?
+  - Created favicon from logo using https://www.favicon.cc/
 - Rules page:
   - Sudoku rules and solve approach from [here](https://masteringsudoku.com/sudoku-rules-beginners/)
+- Practice and Challenge game pages:
+  - Puzzle creating function adapted from [here]https://github.com/reymon359/web-experiments/blob/master/Sudoku%20Board%20Generator/script.js)
+  - Game difficulty level selector adapted from [here](https://stackoverflow.com/questions/37538217/)how-to-get-addeventlistener-to-work-with-a-select-tag
+  - Countdown Timer for Challenge game adapted from [here](https://codepen.io/jmikey/pen/tFHrp)
+  - Stopwatch Timer for Practice game adapted from [here](https://dev.to/gspteck/create-a-stopwatch-in-javascript-2mak)
 
 ## 6.3. Media
 
 - [Font Awesome](http://fontawesome.com)
-
 - [Google Fonts](https://fonts.google.com/)
+- [Pexels](https://www.pexels.com/)
+- [Testing example](https://github.com/pmeeny/CI-MS2-BicepMusicFanSite)
+- [Favicon guidance](https://www.101computing.net/html-how-to-add-a-favicon/)
+- [Cypress testing](https://www.chaijs.com/api/assert/)
+- [Cypress guide for writing tests](https://docs.cypress.io/guides/overview/why-cypress)
+- 
 
 ## 6.4. Acknowledgements
 
-- 
+- My mentor for guidance and support.
+- My partner for advice and patience.
+- My brothers for their pep-talks and positivity.
+- My mother for all her words of love and encouragement.
