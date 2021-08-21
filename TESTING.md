@@ -25,7 +25,8 @@
     - [4.1.2 CSS - W3C CSS Validator](#412-css---w3c-css-validator)
     - [4.1.3 Accessibility - WAVE Web Accessibility Evaluation Tool](#413-accessibility---wave-web-accessibility-evaluation-tool)
     - [4.1.4 Performance - Chrome Lighthouse](#414-performance---chrome-lighthouse)
-    - [4.1.5 User Experience testing](#415-user-experience-testing)
+    - [4.1.5 JSHint](#415-jshint)
+    - [4.1.6 User Experience testing](#416-user-experience-testing)
       - [User Story 1. As a Site Visitor, I want to easily navigate the website's pages from the header and footer](#user-story-1-as-a-site-visitor-i-want-to-easily-navigate-the-websites-pages-from-the-header-and-footer)
       - [User Story 2. As a Site Visitor, I want to have access to and learn the rules](#user-story-2-as-a-site-visitor-i-want-to-have-access-to-and-learn-the-rules)
       - [User Story 3. As a Site Visitor, I want to view hints and tips on how best to approach the game](#user-story-3-as-a-site-visitor-i-want-to-view-hints-and-tips-on-how-best-to-approach-the-game)
@@ -80,14 +81,26 @@ The following tools were used to validate every page of project to ensure there 
     
   | Page | Scores - Desktop | Scores - Mobile | Link |
   | --- | --- | --- | --- |
-  | Home | Performance - 100, Accessibility - 100, Best Practices - 100, SEO - 100 | Performance - 97, Accessibility - 100, Best Practices - 100, SEO - 100 | [Desktop results](assets/testing/../../docs/testing/test-results/validator-tools/lighthouse/lighthouse_index.png), [Mobile results](assets/testing/../../docs/testing/test-results/validator-tools/lighthouse/lighthouse_index_mobile.png) |
-  | Practice | Performance - 100, Accessibility - 98, Best Practices - 100, SEO - 100 | Performance - 98, Accessibility - 96, Best Practices - 100, SEO - 95 | [Desktop results](assets/testing/../../docs/testing/test-results/validator-tools/lighthouse/lighthouse_practice.png), [Mobile results](assets/testing/../../docs/testing/test-results/validator-tools/lighthouse/lighthouse_practice_mobile.png) |
-  | Challenge |  Performance - 100, Accessibility - 100, Best Practices - 100, SEO - 100 | Performance - 98, Accessibility - 98, Best Practices - 100, SEO - 97 | [Desktop results](assets/testing/../../docs/testing/test-results/validator-tools/lighthouse/lighthouse_challenge.png), [Mobile results](assets/testing/../../docs/testing/test-results/validator-tools/lighthouse/lighthouse_challenge_mobile.png) |
-  | Rules | Performance - 100, Accessibility - 100, Best Practices - 100, SEO - 100 | Performance - 97, Accessibility - 100, Best Practices - 100, SEO - 100 | [Desktop results](assets/testing/../../docs/testing/test-results/validator-tools/lighthouse/lighthouse_rules.png), [Mobile results](assets/testing/../../docs/testing/test-results/validator-tools/lighthouse/lighthouse_rules_mobile.png) |
-  | Contact |  |  | [results]() |
-  | Error (404) | Performance - 99, Accessibility - 100, Best Practices - 100, SEO - 100 | Performance - 94, Accessibility - 100, Best Practices - 100, SEO - 100 | [Desktop results](assets/testing/../../docs/testing/test-results/validator-tools/lighthouse/lighthouse_404.png), [Mobile results](assets/testing/../../docs/testing/test-results/validator-tools/lighthouse/lighthouse_404_mobile.png) |
+  | Home | Performance - 100, Accessibility - 100, Best Practices - 100, SEO - 100 | Performance - 98, Accessibility - 100, Best Practices - 100, SEO - 100 | [Desktop results](docs/testing/../../docs/testing/test-results/validator-tools/lighthouse/lighthouse_index.png), [Mobile results](docs/testing/../../docs/testing/test-results/validator-tools/lighthouse/lighthouse_index_mobile.png) |
+  | Practice | Performance - 99, Accessibility - 98, Best Practices - 100, SEO - 100 | Performance - 89, Accessibility - 96, Best Practices - 100, SEO - 96 | [Desktop results](docs/testing/../../docs/testing/test-results/validator-tools/lighthouse/lighthouse_practice.png), [Mobile results](docs/testing/../../docs/testing/test-results/validator-tools/lighthouse/lighthouse_practice_mobile.png) |
+  | Challenge |  Performance - 99, Accessibility - 100, Best Practices - 100, SEO - 100 | Performance - 87, Accessibility - 98, Best Practices - 100, SEO - 96 | [Desktop results](docs/testing/../../docs/testing/test-results/validator-tools/lighthouse/lighthouse_challenge.png), [Mobile results](docs/testing/../../docs/testing/test-results/validator-tools/lighthouse/lighthouse_challenge_mobile.png) |
+  | Rules | Performance - 100, Accessibility - 100, Best Practices - 100, SEO - 100 | Performance - 95, Accessibility - 100, Best Practices - 100, SEO - 100 | [Desktop results](docs/testing/../../docs/testing/test-results/validator-tools/lighthouse/lighthouse_rules.png), [Mobile results](docs/testing/../../docs/testing/test-results/validator-tools/lighthouse/lighthouse_rules_mobile.png) |
+  | Contact |  Performance - 100, Accessibility - 100, Best Practices - 100, SEO - 100 | Performance - 97, Accessibility - 100, Best Practices - 100, SEO - 100  | [Desktop results](docs/testing/../../docs/testing/test-results/validator-tools/lighthouse/lighthouse_contact.png), [Mobile results](docs/testing/../../docs/testing/test-results/validator-tools/lighthouse/lighthouse_contact_mobile.png) |
+  | Error (404) | Performance - 99, Accessibility - 100, Best Practices - 100, SEO - 100 | Performance - 94, Accessibility - 100, Best Practices - 100, SEO - 100 | [Desktop results](docs/testing/../../docs/testing/test-results/validator-tools/lighthouse/lighthouse_404.png), [Mobile results](docs/testing/../../docs/testing/test-results/validator-tools/lighthouse/lighthouse_404_mobile.png) |
 
-### 4.1.5 User Experience testing  
+### 4.1.5 JSHint
+  - Pages tested (mobile and desktop tested on each):
+    
+  | Page | Results | Link |
+  | --- | --- | --- |
+  | index.js | No issues | [results](docs/testing/test-results/validator-tools/jshint/jsHint_index.png) |
+  | practice.js | Flagged $ for jQuery, no other issues | [results](docs/testing/test-results/validator-tools/jshint/jsHint_practice.png) |
+  | challenge.js | Flagged $ for jQuery, no other issues | [results](docs/testing/test-results/validator-tools/jshint/jsHint_challenge.png) |
+  | contact.js | No issues | [results](docs/testing/test-results/validator-tools/jshint/jsHint_contact.png) |
+  | email.js | Undefined emailJS ignored. No issues | [results](docs/testing/test-results/validator-tools/jshint/jsHint_emailJS.png) |
+  | themes.js | Functions declared in loops ignored, required for the purpose of the function | [results](docs/testing/test-results/validator-tools/jshint/jsHint_themes.png) |
+
+### 4.1.6 User Experience testing  
 
 #### User Story 1. As a Site Visitor, I want to easily navigate the website's pages from the header and footer <!-- omit from toc -->
 
