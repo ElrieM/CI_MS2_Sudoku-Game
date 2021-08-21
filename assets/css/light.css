@@ -21,18 +21,26 @@ footer,
   color: var(--header-text);
 }
 
-.navbar-light .navbar-nav .nav-link.active,
+
 .navbar-light .navbar-nav .show>.nav-link {
   color: var(--primary-color);
   background-color: var(--header-back);
+}
+
+.navbar-light .navbar-nav .nav-link.active {
+  text-decoration: underline;
+  text-transform: uppercase;
 }
 
 .navbar-light .navbar-nav .nav-link{
   color: var(--primary-color);
 }
 
-.nav-button:hover {
-  background-color: var(--header-text);
+.nav-link {
+  color: var(--primary-color);
+}
+.nav-link:hover {
+  background-color: var(--bs-info);
 }
 
 .offcanvas-body {
@@ -90,15 +98,16 @@ footer i {
   border: var(--primary-color);
 }
 
-.btn-info {
+.btn-info,
+.btn-info:focus,
+.btn-info:active {
   color: var(--back-color);
   background-color: var(--bs-info);
   border-color: var(--header-text);
+  box-shadow: unset;
 }
 
-.btn-info:hover,
-.btn-info:focus,
-.btn-info:active {
+.btn-info:hover {
   color: var(--back-color);
   background-color: var(--header-text);
   border-color: var(--header-back);
