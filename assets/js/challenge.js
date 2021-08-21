@@ -56,7 +56,6 @@ document.getElementById("newTButton").addEventListener("click", function () {
 document.getElementById("solveTButton").addEventListener("click", function () {
     displaySolvedTimedGrid();
     setTimeout(function () {
-        resetCountdown();
         solveModal.style.display = "block";
     }, 100);
 });
@@ -100,8 +99,7 @@ level.addEventListener("change", function () {
 function timedGame() {
 
     totalBlank = levelBlank; // fetches number of blank cells to generate
-    console.log(totalBlank);
-
+    
     // Create game grid solution
     function solveTimedGrid(solvedTimedGrid, playTimedGrid) {
 
@@ -253,8 +251,6 @@ function displaySolvedTimedGrid() {
     }
 }
 
-console.log(solvedTimedGrid);
-
 // Countdown Countdown on loading page
 // Adapted from https://codepen.io/jmikey/pen/tFHrp 
 var timeDisplay = document.getElementById("countdownTimer");
@@ -319,6 +315,7 @@ continueBtn.onclick = function () {
     solveModal.style.display = "none";
     timedGame(); // Generates new puzzle
     displayTimedGrid(); // Displays puzzle with blank cells for game
+    resetCountdown();
 };
 
 // When the user clicks on the close X at the top, close the modal
@@ -326,6 +323,7 @@ closeXSolve.onclick = function () {
     solveModal.style.display = "none";
     timedGame(); // Generates new puzzle
     displayTimedGrid(); // Displays puzzle with blank cells for game
+    resetCountdown();
 };
 
 // When the user clicks anywhere outside of the modal, close the modal
@@ -334,6 +332,7 @@ window.onclick = function (event) {
         solveModal.style.display = "none";
         timedGame(); // Generates new puzzle
         displayTimedGrid(); // Displays puzzle with blank cells for game
+        resetCountdown();
     }
 };
 

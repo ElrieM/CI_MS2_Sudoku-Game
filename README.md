@@ -309,11 +309,11 @@ Alternatively, click [here](https://docs.github.com/en/github/creating-cloning-a
 - [emailJS](https://www.emailjs.com/) for contact form
 
 ## 6.2. Content
-  - Created favicon from logo using https://www.favicon.cc/
+  - Created favicon from logo using [favicon.cc](https://www.favicon.cc/)
 - Rules page:
   - Sudoku rules and solve approach from [here](https://masteringsudoku.com/sudoku-rules-beginners/)
 - Practice and Challenge game pages:
-  - Puzzle creating function adapted from [here]https://github.com/reymon359/web-experiments/blob/master/Sudoku%20Board%20Generator/script.js)
+  - Puzzle creating function adapted from [here](https://github.com/reymon359/web-experiments/blob/master/Sudoku%20Board%20Generator/script.js)
   - Game difficulty level selector adapted from [here](https://stackoverflow.com/questions/37538217/)how-to-get-addeventlistener-to-work-with-a-select-tag
   - Countdown Timer for Challenge game adapted from [here](https://codepen.io/jmikey/pen/tFHrp)
   - Stopwatch Timer for Practice game adapted from [here](https://dev.to/gspteck/create-a-stopwatch-in-javascript-2mak)
@@ -327,7 +327,6 @@ Alternatively, click [here](https://docs.github.com/en/github/creating-cloning-a
 - [Favicon guidance](https://www.101computing.net/html-how-to-add-a-favicon/)
 - [Cypress testing](https://www.chaijs.com/api/assert/)
 - [Cypress guide for writing tests](https://docs.cypress.io/guides/overview/why-cypress)
-- 
 
 ## 6.4. Acknowledgements
 

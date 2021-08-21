@@ -287,3 +287,5 @@ Average run duration: 48s 774ms.
 - Number of input cells outstanding less than expected.
 - Solve modal doesn't resize.
 - Solve modal on smaller devices covers game, cannot compare as easily.
+- Countdown timer doesn't stop when Solve button is pressed.
+- Challenge game doesn't stop when all cells are filled.

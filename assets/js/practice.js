@@ -88,7 +88,6 @@ level.addEventListener("change", function () {
 function practiceGame() {
 
     totalBlank = levelBlank; // fetches number of blank cells to generate
-    console.log(totalBlank);
 
     // Create game grid solution
     function solveGrid(solvedGrid, playGrid) {
@@ -237,8 +236,6 @@ function displaySolvedGrid() {
         }
     }
 }
-
-console.log(solvedGrid);
 
 // Countup timer on loading page
 // Timer control buttons
